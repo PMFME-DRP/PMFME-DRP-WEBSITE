@@ -909,16 +909,6 @@ padding-bottom:70px;
 }
 
 }
-
-/* SMALL NOTE */
-
-.disclaimer{
-margin-top:15px;
-font-size:12px;
-color:rgba(255,255,255,.75);
-}
-
-
 /* TRUST STRIP */
 .trust-strip{background:#fff;border-bottom:1px solid var(--line)}
 .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -954,6 +944,34 @@ color:rgba(255,255,255,.75);
 .faq-item.open .plus{transform:rotate(45deg)}
 .plus{font-size:24px;line-height:1;transition:.2s}
 
+
+/* WHO CAN APPLY / PREPARATION */
+.prepare-section{background:#fff}
+.prepare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.prepare-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:22px}
+.prepare-card span{font-size:28px}
+.prepare-card strong{display:block;margin-top:10px;font-size:17px}
+.prepare-card p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.prepare-cta{margin-top:24px;padding:20px 22px;background:var(--soft);border:1px solid #d9eee2;border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.prepare-cta strong{display:block;font-size:18px}
+.prepare-cta > div > span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+
+.video-card{transition:.2s ease}
+.video-card:hover{transform:translateY(-4px)}
+.video-card video{aspect-ratio:16/10}
+.video-info{min-height:118px}
+.video-info h3{color:var(--green)}
+
+@media(max-width:900px){
+  .prepare-grid{grid-template-columns:1fr 1fr}
+  .prepare-cta{display:block}
+  .prepare-cta .btn{margin-top:14px}
+}
+@media(max-width:600px){
+  .prepare-grid{grid-template-columns:1fr}
+  .prepare-cta .btn{width:100%}
+}
+
 </style>
 </head>
 
@@ -982,23 +1000,15 @@ color:rgba(255,255,255,.75);
 
 <a href="#benefits">Benefits</a>
 <a href="#businesses">Businesses</a>
+<a href="#who-can-apply">Who Can Apply</a>
 <a href="#help">Guidance</a>
 <a href="#resources">Resources</a>
+<a href="#prepare">Prepare</a>
 <a href="#stories">Stories</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 
 </nav>
-
-<a class="nav-cta"
-href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20guidance%20about%20PMFME%20for%20my%20food%20business."
-target="_blank"
-rel="noopener">
-
-WHATSAPP US
-
-</a>
-
 <button class="menu" id="menuButton" aria-label="Open menu">
 ☰
 </button>
@@ -1011,8 +1021,10 @@ WHATSAPP US
 
 <a href="#benefits">Benefits</a>
 <a href="#businesses">Businesses</a>
+<a href="#who-can-apply">Who Can Apply</a>
 <a href="#help">Guidance</a>
 <a href="#resources">Resources</a>
+<a href="#prepare">Prepare</a>
 <a href="#stories">Stories</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
@@ -1111,10 +1123,6 @@ rel="noopener">
 EXPLORE PMFME SUPPORT →
 </a>
 
-</div>
-
-<div class="disclaimer">
-Independent informational/guidance page. Not an official Government of India website.
 </div>
 
 </div>
@@ -1316,12 +1324,11 @@ WHO CAN GET GUIDANCE?
 </div>
 
 <h2>
-What Kind of Food Business?
+Who Can Explore PMFME Support?
 </h2>
 
 <p>
-Explore common food processing categories that may be relevant
-to your business. Eligibility depends on applicable scheme guidelines.
+If you are planning, starting or upgrading a micro food-processing activity, these are common categories to explore. Final eligibility depends on the applicable scheme guidelines.
 </p>
 
 </div>
@@ -1389,6 +1396,46 @@ to your business. Eligibility depends on applicable scheme guidelines.
 
 </div>
 
+</section>
+
+
+<!-- WHO CAN APPLY -->
+<section id="who-can-apply">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">WHO CAN EXPLORE PMFME?</div>
+      <h2>Is PMFME Relevant to Your Business?</h2>
+      <p>
+        Use these simple checks to understand whether your food-processing project
+        may be worth discussing before you start the application process.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card highlight-card">
+        <div class="bigicon">🏪</div>
+        <h3>Existing Food Business</h3>
+        <p>Micro food-processing entrepreneurs looking to formalise, improve or expand an existing activity.</p>
+      </div>
+
+      <div class="card">
+        <div class="bigicon">🚀</div>
+        <h3>New Food Processing Unit</h3>
+        <p>Entrepreneurs planning a new eligible food-processing activity can explore the applicable requirements.</p>
+      </div>
+
+      <div class="card">
+        <div class="bigicon">⚙️</div>
+        <h3>Machinery & Capacity Upgrade</h3>
+        <p>Businesses considering eligible machinery, equipment, processing or value-addition improvements.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      Eligibility is not automatic. Beneficiary category, activity, project structure,
+      eligible cost and other applicable conditions must be checked under the current scheme guidelines.
+    </div>
+  </div>
 </section>
 
 
@@ -1571,6 +1618,66 @@ Proceed with the required application and financing process with proper document
 
 </section>
 
+
+
+<!-- BEFORE APPLYING -->
+<section class="prepare-section" id="prepare">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">BEFORE YOU APPLY</div>
+      <h2>Keep These Details Ready</h2>
+      <p>
+        Having the basic project information ready can make your initial guidance,
+        project planning and bank discussion much easier.
+      </p>
+    </div>
+
+    <div class="prepare-grid">
+      <div class="prepare-card">
+        <span>🍱</span>
+        <strong>Food Product</strong>
+        <p>What food product will you manufacture or process?</p>
+      </div>
+      <div class="prepare-card">
+        <span>📍</span>
+        <strong>Business Location</strong>
+        <p>District, town/village and proposed unit location.</p>
+      </div>
+      <div class="prepare-card">
+        <span>🏭</span>
+        <strong>Machinery</strong>
+        <p>Machinery required and an approximate machinery cost.</p>
+      </div>
+      <div class="prepare-card">
+        <span>💰</span>
+        <strong>Project Cost</strong>
+        <p>Approximate project cost, own contribution and finance requirement.</p>
+      </div>
+      <div class="prepare-card">
+        <span>📄</span>
+        <strong>Documents</strong>
+        <p>Basic identity, business and project-related information.</p>
+      </div>
+      <div class="prepare-card">
+        <span>🏦</span>
+        <strong>Bank Status</strong>
+        <p>Whether you are at idea, project, application or bank stage.</p>
+      </div>
+    </div>
+
+    <div class="prepare-cta">
+      <div>
+        <strong>Not sure what you need?</strong>
+        <span>Send your basic business details on WhatsApp and start the discussion.</span>
+      </div>
+      <a class="btn btn-orange"
+         href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20PMFME%20guidance.%0A%0AFood%20business%2Factivity%3A%0ADistrict%3A%0ANew%20or%20existing%20unit%3A%0AApprox.%20project%2Fmachinery%20cost%3A%0ACurrent%20stage%3A"
+         target="_blank" rel="noopener">
+        💬 ASK ON WHATSAPP
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <!-- BEFORE WHATSAPP -->
@@ -1998,10 +2105,6 @@ Guidance • Support • Food Processing
 📱 WhatsApp: +91 70410 75170
 </p>
 
-<p>
-Independent informational/guidance page.
-Not an official Government of India website.
-</p>
 
 </div>
 
@@ -2026,6 +2129,10 @@ Resources
 
 <a href="#stories">
 Stories
+</a>
+
+<a href="#faq">
+FAQ
 </a>
 
 <a href="https://www.mofpi.gov.in/"
@@ -2085,7 +2192,7 @@ document.querySelectorAll(".faq-question").forEach(function(button){
   });
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// Footer year is static; no #year element is required.
 </script>
 
 </body>
