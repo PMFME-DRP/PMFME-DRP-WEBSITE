@@ -3,973 +3,932 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#075b3b">
 
-<meta name="description" content="PMFME-DRP food business guidance for micro food processing entrepreneurs: eligibility, project planning, machinery, documentation, financing and application guidance.">
+<meta name="theme-color" content="#075b3b">
+<meta name="description" content="PMFME-DRP - Food Processing Business Guidance, Support, Eligibility, Application Guidance and Success Stories">
 
 <title>PMFME-DRP | Food Business Guidance & Support</title>
 
 <style>
 
 :root{
---green:#075b3b;
---green2:#0b7a4b;
---green3:#063f2c;
---orange:#f59b25;
---gold:#ffd57c;
---cream:#f7fbf8;
---dark:#123326;
---muted:#5d6d66;
---white:#ffffff;
---line:#e4ece8;
---soft:#eef7f2;
---shadow:0 18px 50px rgba(0,0,0,.09);
---radius:24px;
+    --green:#075b3b;
+    --green-dark:#03452d;
+    --green-light:#0b7a4b;
+    --orange:#f59b25;
+    --orange-dark:#df8311;
+    --cream:#f7fbf8;
+    --dark:#123326;
+    --muted:#5d6d66;
+    --white:#ffffff;
+    --line:#e2ece7;
+    --shadow:0 12px 35px rgba(0,0,0,.09);
+    --radius:22px;
 }
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Inter,Arial,Helvetica,sans-serif;
-color:var(--dark);
-background:var(--cream);
-line-height:1.6;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--dark);
+    background:#fff;
+    line-height:1.65;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 .container{
-width:min(1120px,92%);
-margin:auto;
+    width:min(1180px,92%);
+    margin:auto;
 }
 
-/* TOP BAR */
+/* TOP STRIP */
 
 .topbar{
-background:var(--green);
-color:#fff;
-text-align:center;
-font-size:13px;
-font-weight:800;
-padding:8px 12px;
+    background:var(--green);
+    color:#fff;
+    text-align:center;
+    padding:10px 15px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.4px;
 }
 
 /* HEADER */
 
 header{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(255,255,255,.97);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--line);
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .nav{
-min-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
+    min-height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:12px;
+    display:flex;
+    align-items:center;
+    gap:13px;
 }
 
 .brand-mark{
-width:48px;
-height:48px;
-border-radius:15px;
-background:linear-gradient(145deg,var(--orange),var(--green));
-display:grid;
-place-items:center;
-font-size:25px;
-box-shadow:0 8px 20px rgba(7,91,59,.18);
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    background:linear-gradient(145deg,#f5a623,#1b7b49);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    box-shadow:0 7px 18px rgba(0,0,0,.14);
 }
 
 .brand-title{
-font-weight:850;
-font-size:20px;
-line-height:1.1;
+    font-size:24px;
+    font-weight:800;
+    color:var(--dark);
 }
 
-.brand-sub{
-font-size:11px;
-color:var(--muted);
-margin-top:4px;
+.brand-subtitle{
+    font-size:13px;
+    color:var(--muted);
 }
 
-.navlinks{
-display:flex;
-gap:22px;
-font-size:14px;
-font-weight:750;
-align-items:center;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    font-size:15px;
+    font-weight:700;
 }
 
-.navlinks a:hover{
-color:var(--green2);
-}
-
-.nav-cta,
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-border-radius:999px;
-font-weight:850;
-transition:.2s ease;
+.nav-links a:hover{
+    color:var(--orange-dark);
 }
 
 .nav-cta{
-background:var(--orange);
-color:#fff;
-padding:13px 22px;
+    background:var(--orange);
+    color:#fff;
+    padding:14px 24px;
+    border-radius:30px;
+    font-weight:800;
+    white-space:nowrap;
 }
 
-.nav-cta:hover,
-.btn-orange:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 24px rgba(245,155,37,.28);
+.nav-cta:hover{
+    background:var(--orange-dark);
 }
 
-.menu{
-display:none;
-border:0;
-background:none;
-font-size:28px;
-cursor:pointer;
-}
-
-/* CONTACT STRIP */
+/* WHATSAPP CONTACT STRIP */
 
 .contact-strip{
-background:#f0f8f3;
-border-bottom:1px solid var(--line);
+    background:#eff8f3;
+    border-bottom:1px solid #dcece4;
 }
 
 .contact-strip-inner{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:25px;
-padding:14px 0;
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.whatsapp-number{
-display:flex;
-align-items:center;
-gap:12px;
+.contact-info{
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 
 .whatsapp-icon{
-width:42px;
-height:42px;
-border-radius:50%;
-background:#25D366;
-color:#fff;
-display:grid;
-place-items:center;
-font-size:22px;
-font-weight:bold;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#20c76a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
 }
 
-.whatsapp-number strong{
-display:block;
-font-size:15px;
+.contact-info strong{
+    display:block;
+    font-size:16px;
 }
 
-.whatsapp-number span{
-display:block;
-font-size:13px;
-color:var(--muted);
+.contact-info span{
+    display:block;
+    color:var(--muted);
+    font-size:14px;
 }
 
-.whatsapp-link{
-background:#159447;
-color:#fff;
-padding:11px 18px;
-border-radius:999px;
-font-weight:850;
-font-size:14px;
+.whatsapp-btn{
+    background:#0b8d45;
+    color:#fff;
+    padding:13px 24px;
+    border-radius:30px;
+    font-weight:800;
+}
+
+.whatsapp-btn:hover{
+    background:#066b34;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-bottom:1px solid var(--line);
+    background:#fff;
+}
+
+.stat{
+    text-align:center;
+    padding:22px 15px;
+    border-right:1px solid var(--line);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat strong{
+    display:block;
+    color:var(--green);
+    font-size:25px;
+    margin-bottom:4px;
+}
+
+.stat span{
+    color:var(--muted);
+    font-size:14px;
 }
 
 /* HERO */
 
 .hero{
-background:
-radial-gradient(circle at 82% 25%,rgba(245,155,37,.22),transparent 30%),
-linear-gradient(135deg,#064e34 0%,#087247 55%,#0b7a4b 100%);
-color:#fff;
-padding:76px 0 84px;
+    background:
+        radial-gradient(circle at 85% 20%,rgba(255,255,255,.12),transparent 30%),
+        linear-gradient(120deg,#034d31,#087744);
+    color:#fff;
+    padding:75px 0 85px;
 }
 
 .hero-grid{
-display:grid;
-grid-template-columns:1.08fr .92fr;
-gap:56px;
-align-items:center;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:55px;
+    align-items:center;
 }
 
 .badge{
-display:inline-flex;
-padding:8px 14px;
-border:1px solid rgba(255,255,255,.35);
-background:rgba(255,255,255,.08);
-border-radius:999px;
-font-size:12px;
-font-weight:850;
+    display:inline-block;
+    border:1px solid rgba(255,255,255,.5);
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:22px;
 }
 
 .hero h1{
-font-size:clamp(42px,6vw,72px);
-line-height:1.03;
-margin:20px 0;
-letter-spacing:-2px;
+    font-size:clamp(44px,6vw,76px);
+    line-height:1.03;
+    letter-spacing:-2px;
+    margin-bottom:25px;
 }
 
 .hero h1 span{
-color:var(--gold);
+    color:#ffd16b;
 }
 
-.hero p{
-font-size:18px;
-max-width:700px;
-color:rgba(255,255,255,.9);
+.hero-text{
+    font-size:18px;
+    max-width:700px;
+    color:#e9f6ef;
+    margin-bottom:30px;
 }
 
-.actions{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:28px;
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
 }
 
 .btn{
-padding:14px 22px;
-border:0;
-cursor:pointer;
+    display:inline-block;
+    padding:15px 25px;
+    border-radius:30px;
+    font-weight:800;
+    border:2px solid transparent;
 }
 
 .btn-orange{
-background:var(--orange);
-color:#fff;
+    background:var(--orange);
+    color:#fff;
 }
 
 .btn-white{
-background:#fff;
-color:var(--green);
+    background:#fff;
+    color:var(--green);
 }
 
-.hero-card{
-background:#fff;
-color:var(--dark);
-border-radius:28px;
-padding:30px;
-box-shadow:0 28px 70px rgba(0,0,0,.18);
+.btn-outline{
+    border-color:rgba(255,255,255,.6);
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+}
+
+/* HERO CARD */
+
+.support-card{
+    background:#fff;
+    color:var(--dark);
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
 }
 
 .eyebrow{
-color:var(--green2);
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-text-transform:uppercase;
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-weight:800;
+    font-size:12px;
 }
 
-.hero-card h2{
-font-size:28px;
-margin:10px 0 18px;
+.support-card h2{
+    font-size:30px;
+    margin:10px 0 20px;
 }
 
-.support-row{
-display:flex;
-gap:14px;
-padding:15px 0;
-border-bottom:1px solid var(--line);
+.support-item{
+    display:flex;
+    gap:15px;
+    padding:17px 0;
+    border-bottom:1px solid var(--line);
 }
 
-.support-row:last-child{
-border-bottom:0;
+.support-item:last-child{
+    border-bottom:0;
 }
 
-.icon{
-flex:0 0 42px;
-width:42px;
-height:42px;
-border-radius:14px;
-background:#eaf5ef;
-display:grid;
-place-items:center;
-font-size:20px;
+.support-icon{
+    width:45px;
+    height:45px;
+    border-radius:15px;
+    background:#edf7f1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    font-size:21px;
 }
 
-.support-row strong{
-display:block;
-font-size:16px;
+.support-item strong{
+    display:block;
+    font-size:17px;
 }
 
-.support-row small{
-display:block;
-color:var(--muted);
-margin-top:2px;
+.support-item span{
+    display:block;
+    color:var(--muted);
+    font-size:14px;
 }
 
 /* SECTIONS */
 
 section{
-padding:82px 0;
+    padding:80px 0;
 }
 
 .section-head{
-text-align:center;
-max-width:780px;
-margin:0 auto 42px;
+    max-width:760px;
+    margin-bottom:40px;
+}
+
+.section-head .eyebrow{
+    margin-bottom:8px;
 }
 
 .section-head h2{
-font-size:clamp(32px,4vw,48px);
-line-height:1.1;
-margin:10px 0 14px;
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:12px;
 }
 
 .section-head p{
-color:var(--muted);
-font-size:17px;
+    color:var(--muted);
+    font-size:17px;
 }
 
 /* BENEFITS */
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
+.benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
 .card{
-background:#fff;
-border:1px solid var(--line);
-border-radius:var(--radius);
-padding:30px;
-box-shadow:var(--shadow);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:27px;
+    box-shadow:var(--shadow);
+}
+
+.card-icon{
+    width:52px;
+    height:52px;
+    border-radius:16px;
+    background:#edf7f1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    margin-bottom:18px;
 }
 
 .card h3{
-margin:16px 0 8px;
-font-size:21px;
+    font-size:19px;
+    margin-bottom:9px;
 }
 
 .card p{
-color:var(--muted);
-margin:0;
-}
-
-.card .bigicon{
-font-size:30px;
-}
-
-.highlight-card{
-border:2px solid #d9eee2;
-}
-
-.highlight-number{
-font-size:31px;
-font-weight:900;
-color:var(--green);
+    color:var(--muted);
+    font-size:14px;
 }
 
 /* BUSINESS */
 
-.businesses{
-background:#fff;
+.business-section{
+    background:var(--cream);
 }
 
 .business-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.business{
-padding:22px 18px;
-background:var(--cream);
-border:1px solid var(--line);
-border-radius:20px;
-min-height:135px;
-transition:.2s ease;
+.business-card{
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:20px;
+    box-shadow:var(--shadow);
 }
 
-.business:hover{
-transform:translateY(-4px);
-box-shadow:var(--shadow);
-background:#fff;
+.business-top{
+    padding:25px;
+    background:linear-gradient(135deg,#075b3b,#0a7b4c);
+    color:#fff;
 }
 
-.business .emoji{
-font-size:30px;
+.business-top h3{
+    font-size:22px;
 }
 
-.business strong{
-display:block;
-margin-top:10px;
-font-size:16px;
+.business-card-body{
+    padding:22px;
 }
 
-.business span{
-display:block;
-color:var(--muted);
-font-size:13px;
-margin-top:3px;
+.business-card-body p{
+    color:var(--muted);
+    font-size:14px;
 }
 
-/* HELP */
+/* WHO CAN APPLY */
 
-.help-section{
-background:#f0f7f3;
+.apply-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
 }
 
-.help-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+.apply-list{
+    list-style:none;
 }
 
-.help-card{
-background:#fff;
-padding:24px;
-border-radius:20px;
-border:1px solid var(--line);
+.apply-list li{
+    position:relative;
+    padding:13px 0 13px 31px;
+    border-bottom:1px solid var(--line);
 }
 
-.help-card .help-icon{
-font-size:28px;
+.apply-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:12px;
+    width:21px;
+    height:21px;
+    border-radius:50%;
+    background:#e8f6ee;
+    color:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
 }
 
-.help-card h3{
-margin:10px 0 6px;
-font-size:18px;
-}
-
-.help-card p{
-margin:0;
-color:var(--muted);
-font-size:14px;
-}
-
-/* STEPS */
+/* GUIDANCE */
 
 .steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
 .step{
-background:#fff;
-border:1px solid var(--line);
-border-radius:22px;
-padding:24px;
+    position:relative;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:var(--shadow);
 }
 
-.step-num{
-width:40px;
-height:40px;
-border-radius:50%;
-background:var(--green);
-color:#fff;
-display:grid;
-place-items:center;
-font-weight:900;
+.step-number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--green);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    margin-bottom:18px;
 }
 
 .step h3{
-font-size:18px;
-margin:15px 0 7px;
+    margin-bottom:8px;
 }
 
 .step p{
-color:var(--muted);
-font-size:14px;
-margin:0;
+    color:var(--muted);
+    font-size:14px;
 }
 
-/* RESOURCE */
+/* RESOURCES */
 
-.resource-section{
-background:#fff7ea;
+.resources{
+    background:#f5faf7;
 }
 
-.resource-wrap{
-display:grid;
-grid-template-columns:.9fr 1.1fr;
-gap:34px;
-align-items:center;
+.resource-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.poster{
-background:#fff;
-padding:12px;
-border-radius:26px;
-box-shadow:var(--shadow);
-border:1px solid var(--line);
+.resource-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:25px;
 }
 
-.poster img{
-display:block;
-width:100%;
-border-radius:18px;
-max-height:620px;
-object-fit:contain;
+.resource-card h3{
+    margin-bottom:9px;
 }
 
-.resource-copy h2{
-font-size:42px;
-line-height:1.1;
-margin:10px 0 15px;
+.resource-card p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:15px;
 }
 
-.resource-copy p{
-color:var(--muted);
-font-size:17px;
+.resource-link{
+    color:var(--green);
+    font-weight:800;
 }
 
-.resource-list{
-display:grid;
-gap:12px;
-margin:24px 0;
+/* PREPARE */
+
+.prepare-box{
+    background:linear-gradient(135deg,#075b3b,#0b7b4d);
+    color:#fff;
+    border-radius:28px;
+    padding:45px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
 }
 
-.resource-item{
-display:flex;
-gap:12px;
-align-items:flex-start;
-padding:14px 16px;
-background:#fff;
-border:1px solid var(--line);
-border-radius:16px;
+.prepare-box h2{
+    font-size:38px;
+    line-height:1.15;
+    margin:10px 0 15px;
 }
 
-.note{
-margin-top:20px;
-padding:14px 16px;
-border-radius:15px;
-background:#fff7e9;
-border:1px solid #f5d49d;
-color:#6b531f;
-font-size:13px;
+.prepare-box p{
+    color:#e5f3ec;
 }
 
-/* VIDEOS */
-
-.videos{
-background:#f0f7f3;
+.prepare-list{
+    list-style:none;
 }
 
-.video-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:24px;
+.prepare-list li{
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,.18);
 }
 
-.video-card{
-background:#fff;
-border-radius:24px;
-overflow:hidden;
-border:1px solid var(--line);
-box-shadow:var(--shadow);
+.prepare-list li::before{
+    content:"✓";
+    margin-right:10px;
+    color:#ffd16b;
+    font-weight:900;
 }
 
-.video-card video{
-display:block;
-width:100%;
-aspect-ratio:16/9;
-background:#10231b;
+/* STORIES */
+
+.stories-section{
+    background:#fff;
 }
 
-.video-info{
-padding:22px;
+.story-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
-.video-info h3{
-margin:0 0 7px;
-font-size:21px;
+.story-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
 }
 
-.video-info p{
-margin:0;
-color:var(--muted);
-font-size:14px;
+.story-video{
+    width:100%;
+    aspect-ratio:16/9;
+    background:#111;
+    display:block;
 }
 
-/* CTA */
-
-.cta{
-padding:70px 0;
-background:linear-gradient(135deg,var(--green),#0b7a4b);
-color:#fff;
+.story-content{
+    padding:22px;
 }
 
-.cta-box{
-display:flex;
-justify-content:space-between;
-gap:30px;
-align-items:center;
+.story-content h3{
+    font-size:20px;
+    margin-bottom:6px;
 }
 
-.cta h2{
-font-size:clamp(34px,5vw,52px);
-line-height:1.05;
-margin:8px 0 12px;
+.story-content p{
+    color:var(--muted);
+    font-size:14px;
 }
 
-.cta p{
-max-width:720px;
-color:rgba(255,255,255,.88);
-font-size:17px;
+/* FAQ */
+
+.faq-section{
+    background:var(--cream);
 }
 
-.cta .eyebrow{
-color:var(--gold);
+.faq{
+    max-width:900px;
 }
 
-.cta .actions{
-margin-top:20px;
+details{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:15px;
+    margin-bottom:12px;
+    padding:18px 20px;
 }
 
-/* BIG WHATSAPP BOX */
-
-.whatsapp-box{
-margin-top:25px;
-padding:18px 20px;
-border:1px solid rgba(255,255,255,.25);
-border-radius:20px;
-background:rgba(255,255,255,.08);
-display:flex;
-align-items:center;
-gap:15px;
+summary{
+    cursor:pointer;
+    font-weight:800;
+    list-style:none;
 }
 
-.whatsapp-box-icon{
-width:52px;
-height:52px;
-border-radius:50%;
-background:#25D366;
-display:grid;
-place-items:center;
-font-size:25px;
+summary::-webkit-details-marker{
+    display:none;
 }
 
-.whatsapp-box strong{
-display:block;
-font-size:19px;
+details p{
+    color:var(--muted);
+    margin-top:12px;
+    font-size:14px;
 }
 
-.whatsapp-box span{
-font-size:14px;
-color:rgba(255,255,255,.85);
+/* CONTACT */
+
+.contact-section{
+    background:linear-gradient(135deg,#034d31,#087744);
+    color:#fff;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.contact-box h2{
+    font-size:44px;
+    line-height:1.15;
+    margin:10px 0 15px;
+}
+
+.contact-box p{
+    color:#e2f2ea;
+}
+
+.contact-card{
+    background:#fff;
+    color:var(--dark);
+    padding:32px;
+    border-radius:24px;
+}
+
+.contact-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.contact-row:last-child{
+    border-bottom:0;
+}
+
+.contact-row strong{
+    display:block;
+}
+
+.contact-row span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* DISCLAIMER */
+
+.disclaimer{
+    background:#fff8e9;
+    border-top:1px solid #f0dfb7;
+    border-bottom:1px solid #f0dfb7;
+    padding:25px 0;
+}
+
+.disclaimer p{
+    color:#6e5b32;
+    font-size:13px;
 }
 
 /* FOOTER */
 
 footer{
-background:#083c2a;
-color:#dceae4;
-padding:34px 0;
+    background:#063f2a;
+    color:#d8eee4;
+    padding:35px 0;
 }
 
 .footer-grid{
-display:flex;
-justify-content:space-between;
-gap:25px;
-flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:30px;
 }
 
 footer strong{
-color:#fff;
+    color:#fff;
 }
 
 footer p{
-margin:6px 0;
-font-size:13px;
-color:#b9d0c7;
+    font-size:13px;
+    margin-top:7px;
 }
 
 .footer-links{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-font-size:13px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    font-size:14px;
 }
 
 .footer-links a:hover{
-color:#fff;
+    color:#fff;
 }
 
-/* MOBILE WHATSAPP */
+/* MOBILE */
 
-.mobile-whatsapp{
-display:none;
-}
+@media(max-width:1000px){
 
-/* MOBILE MENU */
+    .nav-links{
+        gap:12px;
+        font-size:13px;
+    }
 
-.mobile-menu{
-display:none;
-background:#fff;
-border-bottom:1px solid var(--line);
-}
+    .nav-cta{
+        padding:11px 17px;
+    }
 
-.mobile-menu a{
-display:block;
-padding:13px 4%;
-font-weight:750;
-border-top:1px solid var(--line);
-}
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
 
-.mobile-menu.active{
-display:block;
-}
+    .benefit-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-/* RESPONSIVE */
+    .steps{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-@media(max-width:900px){
-
-.navlinks{
-display:none;
-}
-
-.menu{
-display:block;
-}
-
-.hero-grid,
-.resource-wrap{
-grid-template-columns:1fr;
-}
-
-.cards{
-grid-template-columns:1fr 1fr;
-}
-
-.business-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.help-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.steps{
-grid-template-columns:1fr 1fr;
-}
-
-.video-grid{
-grid-template-columns:1fr;
-}
-
-.cta-box{
-display:block;
-}
+    .business-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
-@media(max-width:600px){
+@media(max-width:760px){
 
-.container{
-width:min(94%,560px);
-}
+    .nav{
+        min-height:75px;
+    }
 
-.topbar{
-font-size:11px;
-}
+    .brand-mark{
+        width:44px;
+        height:44px;
+    }
 
-.nav{
-min-height:68px;
-}
+    .brand-title{
+        font-size:19px;
+    }
 
-.brand-mark{
-width:42px;
-height:42px;
-font-size:22px;
-}
+    .brand-subtitle{
+        font-size:11px;
+    }
 
-.brand-title{
-font-size:17px;
-}
+    .nav-links{
+        display:none;
+    }
 
-.brand-sub{
-font-size:10px;
-}
+    .nav-cta{
+        padding:10px 16px;
+        font-size:12px;
+    }
 
-.nav-cta{
-display:none;
-}
+    .contact-strip-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:15px 0;
+    }
 
-.contact-strip-inner{
-display:block;
-padding:12px 0;
-}
+    .whatsapp-btn{
+        width:100%;
+        text-align:center;
+    }
 
-.whatsapp-link{
-display:block;
-text-align:center;
-margin-top:10px;
-}
+    .stats{
+        grid-template-columns:1fr;
+    }
 
-.hero{
-padding:52px 0 58px;
-}
+    .stat{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+    }
 
-.hero h1{
-font-size:43px;
-letter-spacing:-1px;
-}
+    .stat:last-child{
+        border-bottom:0;
+    }
 
-.hero p{
-font-size:16px;
-}
+    .hero{
+        padding:55px 0 60px;
+    }
 
-.hero-card{
-padding:22px;
-}
+    .hero h1{
+        font-size:47px;
+        letter-spacing:-1.5px;
+    }
 
-section{
-padding:62px 0;
-}
+    .hero-text{
+        font-size:16px;
+    }
 
-.cards,
-.business-grid,
-.help-grid,
-.steps{
-grid-template-columns:1fr;
-}
+    .support-card{
+        padding:25px;
+    }
 
-.section-head h2,
-.resource-copy h2{
-font-size:34px;
-}
+    section{
+        padding:60px 0;
+    }
 
-.actions{
-flex-direction:column;
-}
+    .section-head h2{
+        font-size:34px;
+    }
 
-.btn{
-width:100%;
-}
+    .benefit-grid,
+    .business-grid,
+    .steps,
+    .resource-grid,
+    .story-grid,
+    .apply-grid,
+    .contact-box,
+    .prepare-box,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
-.resource-wrap{
-gap:24px;
-}
+    .prepare-box{
+        padding:30px;
+    }
 
-.poster img{
-max-height:none;
-}
+    .prepare-box h2{
+        font-size:32px;
+    }
 
-.footer-grid{
-display:block;
-}
+    .contact-box h2{
+        font-size:36px;
+    }
 
-.footer-links{
-margin-top:16px;
-}
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
 
-.mobile-whatsapp{
-display:flex;
-position:fixed;
-bottom:15px;
-left:15px;
-right:15px;
-z-index:200;
-background:#25D366;
-color:#fff;
-padding:14px 18px;
-border-radius:999px;
-align-items:center;
-justify-content:center;
-gap:10px;
-font-weight:900;
-box-shadow:0 10px 30px rgba(0,0,0,.22);
-}
+    .hero-buttons .btn{
+        text-align:center;
+    }
 
-body{
-padding-bottom:70px;
-}
-
-}
-/* TRUST STRIP */
-.trust-strip{background:#fff;border-bottom:1px solid var(--line)}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.trust-item{padding:17px 20px;text-align:center;border-right:1px solid var(--line)}
-.trust-item:last-child{border-right:0}
-.trust-item strong{display:block;color:var(--green);font-size:18px}
-.trust-item span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-@media(max-width:600px){
-  .trust-grid{grid-template-columns:1fr}
-  .trust-item{border-right:0;border-bottom:1px solid var(--line);padding:12px}
-  .trust-item:last-child{border-bottom:0}
-}
-
-
-/* WHATSAPP QUALIFIER */
-.qualifier{background:linear-gradient(135deg,#fff7ea,#f0f7f3)}
-.qualifier-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.qualifier-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
-.qualifier-box h3{font-size:25px;margin:9px 0 12px}
-.qualifier-box p{color:var(--muted)}
-.check-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
-.check-list li{background:var(--soft);padding:10px 13px;border-radius:13px;font-size:14px}
-@media(max-width:900px){.qualifier-grid{grid-template-columns:1fr}}
-
-
-/* FAQ */
-.faq-section{background:#fff}
-.faq{max-width:850px;margin:auto;display:grid;gap:12px}
-.faq-item{background:var(--cream);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.faq-question{width:100%;border:0;background:transparent;text-align:left;padding:18px 20px;font-weight:900;cursor:pointer;display:flex;justify-content:space-between;gap:20px;color:var(--dark)}
-.faq-answer{display:none;padding:0 20px 18px;color:var(--muted);font-size:14px}
-.faq-item.open .faq-answer{display:block}
-.faq-item.open .plus{transform:rotate(45deg)}
-.plus{font-size:24px;line-height:1;transition:.2s}
-
-
-/* WHO CAN APPLY / PREPARATION */
-.prepare-section{background:#fff}
-.prepare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.prepare-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:22px}
-.prepare-card span{font-size:28px}
-.prepare-card strong{display:block;margin-top:10px;font-size:17px}
-.prepare-card p{margin:5px 0 0;color:var(--muted);font-size:14px}
-.prepare-cta{margin-top:24px;padding:20px 22px;background:var(--soft);border:1px solid #d9eee2;border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.prepare-cta strong{display:block;font-size:18px}
-.prepare-cta > div > span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
-
-.video-card{transition:.2s ease}
-.video-card:hover{transform:translateY(-4px)}
-.video-card video{aspect-ratio:16/10}
-.video-info{min-height:118px}
-.video-info h3{color:var(--green)}
-
-@media(max-width:900px){
-  .prepare-grid{grid-template-columns:1fr 1fr}
-  .prepare-cta{display:block}
-  .prepare-cta .btn{margin-top:14px}
-}
-@media(max-width:600px){
-  .prepare-grid{grid-template-columns:1fr}
-  .prepare-cta .btn{width:100%}
 }
 
 </style>
@@ -977,1166 +936,1094 @@ padding-bottom:70px;
 
 <body>
 
+<!-- TOP STRIP -->
 <div class="topbar">
-🇮🇳 PMFME-DRP • FOOD PROCESSING BUSINESS GUIDANCE & SUPPORT
+    IN PMFME • FOOD PROCESSING BUSINESS GUIDANCE & SUPPORT
 </div>
 
+<!-- HEADER -->
 <header>
+    <div class="container nav">
 
-<div class="container nav">
+        <a href="#home" class="brand">
+            <div class="brand-mark">🍲</div>
 
-<a class="brand" href="#home">
+            <div>
+                <div class="brand-title">PMFME-DRP</div>
+                <div class="brand-subtitle">
+                    Food Business Guidance • Support • Processing
+                </div>
+            </div>
+        </a>
 
-<div class="brand-mark">🥣</div>
+        <nav class="nav-links">
+            <a href="#benefits">Benefits</a>
+            <a href="#businesses">Businesses</a>
+            <a href="#apply">Who Can Apply</a>
+            <a href="#guidance">Guidance</a>
+            <a href="#resources">Resources</a>
+            <a href="#prepare">Prepare</a>
+            <a href="#stories">Stories</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<div>
-<div class="brand-title">PMFME-DRP</div>
-<div class="brand-sub">Food Business Guidance • Support • Processing</div>
-</div>
+        <a
+            class="nav-cta"
+            href="https://wa.me/917041075170?text=Hello%20PMFME-DRP,%20I%20want%20guidance%20regarding%20PMFME."
+            target="_blank"
+        >
+            GET GUIDANCE
+        </a>
 
-</a>
-
-<nav class="navlinks">
-
-<a href="#benefits">Benefits</a>
-<a href="#businesses">Businesses</a>
-<a href="#who-can-apply">Who Can Apply</a>
-<a href="#help">Guidance</a>
-<a href="#resources">Resources</a>
-<a href="#prepare">Prepare</a>
-<a href="#stories">Stories</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-
-</nav>
-<button class="menu" id="menuButton" aria-label="Open menu">
-☰
-</button>
-
-</div>
-
+    </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-
-<a href="#benefits">Benefits</a>
-<a href="#businesses">Businesses</a>
-<a href="#who-can-apply">Who Can Apply</a>
-<a href="#help">Guidance</a>
-<a href="#resources">Resources</a>
-<a href="#prepare">Prepare</a>
-<a href="#stories">Stories</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
-
-</div>
-
-
-<!-- CONTACT STRIP -->
-
+<!-- WHATSAPP CONTACT STRIP -->
 <div class="contact-strip">
+    <div class="container contact-strip-inner">
 
-<div class="container contact-strip-inner">
+        <div class="contact-info">
+            <div class="whatsapp-icon">💬</div>
 
-<div class="whatsapp-number">
+            <div>
+                <strong>Talk to us on WhatsApp</strong>
+                <span>+91 70410 75170</span>
+            </div>
+        </div>
 
-<div class="whatsapp-icon">☘</div>
+        <a
+            class="whatsapp-btn"
+            href="https://wa.me/917041075170?text=Hello%20PMFME-DRP,%20I%20want%20to%20know%20more%20about%20PMFME."
+            target="_blank"
+        >
+            💬 CHAT ON WHATSAPP
+        </a>
 
-<div>
-<strong>Talk to us on WhatsApp</strong>
-<span>+91 70410 75170</span>
+    </div>
 </div>
 
-</div>
+<!-- STATS -->
+<div class="stats">
 
-<a class="whatsapp-link"
-href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20guidance%20about%20PMFME%20for%20my%20food%20business."
-target="_blank"
-rel="noopener">
+    <div class="stat">
+        <strong>35%*</strong>
+        <span>Credit-linked capital subsidy for eligible individual units</span>
+    </div>
 
-💬 CHAT ON WHATSAPP
+    <div class="stat">
+        <strong>₹10 Lakh*</strong>
+        <span>Maximum ceiling for an individual unit</span>
+    </div>
 
-</a>
-
-</div>
+    <div class="stat">
+        <strong>10%*</strong>
+        <span>Minimum beneficiary contribution mentioned in scheme guidance</span>
+    </div>
 
 </div>
 
 
 <main id="home">
 
-
-
-<!-- QUICK FACTS -->
-<div class="trust-strip">
-  <div class="container trust-grid">
-    <div class="trust-item">
-      <strong>35%*</strong>
-      <span>Credit-linked capital subsidy for eligible individual units</span>
-    </div>
-    <div class="trust-item">
-      <strong>₹10 Lakh*</strong>
-      <span>Maximum ceiling for an individual unit</span>
-    </div>
-    <div class="trust-item">
-      <strong>10%*</strong>
-      <span>Minimum beneficiary contribution mentioned in scheme guidance</span>
-    </div>
-  </div>
-</div>
-
 <!-- HERO -->
-
 <section class="hero">
 
-<div class="container hero-grid">
+    <div class="container hero-grid">
 
-<div>
+        <div>
 
-<div class="badge">
-GOVERNMENT SCHEME • MICRO FOOD PROCESSING
-</div>
+            <div class="badge">
+                GOVERNMENT SCHEME • MICRO FOOD PROCESSING
+            </div>
 
-<h1>
-Have a Food Business Idea?
-<span>Explore PMFME Support.</span>
-</h1>
+            <h1>
+                Have a Food<br>
+                Business Idea?<br>
+                <span>Explore PMFME Support.</span>
+            </h1>
 
-<p>
-Understand PMFME support, eligibility, project planning,
-machinery, documentation, financing and application steps
-with practical guidance.
-</p>
+            <p class="hero-text">
+                Understand PMFME support, eligibility, project planning,
+                machinery, documentation, financing and application steps
+                with practical guidance.
+            </p>
 
-<div class="actions">
+            <div class="hero-buttons">
 
-<a class="btn btn-orange"
-href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20guidance%20about%20PMFME%20for%20my%20food%20business."
-target="_blank"
-rel="noopener">
+                <a
+                    class="btn btn-orange"
+                    href="https://wa.me/917041075170?text=Hello%20PMFME-DRP,%20I%20want%20PMFME%20guidance."
+                    target="_blank"
+                >
+                    💬 GET PMFME GUIDANCE
+                </a>
 
-📲 GET GUIDANCE ON WHATSAPP
+                <a class="btn btn-white" href="#benefits">
+                    EXPLORE BENEFITS →
+                </a>
 
-</a>
+            </div>
 
-<a class="btn btn-white" href="#benefits">
-EXPLORE PMFME SUPPORT →
-</a>
-
-</div>
-
-</div>
-
-
-<div class="hero-card">
-
-<div class="eyebrow">
-PMFME SUPPORT
-</div>
-
-<h2>
-What Can You Get?
-</h2>
+        </div>
 
 
-<div class="support-row">
+        <div class="support-card">
 
-<div class="icon">💰</div>
+            <div class="eyebrow">PMFME SUPPORT</div>
 
-<div>
+            <h2>What Can You Get?</h2>
 
-<strong>
-Up to 35% Credit-Linked Subsidy*
-</strong>
+            <div class="support-item">
 
-<small>
-Maximum ₹10 lakh per individual unit, subject to applicable eligibility and scheme guidelines.
-</small>
+                <div class="support-icon">💰</div>
 
-</div>
+                <div>
+                    <strong>Up to 35% Credit-Linked Subsidy*</strong>
+                    <span>
+                        Maximum ₹10 lakh per individual unit,
+                        subject to applicable eligibility and scheme guidelines.
+                    </span>
+                </div>
 
-</div>
+            </div>
 
+            <div class="support-item">
 
-<div class="support-row">
+                <div class="support-icon">🏭</div>
 
-<div class="icon">🏭</div>
+                <div>
+                    <strong>Food Processing Machinery</strong>
+                    <span>
+                        Understand eligible machinery, equipment
+                        and project requirements.
+                    </span>
+                </div>
 
-<div>
+            </div>
 
-<strong>
-Food Processing Machinery
-</strong>
+            <div class="support-item">
 
-<small>
-Understand eligible machinery, equipment and project requirements.
-</small>
+                <div class="support-icon">📋</div>
 
-</div>
+                <div>
+                    <strong>Application Guidance</strong>
+                    <span>
+                        Understand documents, project planning,
+                        financing and application steps.
+                    </span>
+                </div>
 
-</div>
+            </div>
 
+            <div class="support-item">
 
-<div class="support-row">
+                <div class="support-icon">🚀</div>
 
-<div class="icon">📋</div>
+                <div>
+                    <strong>Enterprise Formalisation</strong>
+                    <span>
+                        Move your food business toward a more
+                        organised and sustainable enterprise.
+                    </span>
+                </div>
 
-<div>
+            </div>
 
-<strong>
-Application Guidance
-</strong>
+        </div>
 
-<small>
-Understand documents, project planning, financing and application steps.
-</small>
-
-</div>
-
-</div>
-
-
-<div class="support-row">
-
-<div class="icon">🏦</div>
-
-<div>
-
-<strong>
-Bank & Financing Guidance
-</strong>
-
-<small>
-Understand the financing process and prepare your project information.
-</small>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- BENEFITS -->
-
 <section id="benefits">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-head">
+        <div class="section-head">
 
-<div class="eyebrow">
-WHY EXPLORE PMFME?
-</div>
+            <div class="eyebrow">WHY EXPLORE PMFME?</div>
 
-<h2>
-Support for Your Food Business Journey
-</h2>
+            <h2>
+                Support for Your Food Business Journey
+            </h2>
 
-<p>
-Whether you are planning a new food processing unit or strengthening
-an existing enterprise, proper guidance can help you understand
-the scheme better.
-</p>
+            <p>
+                PMFME can help eligible food processing entrepreneurs
+                understand financing, machinery, formalisation and
+                business development opportunities.
+            </p>
 
-</div>
+        </div>
 
 
-<div class="cards">
+        <div class="benefit-grid">
+
+            <div class="card">
+
+                <div class="card-icon">💰</div>
+
+                <h3>Credit-Linked Subsidy</h3>
+
+                <p>
+                    Eligible individual food processing units may receive
+                    credit-linked capital subsidy subject to scheme rules
+                    and eligibility.
+                </p>
+
+            </div>
 
 
-<div class="card highlight-card">
+            <div class="card">
 
-<div class="bigicon">💰</div>
+                <div class="card-icon">🏭</div>
 
-<div class="highlight-number">
-35%
-</div>
+                <h3>Machinery Support</h3>
 
-<h3>
-Credit-Linked Subsidy
-</h3>
+                <p>
+                    Understand food processing machinery, equipment,
+                    project cost and financing requirements.
+                </p>
 
-<p>
-For eligible individual micro food processing units, PMFME provides credit-linked capital subsidy at 35% of eligible project cost, subject to a maximum ceiling of ₹10 lakh per unit.
-</p>
-
-</div>
+            </div>
 
 
-<div class="card">
+            <div class="card">
 
-<div class="bigicon">🏭</div>
+                <div class="card-icon">📑</div>
 
-<h3>
-Machinery & Equipment
-</h3>
+                <h3>Application Guidance</h3>
 
-<p>
-Understand food processing machinery, equipment,
-project requirements and financing considerations.
-</p>
+                <p>
+                    Get practical guidance on documents, project planning,
+                    bank financing and application preparation.
+                </p>
 
-</div>
+            </div>
 
 
-<div class="card">
+            <div class="card">
 
-<div class="bigicon">📄</div>
+                <div class="card-icon">📈</div>
 
-<h3>
-Application Guidance
-</h3>
+                <h3>Business Growth</h3>
 
-<p>
-Get practical help understanding documents, project planning,
-bank financing and application steps.
-</p>
+                <p>
+                    Explore ways to organise, formalise and strengthen
+                    your food processing enterprise.
+                </p>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<div class="note">
-*PMFME benefits and eligibility are subject to the applicable scheme guidelines,
-official updates and approval by the concerned authorities/bank.
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- BUSINESS CATEGORIES -->
+<!-- BUSINESSES -->
+<section id="businesses" class="business-section">
 
-<section class="businesses" id="businesses">
+    <div class="container">
 
-<div class="container">
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="eyebrow">FOOD BUSINESS OPPORTUNITIES</div>
 
-<div class="eyebrow">
-WHO CAN GET GUIDANCE?
-</div>
+            <h2>
+                What Kind of Food Businesses Can Be Explored?
+            </h2>
 
-<h2>
-Who Can Explore PMFME Support?
-</h2>
+            <p>
+                Food processing covers a wide range of activities.
+                Eligibility depends on the applicable PMFME guidelines
+                and the nature of the proposed unit.
+            </p>
 
-<p>
-If you are planning, starting or upgrading a micro food-processing activity, these are common categories to explore. Final eligibility depends on the applicable scheme guidelines.
-</p>
-
-</div>
-
-
-<div class="business-grid">
+        </div>
 
 
-<div class="business">
-<div class="emoji">🌾</div>
-<strong>Flour Mill</strong>
-<span>Wheat & grain processing</span>
-</div>
+        <div class="business-grid">
+
+            <div class="business-card">
+
+                <div class="business-top">
+                    <h3>🌾 Grain & Flour Processing</h3>
+                </div>
+
+                <div class="business-card-body">
+                    <p>
+                        Flour mills, grain processing, millet processing,
+                        cleaning, grading and related food processing activities.
+                    </p>
+                </div>
+
+            </div>
 
 
-<div class="business">
-<div class="emoji">🌶️</div>
-<strong>Spice Processing</strong>
-<span>Cleaning, grinding & packing</span>
-</div>
+            <div class="business-card">
+
+                <div class="business-top">
+                    <h3>🥭 Fruits & Vegetables</h3>
+                </div>
+
+                <div class="business-card-body">
+                    <p>
+                        Dehydration, processing, preservation, pulping,
+                        packaging and value-added food products.
+                    </p>
+                </div>
+
+            </div>
 
 
-<div class="business">
-<div class="emoji">🍪</div>
-<strong>Bakery Products</strong>
-<span>Biscuits, bakery & snacks</span>
-</div>
+            <div class="business-card">
+
+                <div class="business-top">
+                    <h3>🥫 Spices & Food Products</h3>
+                </div>
+
+                <div class="business-card-body">
+                    <p>
+                        Spice processing, blended products, packaged food
+                        products and other eligible processing activities.
+                    </p>
+                </div>
+
+            </div>
 
 
-<div class="business">
-<div class="emoji">🥫</div>
-<strong>Pickles & Sauces</strong>
-<span>Processed food products</span>
-</div>
+            <div class="business-card">
+
+                <div class="business-top">
+                    <h3>🥛 Dairy & Related Processing</h3>
+                </div>
+
+                <div class="business-card-body">
+                    <p>
+                        Explore eligible dairy and food processing
+                        activities according to applicable guidelines.
+                    </p>
+                </div>
+
+            </div>
 
 
-<div class="business">
-<div class="emoji">🥛</div>
-<strong>Dairy Processing</strong>
-<span>Milk-based products</span>
-</div>
+            <div class="business-card">
+
+                <div class="business-top">
+                    <h3>🍪 Bakery & Snacks</h3>
+                </div>
+
+                <div class="business-card-body">
+                    <p>
+                        Bakery products, snacks and other food processing
+                        enterprises may be explored subject to eligibility.
+                    </p>
+                </div>
+
+            </div>
 
 
-<div class="business">
-<div class="emoji">🍚</div>
-<strong>Rice Processing</strong>
-<span>Milling & value addition</span>
-</div>
+            <div class="business-card">
 
+                <div class="business-top">
+                    <h3>📦 Value Added Food Products</h3>
+                </div>
 
-<div class="business">
-<div class="emoji">🥜</div>
-<strong>Oil & Nut Processing</strong>
-<span>Oil extraction & processing</span>
-</div>
+                <div class="business-card-body">
+                    <p>
+                        Convert agricultural produce into value-added
+                        food products with suitable processing and packaging.
+                    </p>
+                </div>
 
+            </div>
 
-<div class="business">
-<div class="emoji">🍌</div>
-<strong>Fruit & Vegetable</strong>
-<span>Processing & value addition</span>
-</div>
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- WHO CAN APPLY -->
-<section id="who-can-apply">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">WHO CAN EXPLORE PMFME?</div>
-      <h2>Is PMFME Relevant to Your Business?</h2>
-      <p>
-        Use these simple checks to understand whether your food-processing project
-        may be worth discussing before you start the application process.
-      </p>
+<section id="apply">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">WHO CAN APPLY?</div>
+
+            <h2>
+                Check Your Basic Eligibility
+            </h2>
+
+            <p>
+                Eligibility should always be checked against the applicable
+                PMFME guidelines and the specific facts of the enterprise.
+            </p>
+
+        </div>
+
+
+        <div class="apply-grid">
+
+            <div class="card">
+
+                <h3>Potential Applicant Profile</h3>
+
+                <ul class="apply-list">
+
+                    <li>
+                        Existing eligible food processing entrepreneurs
+                    </li>
+
+                    <li>
+                        Individual food processing units meeting scheme requirements
+                    </li>
+
+                    <li>
+                        Entrepreneurs planning eligible food processing activities
+                    </li>
+
+                    <li>
+                        Businesses seeking formalisation and capacity enhancement
+                    </li>
+
+                    <li>
+                        Applicants able to meet required contribution and financing conditions
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Before You Apply</h3>
+
+                <ul class="apply-list">
+
+                    <li>
+                        Identify the exact food processing activity
+                    </li>
+
+                    <li>
+                        Estimate machinery and project requirements
+                    </li>
+
+                    <li>
+                        Prepare a realistic project cost
+                    </li>
+
+                    <li>
+                        Keep required documents ready
+                    </li>
+
+                    <li>
+                        Discuss financing requirements with the concerned bank
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="cards">
-      <div class="card highlight-card">
-        <div class="bigicon">🏪</div>
-        <h3>Existing Food Business</h3>
-        <p>Micro food-processing entrepreneurs looking to formalise, improve or expand an existing activity.</p>
-      </div>
-
-      <div class="card">
-        <div class="bigicon">🚀</div>
-        <h3>New Food Processing Unit</h3>
-        <p>Entrepreneurs planning a new eligible food-processing activity can explore the applicable requirements.</p>
-      </div>
-
-      <div class="card">
-        <div class="bigicon">⚙️</div>
-        <h3>Machinery & Capacity Upgrade</h3>
-        <p>Businesses considering eligible machinery, equipment, processing or value-addition improvements.</p>
-      </div>
-    </div>
-
-    <div class="note">
-      Eligibility is not automatic. Beneficiary category, activity, project structure,
-      eligible cost and other applicable conditions must be checked under the current scheme guidelines.
-    </div>
-  </div>
-</section>
-
-
-<!-- WHAT WE HELP WITH -->
-
-<section class="help-section" id="help">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">
-WHAT WE HELP YOU UNDERSTAND
-</div>
-
-<h2>
-From Business Idea to Application
-</h2>
-
-<p>
-Get practical guidance on the important areas you should understand
-before moving ahead with your food processing project.
-</p>
-
-</div>
-
-
-<div class="help-grid">
-
-
-<div class="help-card">
-<div class="help-icon">💡</div>
-<h3>Business Idea</h3>
-<p>
-Understand your food processing activity and the basic project concept.
-</p>
-</div>
-
-
-<div class="help-card">
-<div class="help-icon">✅</div>
-<h3>Eligibility</h3>
-<p>
-Understand whether your business activity may fit the applicable requirements.
-</p>
-</div>
-
-
-<div class="help-card">
-<div class="help-icon">🏭</div>
-<h3>Machinery</h3>
-<p>
-Understand machinery, equipment and processing requirements.
-</p>
-</div>
-
-
-<div class="help-card">
-<div class="help-icon">📊</div>
-<h3>Project Planning</h3>
-<p>
-Plan project cost, machinery, working capital and financing information.
-</p>
-</div>
-
-
-<div class="help-card">
-<div class="help-icon">📑</div>
-<h3>Documentation</h3>
-<p>
-Understand the documents and information normally required for the process.
-</p>
-</div>
-
-
-<div class="help-card">
-<div class="help-icon">🏦</div>
-<h3>Bank Process</h3>
-<p>
-Understand the financing process and prepare your project information properly.
-</p>
-</div>
-
-</div>
-
-</div>
 
 </section>
 
 
-<!-- PROCESS -->
+<!-- GUIDANCE -->
+<section id="guidance" class="business-section">
 
-<section>
+    <div class="container">
 
-<div class="container">
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="eyebrow">FROM IDEA TO APPLICATION</div>
 
-<div class="eyebrow">
-FROM IDEA TO APPLICATION
-</div>
+            <h2>
+                A Simple Way to Understand the Process
+            </h2>
 
-<h2>
-A Simple Way to Understand the Process
-</h2>
+            <p>
+                Proper preparation can make the application and project
+                discussion process easier.
+            </p>
 
-<p>
-Start with your business idea and understand the major areas
-that need attention before moving ahead.
-</p>
-
-</div>
+        </div>
 
 
-<div class="steps">
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Business Idea</h3>
+
+                <p>
+                    Identify the food product, processing activity
+                    and business opportunity.
+                </p>
+
+            </div>
 
 
-<div class="step">
+            <div class="step">
 
-<div class="step-num">1</div>
+                <div class="step-number">2</div>
 
-<h3>
-Business Idea
-</h3>
+                <h3>Project Planning</h3>
 
-<p>
-Identify what food product you want to manufacture or process.
-</p>
+                <p>
+                    Plan machinery, capacity, project cost,
+                    raw materials and operating requirements.
+                </p>
 
-</div>
-
-
-<div class="step">
-
-<div class="step-num">2</div>
-
-<h3>
-Eligibility
-</h3>
-
-<p>
-Understand whether your activity and enterprise fit the applicable requirements.
-</p>
-
-</div>
+            </div>
 
 
-<div class="step">
+            <div class="step">
 
-<div class="step-num">3</div>
+                <div class="step-number">3</div>
 
-<h3>
-Project Planning
-</h3>
+                <h3>Documentation</h3>
 
-<p>
-Plan machinery, project cost, finance, documents and business requirements.
-</p>
+                <p>
+                    Organise the required documents and prepare
+                    the project information properly.
+                </p>
 
-</div>
+            </div>
 
 
-<div class="step">
+            <div class="step">
 
-<div class="step-num">4</div>
+                <div class="step-number">4</div>
 
-<h3>
-Application & Bank
-</h3>
+                <h3>Financing & Application</h3>
 
-<p>
-Proceed with the required application and financing process with proper documentation.
-</p>
+                <p>
+                    Proceed through the applicable application,
+                    financing and approval process.
+                </p>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
+<!-- RESOURCES -->
+<section id="resources" class="resources">
 
-<!-- BEFORE APPLYING -->
-<section class="prepare-section" id="prepare">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">BEFORE YOU APPLY</div>
-      <h2>Keep These Details Ready</h2>
-      <p>
-        Having the basic project information ready can make your initial guidance,
-        project planning and bank discussion much easier.
-      </p>
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">RESOURCES</div>
+
+            <h2>
+                Information to Help You Prepare
+            </h2>
+
+            <p>
+                Use these areas to understand your business before
+                approaching the application and financing process.
+            </p>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+
+                <h3>📋 Documents</h3>
+
+                <p>
+                    Understand the types of information and documents
+                    that may be required during the process.
+                </p>
+
+                <a class="resource-link" href="#prepare">
+                    PREPARE YOUR DOCUMENTS →
+                </a>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>🏭 Machinery</h3>
+
+                <p>
+                    Understand machinery capacity, quotations,
+                    project cost and processing requirements.
+                </p>
+
+                <a class="resource-link" href="#businesses">
+                    EXPLORE BUSINESSES →
+                </a>
+
+            </div>
+
+
+            <div class="resource-card">
+
+                <h3>💼 Project Planning</h3>
+
+                <p>
+                    Think through your product, market, capacity,
+                    investment and financing before applying.
+                </p>
+
+                <a class="resource-link" href="#guidance">
+                    SEE THE PROCESS →
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="prepare-grid">
-      <div class="prepare-card">
-        <span>🍱</span>
-        <strong>Food Product</strong>
-        <p>What food product will you manufacture or process?</p>
-      </div>
-      <div class="prepare-card">
-        <span>📍</span>
-        <strong>Business Location</strong>
-        <p>District, town/village and proposed unit location.</p>
-      </div>
-      <div class="prepare-card">
-        <span>🏭</span>
-        <strong>Machinery</strong>
-        <p>Machinery required and an approximate machinery cost.</p>
-      </div>
-      <div class="prepare-card">
-        <span>💰</span>
-        <strong>Project Cost</strong>
-        <p>Approximate project cost, own contribution and finance requirement.</p>
-      </div>
-      <div class="prepare-card">
-        <span>📄</span>
-        <strong>Documents</strong>
-        <p>Basic identity, business and project-related information.</p>
-      </div>
-      <div class="prepare-card">
-        <span>🏦</span>
-        <strong>Bank Status</strong>
-        <p>Whether you are at idea, project, application or bank stage.</p>
-      </div>
-    </div>
-
-    <div class="prepare-cta">
-      <div>
-        <strong>Not sure what you need?</strong>
-        <span>Send your basic business details on WhatsApp and start the discussion.</span>
-      </div>
-      <a class="btn btn-orange"
-         href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20PMFME%20guidance.%0A%0AFood%20business%2Factivity%3A%0ADistrict%3A%0ANew%20or%20existing%20unit%3A%0AApprox.%20project%2Fmachinery%20cost%3A%0ACurrent%20stage%3A"
-         target="_blank" rel="noopener">
-        💬 ASK ON WHATSAPP
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- BEFORE WHATSAPP -->
-<section class="qualifier">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">BEFORE YOU CONTACT US</div>
-      <h2>Send These Details on WhatsApp</h2>
-      <p>A few basic details help make the initial discussion faster and more useful.</p>
-    </div>
-
-    <div class="qualifier-grid">
-      <div class="qualifier-box">
-        <div class="eyebrow">QUICK CHECKLIST</div>
-        <h3>What should you share?</h3>
-        <ul class="check-list">
-          <li>🍱 Food product / processing activity</li>
-          <li>📍 District and unit location</li>
-          <li>🏭 New unit or existing business</li>
-          <li>💰 Approximate project / machinery cost</li>
-          <li>📋 Current stage: idea, project, bank or application</li>
-        </ul>
-      </div>
-
-      <div class="qualifier-box">
-        <div class="eyebrow">DIRECT CONTACT</div>
-        <h3>Talk directly on WhatsApp</h3>
-        <p>
-          Send your business details and ask about eligibility, project planning,
-          machinery, documentation, financing or the application process.
-        </p>
-        <a class="btn btn-orange"
-           href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20PMFME%20guidance.%0A%0AFood%20business%2Factivity%3A%0ADistrict%3A%0ANew%20or%20existing%20unit%3A%0AApprox.%20project%2Fmachinery%20cost%3A%0ACurrent%20stage%3A"
-           target="_blank" rel="noopener">
-          💬 START WHATSAPP CHAT
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESOURCE -->
-
-<section class="resource-section" id="resources">
-
-<div class="container resource-wrap">
-
-
-<div class="poster">
-
-<img
-src="assets/Food%20Business%20Subsidy%20Scheme%20Poster.png"
-alt="Food Business Subsidy Scheme Poster"
->
-
-</div>
-
-
-<div class="resource-copy">
-
-<div class="eyebrow">
-PMFME RESOURCES
-</div>
-
-<h2>
-Start With the Basics.
-</h2>
-
-<p>
-Use the available awareness material to understand the opportunity
-and then seek guidance for your specific food business.
-</p>
-
-
-<div class="resource-list">
-
-
-<div class="resource-item">
-
-<span>📌</span>
-
-<div>
-
-<strong>
-Understand the scheme
-</strong>
-
-<br>
-
-<small>
-Learn the basic support available under PMFME.
-</small>
-
-</div>
-
-</div>
-
-
-<div class="resource-item">
-
-<span>🧾</span>
-
-<div>
-
-<strong>
-Prepare before applying
-</strong>
-
-<br>
-
-<small>
-Keep your business, project and document information ready.
-</small>
-
-</div>
-
-</div>
-
-
-<div class="resource-item">
-
-<span>🌐</span>
-
-<div>
-
-<strong>
-Verify official information
-</strong>
-
-<br>
-
-<small>
-Check the latest official guidelines and portal before applying.
-</small>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<a
-class="btn btn-orange"
-href="https://pmfme.mofpi.gov.in/"
-target="_blank"
-rel="noopener"
->
-
-VISIT OFFICIAL PMFME PORTAL ↗
-
-</a>
-
-
-<div class="note">
-
-Scheme benefits, eligibility and application requirements
-are subject to applicable PMFME guidelines and official updates.
-
-</div>
-
-</div>
-
-</div>
 
 </section>
 
 
-<!-- STORIES / VIDEOS -->
+<!-- PREPARE -->
+<section id="prepare">
 
-<section class="videos" id="stories">
+    <div class="container">
 
-<div class="container">
+        <div class="prepare-box">
 
-<div class="section-head">
+            <div>
 
-<div class="eyebrow">
-REAL FOOD BUSINESS STORIES
-</div>
+                <div class="eyebrow" style="color:#ffd16b;">
+                    GET READY
+                </div>
 
-<h2>
-See Food Businesses in Action
-</h2>
+                <h2>
+                    Prepare Before You Apply
+                </h2>
 
-<p>
-Watch real examples and get a better feel for food processing activities,
-machinery, products and enterprise operations.
-</p>
+                <p>
+                    A well-prepared project makes it easier to discuss
+                    your proposal with the concerned stakeholders and bank.
+                </p>
 
-</div>
-
-
-<div class="video-grid">
+            </div>
 
 
-<article class="video-card">
+            <div>
 
-<video controls preload="metadata" playsinline>
+                <ul class="prepare-list">
 
-<source
-src="assets/SURTIES.mp4"
-type="video/mp4"
->
+                    <li>Business / food processing activity</li>
 
-Your browser does not support video playback.
+                    <li>Machinery requirements and quotations</li>
 
-</video>
+                    <li>Estimated project cost</li>
 
-<div class="video-info">
+                    <li>Raw material and production plan</li>
 
-<h3>
-Surties – Food Business Story
-</h3>
+                    <li>Basic business and market understanding</li>
 
-<p>
-Explore a real food-processing business example and understand the business activity.
-</p>
+                    <li>Required applicant documents</li>
 
-</div>
+                </ul>
 
-</article>
+            </div>
 
+        </div>
 
-<article class="video-card">
-
-<video controls preload="metadata" playsinline>
-
-<source
-src="assets/GHANSHYAM%20FLOUR%20MILL%20-%20MAYUR%20BHAI.mp4"
-type="video/mp4"
->
-
-Your browser does not support video playback.
-
-</video>
-
-<div class="video-info">
-
-<h3>
-Ghanshyam Flour Mill – Mayur Bhai
-</h3>
-
-<p>
-See a flour-milling business example and its processing activity.
-</p>
-
-</div>
-
-</article>
-
-
-
-<article class="video-card">
-
-<video controls preload="metadata" playsinline>
-
-<source
-src="assets/WhatsApp%20Video%202026-08-20%20at%201.55.24%20PM.mp4"
-type="video/mp4"
->
-
-Your browser does not support video playback.
-
-</video>
-
-<div class="video-info">
-
-<h3>
-PMFME Food Processing Success Story
-</h3>
-
-<p>
-A real food-processing unit showcasing automated production machinery and
-modern processing operations.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="video-card">
-
-<video controls preload="metadata" playsinline>
-
-<source
-src="assets/WhatsApp%20Video%202026-08-20%20at%201.55.39%20PM.mp4"
-type="video/mp4"
->
-
-Your browser does not support video playback.
-
-</video>
-
-<div class="video-info">
-
-<h3>
-Grabnord – Food Processing Success Story
-</h3>
-
-<p>
-A real food-processing enterprise showcasing packaged food products,
-processing operations and a modern production environment.
-</p>
-
-</div>
-
-</article>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
+
+<!-- SUCCESS STORIES -->
+<section id="stories" class="stories-section">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">REAL FOOD BUSINESS STORIES</div>
+
+            <h2>
+                Success Stories & Food Businesses in Action
+            </h2>
+
+            <p>
+                Watch real examples of food processing businesses,
+                machinery and enterprise activities.
+            </p>
+
+        </div>
+
+
+        <div class="story-grid">
+
+
+            <!-- STORY 1 -->
+
+            <div class="story-card">
+
+                <video
+                    class="story-video"
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+                    <source
+                        src="assets/GHANSHYAM%20FLOUR%20MILL%20-%20MAYUR%20BHAI.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video playback.
+                </video>
+
+                <div class="story-content">
+
+                    <h3>
+                        Ghanshyam Flour Mill – Mayur Bhai
+                    </h3>
+
+                    <p>
+                        Food processing business story showcasing
+                        a flour processing enterprise.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STORY 2 -->
+
+            <div class="story-card">
+
+                <video
+                    class="story-video"
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+                    <source
+                        src="assets/SURTIES.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video playback.
+                </video>
+
+                <div class="story-content">
+
+                    <h3>
+                        Surties – Food Business Story
+                    </h3>
+
+                    <p>
+                        Real food processing business experience
+                        and enterprise activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STORY 3 -->
+
+            <div class="story-card">
+
+                <video
+                    class="story-video"
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+                    <source
+                        src="assets/WhatsApp%20Video%202026-08-20%20at%201.55.24%20PM.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video playback.
+                </video>
+
+                <div class="story-content">
+
+                    <h3>
+                        Food Processing Success Story
+                    </h3>
+
+                    <p>
+                        A new food processing enterprise story
+                        added to the PMFME-DRP resource section.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STORY 4 -->
+
+            <div class="story-card">
+
+                <video
+                    class="story-video"
+                    controls
+                    preload="metadata"
+                    playsinline
+                >
+                    <source
+                        src="assets/WhatsApp%20Video%202026-08-20%20at%201.55.39%20PM.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video playback.
+                </video>
+
+                <div class="story-content">
+
+                    <h3>
+                        Food Business Success Story
+                    </h3>
+
+                    <p>
+                        Another practical example of a food processing
+                        business and enterprise journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">COMMON QUESTIONS</div>
-      <h2>PMFME Guidance – Quick FAQ</h2>
-      <p>
-        General information only. Case-specific eligibility, sanction and subsidy release
-        remain subject to applicable guidelines and the concerned authorities/bank.
-      </p>
+<section id="faq" class="faq-section">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="eyebrow">FAQ</div>
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+            <p>
+                Some common questions about PMFME and food processing projects.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <details>
+
+                <summary>
+                    What is PMFME?
+                </summary>
+
+                <p>
+                    PMFME is the Prime Minister Formalisation of Micro Food
+                    Processing Enterprises scheme, aimed at supporting eligible
+                    micro food processing enterprises through applicable
+                    scheme interventions.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    What subsidy is available?
+                </summary>
+
+                <p>
+                    Under the individual unit component, the scheme provides
+                    credit-linked capital subsidy of 35% of eligible project
+                    cost, subject to the applicable ceiling and scheme
+                    guidelines.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Is every food business eligible?
+                </summary>
+
+                <p>
+                    No. Eligibility depends on the nature of the food
+                    processing activity, applicant profile, project and
+                    applicable PMFME guidelines.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can I get help in preparing my project?
+                </summary>
+
+                <p>
+                    You can contact PMFME-DRP for practical guidance regarding
+                    project planning, documents, machinery and the application
+                    process. Final eligibility and approval remain subject
+                    to the concerned authorities and financing institution.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Is this the official PMFME government website?
+                </summary>
+
+                <p>
+                    No. This website is an independent informational and
+                    guidance resource created for PMFME-related awareness
+                    and assistance. It is not an official Government of India
+                    portal.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    How can I contact PMFME-DRP?
+                </summary>
+
+                <p>
+                    You can directly contact PMFME-DRP on WhatsApp at
+                    +91 70410 75170.
+                </p>
+
+            </details>
+
+        </div>
+
     </div>
 
-    <div class="faq">
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>What is the individual-unit subsidy support?</span><span class="plus">+</span>
-        </button>
-        <div class="faq-answer">
-          For eligible individual micro food processing units, PMFME provides credit-linked
-          capital subsidy at 35% of eligible project cost, subject to a maximum ceiling of
-          ₹10 lakh per unit.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Is the subsidy paid directly in cash to the applicant?</span><span class="plus">+</span>
-        </button>
-        <div class="faq-answer">
-          The individual-unit support is credit-linked. The applicable banking and scheme
-          procedure determines how the subsidy is handled in the financed project.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Can I get help with machinery and project planning?</span><span class="plus">+</span>
-        </button>
-        <div class="faq-answer">
-          Yes. This page is designed to help you understand your activity, machinery,
-          project information, documentation, financing considerations and application steps.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Is every food business automatically eligible?</span><span class="plus">+</span>
-        </button>
-        <div class="faq-answer">
-          No. Eligibility depends on the applicable PMFME guidelines, beneficiary category,
-          activity, project structure and other conditions.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Where should I check official information?</span><span class="plus">+</span>
-        </button>
-        <div class="faq-answer">
-          Check the official PMFME portal and the Ministry of Food Processing Industries
-          (MoFPI) website. Links are provided in the Resources and footer sections.
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- FINAL CTA -->
 
-<section class="cta" id="contact">
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
 
-<div class="container cta-box">
+    <div class="container contact-box">
 
-<div>
+        <div>
 
-<div class="eyebrow">
-READY TO TAKE THE NEXT STEP?
-</div>
+            <div class="eyebrow" style="color:#ffd16b;">
+                READY TO TAKE THE NEXT STEP?
+            </div>
 
-<h2>
-Have a Food Business Idea?
-</h2>
+            <h2>
+                Have a Food Business Idea?
+            </h2>
 
-<p>
-Tell us about your food business and get practical guidance on
-eligibility, project planning, documents, financing and the application process.
-</p>
+            <p>
+                Share your food processing business idea and get
+                practical guidance on the next steps.
+            </p>
 
+            <br>
 
-<div class="whatsapp-box">
+            <a
+                class="btn btn-orange"
+                href="https://wa.me/917041075170?text=Hello%20PMFME-DRP,%20I%20have%20a%20food%20business%20idea%20and%20need%20PMFME%20guidance."
+                target="_blank"
+            >
+                💬 CHAT ON WHATSAPP
+            </a>
 
-<div class="whatsapp-box-icon">
-☘
-</div>
-
-<div>
-
-<strong>
-WhatsApp: +91 70410 75170
-</strong>
-
-<span>
-Chat directly for PMFME food business guidance.
-</span>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="actions">
+        <div class="contact-card">
 
-<a
-class="btn btn-orange"
-href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20guidance%20about%20PMFME%20for%20my%20food%20business.%0A%0AMy%20food%20business%2Factivity%20is%3A%20%0ADistrict%3A%20"
-target="_blank"
-rel="noopener"
->
+            <h3>
+                PMFME-DRP Contact
+            </h3>
 
-💬 CHAT ON WHATSAPP
+            <div class="contact-row">
 
-</a>
+                <div>💬</div>
+
+                <div>
+                    <strong>WhatsApp</strong>
+                    <span>+91 70410 75170</span>
+                </div>
+
+            </div>
 
 
-<a
-class="btn btn-white"
-href="https://pmfme.mofpi.gov.in/"
-target="_blank"
-rel="noopener"
->
+            <div class="contact-row">
 
-VISIT PMFME PORTAL ↗
+                <div>📋</div>
 
-</a>
+                <div>
+                    <strong>Guidance</strong>
+                    <span>
+                        Food processing business, project and application guidance
+                    </span>
+                </div>
 
-</div>
+            </div>
 
-</div>
 
-</div>
+            <div class="contact-row">
+
+                <div>🏭</div>
+
+                <div>
+                    <strong>Focus</strong>
+                    <span>
+                        Micro food processing enterprises
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -2144,115 +2031,93 @@ VISIT PMFME PORTAL ↗
 </main>
 
 
+<!-- DISCLAIMER -->
+
+<div class="disclaimer">
+
+    <div class="container">
+
+        <p>
+            <strong>Important:</strong>
+            This website is an independent informational and guidance
+            resource for PMFME-related awareness. It is not an official
+            Government of India website or government portal. Scheme
+            benefits, eligibility, project costs, subsidy and approvals
+            are subject to applicable PMFME guidelines and decisions of
+            the competent authorities and financing institution.
+        </p>
+
+    </div>
+
+</div>
+
+
 <!-- FOOTER -->
 
 <footer>
 
-<div class="container footer-grid">
+    <div class="container footer-grid">
 
-<div>
+        <div>
 
-<strong>
-PMFME-DRP
-</strong>
+            <strong>PMFME-DRP</strong>
 
-<p>
-Guidance • Support • Food Processing
-</p>
+            <p>
+                Food Business Guidance • Support • Processing
+            </p>
 
-<p>
-📱 WhatsApp: +91 70410 75170
-</p>
+            <p>
+                Practical information for food processing entrepreneurs.
+            </p>
 
-
-</div>
+        </div>
 
 
-<div class="footer-links">
+        <div>
 
-<a href="#benefits">
-Benefits
-</a>
+            <strong>Quick Links</strong>
 
-<a href="#businesses">
-Businesses
-</a>
+            <div class="footer-links">
 
-<a href="#help">
-Guidance
-</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#businesses">Businesses</a>
+                <a href="#apply">Who Can Apply</a>
+                <a href="#guidance">Guidance</a>
+                <a href="#stories">Success Stories</a>
 
-<a href="#resources">
-Resources
-</a>
+            </div>
 
-<a href="#stories">
-Stories
-</a>
+        </div>
 
-<a href="#faq">
-FAQ
-</a>
 
-<a href="https://www.mofpi.gov.in/"
-target="_blank"
-rel="noopener">
+        <div>
 
-MoFPI ↗
+            <strong>Contact</strong>
 
-</a>
+            <div class="footer-links">
 
-</div>
+                <a
+                    href="https://wa.me/917041075170"
+                    target="_blank"
+                >
+                    WhatsApp: +91 70410 75170
+                </a>
 
-</div>
+                <a href="#faq">
+                    FAQ
+                </a>
+
+                <a href="#contact">
+                    Contact PMFME-DRP
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </footer>
-
-
-<!-- MOBILE WHATSAPP -->
-
-<a
-class="mobile-whatsapp"
-href="https://wa.me/917041075170?text=Hello%2C%20I%20want%20guidance%20about%20PMFME%20for%20my%20food%20business."
-target="_blank"
-rel="noopener"
->
-
-💬 WhatsApp +91 70410 75170
-
-</a>
-
-
-<script>
-
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
-
-menuButton.addEventListener("click", function(){
-
-mobileMenu.classList.toggle("active");
-
-});
-
-document.querySelectorAll(".mobile-menu a").forEach(function(link){
-
-link.addEventListener("click", function(){
-
-mobileMenu.classList.remove("active");
-
-});
-
-});
-
-
-document.querySelectorAll(".faq-question").forEach(function(button){
-  button.addEventListener("click", function(){
-    button.parentElement.classList.toggle("open");
-  });
-});
-
-// Footer year is static; no #year element is required.
-</script>
 
 </body>
 </html>
