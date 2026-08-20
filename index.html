@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b5d3b">
+<title>PMFME Food Business Support</title>
+<style>
+:root{
+  --green:#0b5d3b; --green2:#157a4d; --orange:#f49a32; --cream:#f7f3e9;
+  --ink:#17231d; --muted:#607066; --white:#fff; --gold:#dca746;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:#f5f7f4;color:var(--ink);line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.topbar{background:#063c28;color:#fff;font-size:13px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #e6ece7}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}
+.brand-mark{width:48px;height:48px;border-radius:50%;background:linear-gradient(145deg,var(--orange),var(--green));display:grid;place-items:center;color:#fff;font-weight:900}
+.brand small{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.navlinks{display:flex;gap:22px;font-size:14px;font-weight:700;color:#34443a}
+.navlinks a:hover{color:var(--green2)}
+.hero{background:linear-gradient(135deg,#063c28 0%,#0b5d3b 55%,#18734b 100%);color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -10% -50% 45%;height:480px;border-radius:50%;background:rgba(244,154,50,.18)}
+.hero-inner{padding:72px 0 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:1}
+.kicker{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 13px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:18px 0}
+.hero p{font-size:18px;color:#dcebe3;max-width:680px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:10px;font-weight:800;border:1px solid transparent}
+.btn-primary{background:var(--orange);color:#17231d}
+.btn-light{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.08)}
+.hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:24px;border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.16)}
+.hero-card .big{font-size:44px;font-weight:900;color:#ffd77e}
+.hero-card .label{color:#e7f1eb;font-weight:700}
+.note{font-size:12px;color:#bfe0cf;margin-top:10px}
+section{padding:68px 0}
+.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}
+.section-head h2{margin:0;font-size:32px;color:var(--green)}
+.section-head p{margin:0;color:var(--muted);max-width:650px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:#fff;border:1px solid #e3e9e4;border-radius:18px;padding:22px;box-shadow:0 10px 25px rgba(20,50,35,.05)}
+.stat strong{display:block;font-size:28px;color:var(--green)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e3e9e4;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(20,50,35,.05)}
+.card img{width:100%;height:190px;object-fit:cover;display:block}
+.card-body{padding:18px}
+.card h3{margin:0 0 6px;color:var(--green)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:#fff;border:1px solid #e3e9e4;border-radius:18px;padding:22px;position:relative}
+.step-num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#e9f4ee;color:var(--green);font-weight:900;margin-bottom:14px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:180px;object-fit:cover;border-radius:14px}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.video-card{background:#10261c;border-radius:20px;overflow:hidden;color:#fff}
+.video-card video{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:cover}
+.video-body{padding:18px}
+.video-body h3{margin:0 0 5px}
+.video-body p{margin:0;color:#c9d9d0;font-size:14px}
+.notice{background:#fff8e7;border:1px solid #f1d18a;border-left:5px solid var(--orange);padding:20px;border-radius:14px;color:#5b4b2b}
+.contact{background:linear-gradient(135deg,#063c28,#0b5d3b);color:#fff;border-radius:26px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.contact h2{margin:0 0 8px;font-size:34px}
+.contact p{margin:0;color:#d8e9e0}
+footer{background:#062f21;color:#c8d8d0;padding:28px 0;font-size:13px}
+footer a{color:#fff}
+@media(max-width:850px){
+ .navlinks{display:none}
+ .hero-inner{grid-template-columns:1fr}
+ .stats,.cards,.steps,.videos{grid-template-columns:1fr}
+ .gallery{grid-template-columns:repeat(2,1fr)}
+ .contact{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){
+ section{padding:50px 0}
+ .hero-inner{padding:55px 0}
+ .hero-card .big{font-size:36px}
+ .gallery img{height:140px}
+ .topbar .container{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>PMFME • Ministry of Food Processing Industries • Government of India</span><span>Guidance: +91 70410 75170</span></div></div>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#">
+  <div class="brand-mark">PM</div>
+  <div>PMFME Food Business Support<small>Information • Eligibility • Guidance</small></div>
+</a>
+<nav class="navlinks">
+<a href="#benefits">Benefits</a><a href="#businesses">Businesses</a><a href="#process">How It Works</a><a href="#stories">Stories</a><a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-inner">
+<div>
+<span class="kicker">Micro Food Processing Enterprises</span>
+<h1>Turn your food business into a stronger enterprise.</h1>
+<p>Explore PMFME support, understand the eligibility and application journey, and get practical guidance for your food-processing project.</p>
+<div class="cta-row">
+<a class="btn btn-primary" href="#benefits">Explore PMFME</a>
+<a class="btn btn-light" href="https://wa.me/917041075170?text=I%20want%20PMFME%20information">WhatsApp Guidance</a>
+</div>
+</div>
+<div class="hero-card">
+<div class="label">Individual Micro Food Processing Unit</div>
+<div class="big">35%*</div>
+<div class="label">Credit-linked capital subsidy</div>
+<p class="note">Up to ₹10 lakh, subject to scheme eligibility and applicable guidelines.</p>
+</div>
+</div>
+</section>
+
+<section id="benefits">
+<div class="container">
+<div class="section-head"><div><h2>PMFME at a glance</h2><p>Clear, practical information before you start an application.</p></div></div>
+<div class="stats">
+<div class="stat"><strong>35%</strong>Credit-linked capital subsidy for eligible individual micro food-processing units.</div>
+<div class="stat"><strong>₹10 Lakh</strong>Maximum subsidy for an eligible individual unit, subject to applicable conditions.</div>
+<div class="stat"><strong>10%</strong>Minimum beneficiary contribution for the individual-unit component; balance is through bank finance as applicable.</div>
+</div>
+</div>
+</section>
+
+<section id="businesses" style="background:#eef5f0">
+<div class="container">
+<div class="section-head"><div><h2>Food business opportunities</h2><p>Use these examples as starting points. Final eligibility depends on the applicable PMFME component and guidelines.</p></div></div>
+<div class="cards">
+<div class="card"><img src="assets/cashew.jpg"><div class="card-body"><h3>Cashew & Nut Processing</h3><p>Value addition, grading, roasting and eligible food-processing activities.</p></div></div>
+<div class="card"><img src="assets/chocolates.jpg"><div class="card-body"><h3>Chocolate & Confectionery</h3><p>Explore eligible confectionery and food-product manufacturing opportunities.</p></div></div>
+<div class="card"><img src="assets/dairy.jpg"><div class="card-body"><h3>Dairy Products</h3><p>Value-added dairy processing and related food products.</p></div></div>
+<div class="card"><img src="assets/cookies.jpg"><div class="card-body"><h3>Bakery & Cookies</h3><p>Bakery, biscuits and related food-processing activities.</p></div></div>
+<div class="card"><img src="assets/gulkand.jpg"><div class="card-body"><h3>Gulkand & Traditional Foods</h3><p>Traditional food products and value-added processing.</p></div></div>
+<div class="card"><img src="assets/masala.jpg"><div class="card-body"><h3>Masala & Spice Processing</h3><p>Spice grinding, blending and other eligible processing activities.</p></div></div>
+<div class="card"><img src="assets/rice-mill.jpg"><div class="card-body"><h3>Rice Processing</h3><p>Rice milling and eligible rice-based processing activities.</p></div></div>
+<div class="card"><img src="assets/cold-drink.jpg"><div class="card-body"><h3>Beverage / Food Products</h3><p>Explore eligible beverage and food-product processing activities.</p></div></div>
+<div class="card"><img src="assets/pmfme-poster.png"><div class="card-body"><h3>Other Food Processing</h3><p>Fruit, vegetable, grain, marine, oil and other eligible food-processing activities.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="section-head"><div><h2>How the journey works</h2><p>A simple roadmap from business idea to project implementation.</p></div></div>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><h3>Discuss</h3><p>Share your product, business status, location and approximate project requirement.</p></div>
+<div class="step"><div class="step-num">2</div><h3>Check Eligibility</h3><p>Review the applicant, product, unit and applicable PMFME component.</p></div>
+<div class="step"><div class="step-num">3</div><h3>Prepare Project</h3><p>Structure machinery, project cost, working capital and business information.</p></div>
+<div class="step"><div class="step-num">4</div><h3>Bank Process</h3><p>Proceed through the applicable bank-financing and sanction process.</p></div>
+<div class="step"><div class="step-num">5</div><h3>Subsidy Process</h3><p>Eligible subsidy is processed according to scheme rules and bank procedure.</p></div>
+<div class="step"><div class="step-num">6</div><h3>Grow</h3><p>Implement the approved project and strengthen your food-processing enterprise.</p></div>
+</div>
+</div>
+</section>
+
+<section id="stories" style="background:#10261c;color:#fff">
+<div class="container">
+<div class="section-head"><div><h2 style="color:#fff">Real business stories</h2><p style="color:#c9d9d0">See examples from food-processing enterprises.</p></div></div>
+<div class="videos">
+<div class="video-card"><video controls playsinline preload="metadata"><source src="assets/surties.mp4" type="video/mp4"></video><div class="video-body"><h3>SURTIES</h3><p>Food business story and field example.</p></div></div>
+<div class="video-card"><video controls playsinline preload="metadata"><source src="assets/ghanshyam-flour-mill.mp4" type="video/mp4"></video><div class="video-body"><h3>Ghanshyam Flour Mill – Mayur Bhai</h3><p>Flour-milling business example and machinery-focused story.</p></div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-head"><div><h2>Explore our PMFME resources</h2><p>Promotional and educational material for different food-processing opportunities.</p></div></div>
+<div class="gallery">
+<img src="assets/pm1.jpg"><img src="assets/pm2.jpg"><img src="assets/srajami-1.jpg"><img src="assets/srajami-2.jpg">
+<img src="assets/rice-mill.jpg"><img src="assets/gulkand.jpg"><img src="assets/masala.jpg"><img src="assets/dairy.jpg">
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="notice"><strong>Important:</strong> PMFME support is not an automatic cash payment simply for applying. Eligibility, eligible project cost, bank finance, subsidy release and other conditions depend on the applicable scheme guidelines and procedures. Do not pay anyone promising guaranteed subsidy or guaranteed bank approval.</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact">
+<div><h2>Need PMFME guidance?</h2><p>Send your food product and basic business details on WhatsApp.</p></div>
+<a class="btn btn-primary" href="https://wa.me/917041075170?text=I%20want%20PMFME%20guidance.%20My%20district%20is%20____.%20My%20food%20product%20is%20____.%20My%20business%20is%20New/Existing.%20Approx.%20project%20cost%20is%20____.">WhatsApp +91 70410 75170</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div><strong>PMFME Food Business Support</strong></div>
+<div style="margin-top:7px">Information and guidance page. Scheme benefits are subject to applicable PMFME guidelines and official procedures.</div>
+<div style="margin-top:10px"><a href="https://www.mofpi.gov.in/en/pmfme/shgs-fpos-co-operatives-individual-micro-food-enterprise">Official MoFPI PMFME information</a></div>
+</div>
+</footer>
+</body>
+</html>
