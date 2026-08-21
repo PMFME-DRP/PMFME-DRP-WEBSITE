@@ -9,10 +9,18 @@
 
 <style>
 :root{
-  --green:#4b8fb8;--green2:#72b8d8;--dark:#17384a;--orange:#f2a84b;
-  --cream:#f3faff;--line:#d8eaf3;--muted:#627987;--white:#fff;
-  --blueDeep:#2d6f96;--bluePale:#e9f6fc;
-  --shadow:0 12px 35px rgba(50,105,135,.10);--radius:20px;
+  --blue:#123f63;
+  --blue2:#1d6f9f;
+  --teal:#2b9b93;
+  --sky:#eaf6fb;
+  --gold:#f3a43b;
+  --dark:#18364a;
+  --muted:#5d7485;
+  --line:#d7e6ee;
+  --white:#fff;
+  --cream:#f6fbfd;
+  --shadow:0 14px 38px rgba(18,63,99,.11);
+  --radius:22px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -39,14 +47,26 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 .navlinks a:hover{color:var(--orange)}
 .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;transition:.2s}
 .btn:hover{transform:translateY(-1px)}
-.green{background:var(--green);color:#fff}.orange{background:var(--orange);color:#fff}.white{background:#fff;color:var(--blueDeep)}
+.green{background:var(--blue2);color:#fff}.orange{background:var(--gold);color:#16364a}.white{background:#fff;color:var(--blue);border:1px solid #c4dce8}
 .outline{border:1px solid rgba(255,255,255,.55);color:#fff}
 .hero{
-  position:relative;overflow:hidden;color:#17384d;padding:62px 0 72px;
+  position:relative;overflow:hidden;color:#fff;padding:76px 0 78px;
   background:
-    radial-gradient(circle at 80% 15%,rgba(255,255,255,.95),transparent 22%),
-    radial-gradient(circle at 15% 85%,rgba(42,157,143,.12),transparent 28%),
-    linear-gradient(135deg,#eaf6fb 0%,#dceef5 46%,#f8fbfc 100%);
+    linear-gradient(90deg,rgba(10,48,75,.96) 0%,rgba(18,75,107,.91) 46%,rgba(18,75,107,.52) 100%),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
+}
+.hero:after{
+  content:"";position:absolute;left:-100px;bottom:-160px;width:520px;height:260px;
+  background:rgba(43,155,147,.20);border-radius:50%;transform:rotate(-7deg);
+}
+.hero .container{position:relative;z-index:2}
+.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-2px;margin-bottom:18px;color:#fff}
+.hero h1 span{color:#ffd37a}
+.hero p{font-size:18px;color:#f2f8fb;max-width:690px;margin-bottom:25px}
+.hero-image-caption{
+  display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);
+  padding:9px 13px;border-radius:10px;font-size:11px;font-weight:900;letter-spacing:.4px;
+  margin-bottom:15px;color:#fff;backdrop-filter:blur(5px)
 }
 .hero:before{
   content:"";position:absolute;right:-90px;top:-130px;width:520px;height:520px;
@@ -104,7 +124,7 @@ textarea{min-height:90px;resize:vertical}
 .help{background:linear-gradient(120deg,#4b8fb8,#72b8d8);color:#fff;border-radius:25px;padding:38px}
 .help h2{font-size:35px;line-height:1.15;margin:7px 0 12px}.help p{color:#f5fbff;max-width:700px;margin-bottom:18px}
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
-.step{padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff}.num{width:35px;height:35px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}
+.step{padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff}.num{width:35px;height:35px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:12px}
 .story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.story{border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:#fff}.story video{width:100%;aspect-ratio:16/9;background:#111;display:block}.story div{padding:18px}.story p{font-size:14px;color:var(--muted)}
 .faq{max-width:900px}.faq details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin-bottom:10px}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted);font-size:14px;margin-top:9px}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact{background:linear-gradient(135deg,#4b8fb8,#72b8d8);color:#fff;border-radius:25px;padding:35px}.contact h2{font-size:40px;line-height:1.1;margin:8px 0 12px}.contact p{color:#f5fbff;margin-bottom:18px}
@@ -113,6 +133,9 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
 .mobilebar{display:none}
 @media(max-width:1000px){.navlinks{display:none}.hero-grid,.checker,.calc,.contact-grid{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){
+  .top-inner{font-size:10px}.top-language select{padding:4px 5px}
+  .hero{padding:48px 0 58px}.hero-visual{min-height:300px}.visual-factory{right:25px;transform:scale(.8);transform-origin:bottom right}.visual-arrow{left:37%;bottom:150px}.visual-label{font-size:9px}
+
   .top-inner{align-items:center}.top-inner>span{font-size:10px}.top-language span{display:none}.top-language select{padding:4px 5px}
   .container{width:min(94%,560px)}.nav{min-height:65px}.brand b{font-size:17px}.brand small{font-size:9px}
   .nav>.btn{padding:10px 13px;font-size:11px}.language-control{display:none}.pmfme-lockup span:last-child{font-size:10px}.hero{padding:48px 0 55px}.hero h1{font-size:45px}.hero p{font-size:16px}
@@ -168,7 +191,23 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
         <a class="btn outline" href="#calculator">🧮 ESTIMATE PROJECT SUPPORT</a>
       </div>
     </div>
+    <div class="hero-visual" aria-label="Agriculture to food processing illustration">
+      <div class="visual-sun"></div>
+      <div class="visual-cloud cloud1"></div><div class="visual-cloud cloud2"></div>
+      <div class="visual-field"></div>
+      <div class="visual-road"></div>
+      <div class="visual-factory">
+        <div class="factory-roof"></div>
+        <div class="factory-body">
+          <div class="factory-window"></div><div class="factory-window"></div><div class="factory-window"></div>
+          <div class="factory-door"></div>
+        </div>
+        <div class="factory-smoke"></div>
       </div>
+      <div class="visual-arrow">→</div>
+      <div class="visual-label">🌾 FARM PRODUCE &nbsp; → &nbsp; 🏭 PROCESSING &nbsp; → &nbsp; 📦 VALUE ADDITION</div>
+    </div>
+  </div>
 </section>
 
 <div class="stats">
@@ -244,7 +283,7 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
 </div>
         <button class="btn green" id="calcBtn" type="button">CALCULATE INDICATIVE FIGURES</button>
       </div>
-      <div class="calc-result">
+      <div class="calc-result"><div style="font-size:12px;opacity:.9;margin-bottom:8px">Bank loan estimate = Project Cost − Contribution</div>
         <div style="font-size:12px;opacity:.9">Indicative Bank Loan = Project Cost − Beneficiary Contribution</div>
         <div style="margin-top:12px">Indicative subsidy at 35%*</div>
         <div class="big" id="subsidy">₹0</div>
@@ -479,40 +518,40 @@ if(contributionInput){
    Includes the 34-district administrative structure and the 17 talukas notified in 2025.
    Verify official records for mission-critical submissions. */
 const gujaratTalukas = {
-"Ahmedabad":["Ahmedabad City","Bavla","Sanand","Dholera","Dhandhuka","Dholka","Daskroi","Detroj-Rampura","Mandal","Viramgam"],
-"Amreli":["Amreli","Bagasara","Babra","Jafarabad","Rajula","Khambha","Dhari","Lathi","Savarkundla","Liliya","Kukavav"],
-"Anand":["Anand","Khambhat","Borsad","Petlad","Tarapur","Sojitra","Anklav","Umreth"],
-"Aravalli":["Modasa","Bhiloda","Dhansura","Bayad","Meghraj","Malpur","Shamlaji","Sathamba"],
-"Banaskantha":["Palanpur","Dhanera","Deesa","Kankrej","Danta","Dantiwada","Vadgam","Amirgadh","Ogad","Hadad"],
-"Bharuch":["Bharuch","Ankleshwar","Amod","Vagra","Hansot","Jambusar","Netrang","Valia","Jhagadia"],
-"Bhavnagar":["Bhavnagar","Ghogha","Mahuva","Gariadhar","Umrala","Jessar","Palitana","Sihor","Talaja","Vallabhipur"],
-"Botad":["Botad","Gadhada","Barwala","Ranpur"],
-"Chhota Udepur":["Chhota Udepur","Sankheda","Jetpur-Pavi","Kawant","Bodeli","Naswadi","Kadval"],
-"Dahod":["Dahod","Zalod","Dhanpur","Singvad","Fatehpura","Garbada","Devgadh Baria","Limkheda","Sanjeli","Govind Guru Limdi","Sukhsar"],
+"Ahmedabad":["Ahmedabad City","Bavla","Daskroi","Dhandhuka","Dholera","Dholka","Detroj-Rampura","Mandal","Sanand","Viramgam"],
+"Amreli":["Amreli","Babra","Bagasara","Dhari","Jafrabad","Khambha","Kukavav-Vadia","Lathi","Lilia","Rajula","Savarkundla"],
+"Anand":["Anand","Anklav","Borsad","Khambhat","Petlad","Sojitra","Tarapur","Umreth"],
+"Aravalli":["Bayad","Bhiloda","Dhansura","Malpur","Meghraj","Modasa"],
+"Banaskantha":["Amirgadh","Danta","Dantiwada","Deesa","Deodar","Dhanera","Kankrej","Palanpur","Suigam","Tharad","Vadgam","Vav"],
+"Bharuch":["Amod","Ankleshwar","Bharuch","Hansot","Jambusar","Jhagadia","Netrang","Valia","Vagra"],
+"Bhavnagar":["Bhavnagar","Gariadhar","Ghogha","Mahuva","Palitana","Sihor","Talaja","Umrala","Vallabhipur"],
+"Botad":["Barwala","Botad","Gadhada","Ranpur"],
+"Chhota Udepur":["Bodeli","Chhota Udepur","Jetpur Pavi","Kavant","Naswadi","Sankheda"],
+"Dahod":["Dahod","Devgad Baria","Dhanpur","Fatepura","Garbada","Jhalod","Limkheda","Sanjeli","Singvad"],
 "Dang":["Ahwa","Subir","Waghai"],
-"Devbhumi Dwarka":["Dwarka","Kalyanpur","Bhanvad","Khambhalia"],
-"Gandhinagar":["Gandhinagar","Kalol","Dahegam","Mansa"],
-"Gir Somnath":["Veraval","Kodinar","Una","Sutrapada","Gir Gadhada","Talala"],
-"Jamnagar":["Jamnagar","Jamjodhpur","Jodiya","Lalpur","Dhrol","Kalavad"],
-"Junagadh":["Junagadh City","Junagadh Rural","Bhesan","Keshod","Manavadar","Mendarda","Malia-Hatina","Mangrol","Visavadar","Vanthali"],
-"Kachchh":["Bhuj","Bhachau","Anjar","Abdasa","Mandvi","Mundra","Rapar","Gandhidham","Lakhpat","Nakhatrana"],
-"Kheda":["Kheda","Nadiad","Kathlal","Mahemdavad","Kapadvanj","Thasra","Mahudha","Galteshwar","Matar","Vaso","Fagvel"],
-"Mahisagar":["Lunawada","Kadana","Khanpur","Balasinor","Virpur","Santrampur","Godhar"],
-"Mehsana":["Mehsana","Kadi","Kheralu","Becharaji","Vadnagar","Visnagar","Vijapur","Unjha","Jotana","Satlasana","Gojariya"],
-"Morbi":["Morbi","Maliya Miyana","Halvad","Wankaner","Tankara"],
-"Narmada":["Nandod","Sagbara","Dediapada","Garudeshwar","Tilakwada","Chikda"],
-"Navsari":["Navsari","Gandevi","Chikhli","Vansda","Jalalpore","Khergam"],
-"Panchmahal":["Godhra","Halol","Kalol","Ghoghamba","Jambughoda","Shehera","Morwa Hadaf","Kothamba"],
-"Patan":["Patan","Radhanpur","Sidhpur","Chanasma","Santalpur","Harij","Sami","Saraswati","Shankheshwar"],
-"Porbandar":["Porbandar","Ranavav","Kutiyana"],
-"Rajkot":["Rajkot","Gondal","Dhoraji","Jamkandorna","Jetpur","Jasdan","Kotda Sangani","Paddhari","Upleta","Lodhika","Vichhiya"],
-"Sabarkantha":["Himmatnagar","Khedbrahma","Prantij","Idar","Talod","Poshina","Vijaynagar","Wadali"],
-"Surat":["Surat City","Kamrej","Bardoli","Mangrol","Mahuva","Olpad","Mandvi","Choryasi","Palsana","Umarpada","Areth","Ambika"],
-"Surendranagar":["Wadhwan","Patdi","Chotila","Dasada","Lakhtar","Dhrangadhra","Limbdi","Thangadh","Sayla","Chuda"],
-"Tapi":["Vyara","Dolvan","Kukarmunda","Songadh","Nizar","Valod","Uchchhal","Ukai"],
-"Vadodara":["Vadodara","Karjan","Padra","Dabhoi","Savli","Sinor","Vaghodia"],
-"Valsad":["Valsad","Kaprada","Pardi","Vapi","Dharampur","Umbergaon","Nanapondha"],
-"Vav-Tharad":["Tharad","Vav","Suigam","Bhabhar","Deodar","Lakhani","Rah","Dharnidhar"]
+"Devbhumi Dwarka":["Bhanvad","Dwarka","Kalyanpur","Khambhalia"],
+"Gandhinagar":["Dehgam","Gandhinagar","Kalol","Mansa"],
+"Gir Somnath":["Gir Gadhada","Kodinar","Sutrapada","Talala","Una","Veraval"],
+"Jamnagar":["Dhrol","Jamjodhpur","Jamnagar","Jodiya","Kalavad","Lalpur"],
+"Junagadh":["Bhesan","Junagadh City","Keshod","Malia Hatina","Manavadar","Mangrol","Mendarda","Vanthali","Visavadar"],
+"Kachchh":["Abdasa","Anjar","Bhachau","Bhuj","Gandhidham","Lakhpat","Mandvi","Mundra","Nakhatrana","Rapar"],
+"Kheda":["Balasinor","Galteshwar","Kapadvanj","Kathlal","Kheda","Mahemdavad","Mahudha","Matar","Nadiad","Thasra","Vaso"],
+"Mahisagar":["Balasinor","Kadana","Khanpur","Lunawada","Santrampur","Virpur"],
+"Mehsana":["Becharaji","Kadi","Kheralu","Mehsana","Sami","Satlasana","Unjha","Vadnagar","Vijapur","Visnagar"],
+"Morbi":["Halvad","Maliya Miyana","Morbi","Tankara","Wankaner"],
+"Narmada":["Dediapada","Garudeshwar","Nandod","Sagbara","Tilakwada"],
+"Navsari":["Chikhli","Gandevi","Jalalpore","Khergam","Navsari","Vansda"],
+"Panchmahal":["Ghoghamba","Godhra","Halol","Jambughoda","Kalol","Morwa Hadaf","Shehera"],
+"Patan":["Chanasma","Harij","Patan","Radhanpur","Sami","Santalpur","Sidhpur","Shankheshwar"],
+"Porbandar":["Kutiyana","Porbandar","Ranavav"],
+"Rajkot":["Dhoraji","Gondal","Jasdan","Jamkandorna","Jetpur","Kotda Sangani","Lodhika","Paddhari","Rajkot","Upleta","Vinchhiya"],
+"Sabarkantha":["Himatnagar","Idar","Khedbrahma","Prantij","Talod","Vadali","Vijaynagar"],
+"Surat":["Bardoli","Choryasi","Kamrej","Mandvi","Mangrol","Mahuva","Olpad","Palsana","Surat City","Umarpada"],
+"Surendranagar":["Chotila","Chuda","Dasada","Dhrangadhra","Lakhtar","Limbdi","Muli","Sayla","Thangadh","Wadhwan"],
+"Tapi":["Dolvan","Kukarmunda","Nizar","Songadh","Uchchhal","Valod","Vyara"],
+"Vadodara":["Dabhoi","Karjan","Padra","Savli","Sinor","Vadodara","Vaghodia"],
+"Valsad":["Dharampur","Kaprada","Pardi","Umbergaon","Valsad","Vapi"],
+"Vav-Tharad":["Bhabhar","Deodar","Lakhani","Rah","Suigam","Tharad","Vav"]
 };
 
 const districtNames=Object.keys(gujaratTalukas).sort((a,b)=>a.localeCompare(b));
@@ -554,40 +593,53 @@ if(districtSelect && talukaSelect){
 const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(Number(n)||0);
 
 document.getElementById("checkBtn").addEventListener("click",()=>{
-  const statusEl=document.getElementById("businessStatus");
-  const activityEl=document.getElementById("foodActivity");
-  const stateEl=document.getElementById("location");
-  const status=statusEl ? statusEl.value : "";
-  const activity=activityEl ? activityEl.value : "";
-  const state=stateEl ? stateEl.value : "Gujarat";
+  const status=document.getElementById("businessStatus")?.value||"";
+  const activity=document.getElementById("foodActivity")?.value||"";
+  const state=document.getElementById("location")?.value||"Gujarat";
   const box=document.getElementById("eligResult");
+  if(!box)return;
+
   box.classList.add("show");
 
   if(!status || !activity){
-    box.innerHTML="<strong>Please select all basic details.</strong><br>Choose your business status and food-processing activity, then tap the button again.";
+    box.innerHTML="<strong>Almost there.</strong><br>Please select your business status and food-processing activity.";
     return;
   }
 
   if(activity==="No - non-food activity"){
-    box.innerHTML="<strong>May not fit the basic PMFME food-processing profile.</strong><br>Share the exact activity with DRP Shankar Pradhan for guidance.";
+    box.innerHTML="<strong>PMFME may not be the right fit.</strong><br>Your selected activity is non-food. If your actual business involves food processing, choose the correct activity and check again.";
+    return;
+  }
+
+  if(status==="New food processing business idea" && activity==="Yes - food processing"){
+    box.innerHTML="<strong>Good profile to explore further. 🌾🏭</strong><br>You have selected a food-processing activity in "+state+". Share your product, location and project cost with <b>DRP Shankar Pradhan</b> for the next step.";
+  }else if(activity==="Not sure"){
+    box.innerHTML="<strong>Let's check this together.</strong><br>Your activity may be eligible, but the exact product and processing activity need to be reviewed. <b>Send your details to DRP Shankar Pradhan.</b>";
   }else{
-    box.innerHTML="<strong>Good to explore further.</strong><br>Your answers indicate a food-processing profile. This is only a preliminary self-check; final eligibility depends on applicable PMFME guidelines and the competent authorities.";
+    box.innerHTML="<strong>Your profile looks suitable to explore further. ✓</strong><br>This is a preliminary self-check only. Final eligibility depends on the applicable PMFME guidelines and competent authorities.";
   }
 });
 
 document.getElementById("calcBtn").addEventListener("click",()=>{
-  const cost=Math.max(0,Number(document.getElementById("projectCost").value)||0);
-  let pct=Number(document.getElementById("contributionPct").value);
-  if(!Number.isFinite(pct)) pct=10;
+  const cost=Number(document.getElementById("projectCost")?.value)||0;
+  const pctInput=document.getElementById("contributionPct");
+  const subsidyEl=document.getElementById("subsidy");
+  const costOut=document.getElementById("costOut");
+  const subsidyOut=document.getElementById("subsidyOut");
+  const ownOut=document.getElementById("ownOut");
+  const loanOut=document.getElementById("loanOut");
+
+  let pct=Number(pctInput?.value);
+  if(!Number.isFinite(pct))pct=10;
   pct=Math.min(40,Math.max(10,pct));
-  document.getElementById("contributionPct").value=pct;
+  if(pctInput)pctInput.value=pct;
 
   if(cost<=0){
-    document.getElementById("subsidy").textContent="Enter project cost";
-    document.getElementById("costOut").textContent="₹0";
-    document.getElementById("subsidyOut").textContent="₹0";
-    document.getElementById("ownOut").textContent="₹0";
-    document.getElementById("loanOut").textContent="₹0";
+    subsidyEl.textContent="Enter project cost";
+    costOut.textContent="₹0";
+    subsidyOut.textContent="₹0";
+    ownOut.textContent="₹0";
+    loanOut.textContent="₹0";
     return;
   }
 
@@ -595,11 +647,11 @@ document.getElementById("calcBtn").addEventListener("click",()=>{
   const subsidy=Math.min(cost*0.35,1000000);
   const loan=Math.max(0,cost-contribution);
 
-  document.getElementById("subsidy").textContent=money(subsidy);
-  document.getElementById("costOut").textContent=money(cost);
-  document.getElementById("subsidyOut").textContent=money(subsidy);
-  document.getElementById("ownOut").textContent=money(contribution);
-  document.getElementById("loanOut").textContent=money(loan);
+  subsidyEl.textContent=money(subsidy);
+  costOut.textContent=money(cost);
+  subsidyOut.textContent=money(subsidy);
+  ownOut.textContent=money(contribution);
+  loanOut.textContent=money(loan);
 });
 
 document.getElementById("whatsappBtn").addEventListener("click",()=>{
