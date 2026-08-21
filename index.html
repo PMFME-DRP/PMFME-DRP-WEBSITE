@@ -535,11 +535,89 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
   .opportunity-grid{grid-template-columns:repeat(2,1fr)}.opportunity-head{align-items:flex-start}
 }
 @media(max-width:600px){
-  .hero-pro{padding:45px 0 48px}.hero-pro h1{font-size:40px}.hero-accent{font-size:31px}.hero-lead{font-size:15px}
-  .hero-process{width:100%;display:grid;grid-template-columns:1fr 18px 1fr;gap:0;padding:9px}.hero-process .process-item{padding:6px 3px}.hero-process .process-item b{font-size:9px;white-space:normal;text-align:left}.hero-process i{font-size:14px;text-align:center}
-  .hero-actions .btn{width:100%}.hero-start-card{padding:20px}
-  .opportunity-head{display:block}.opportunity-head h2{font-size:31px}.opportunity-head .btn{width:100%;margin-top:16px}
-  .opportunity-grid{grid-template-columns:1fr;gap:10px}.op-card{min-height:88px}
+  body{padding-bottom:58px}
+  .top{padding:7px 10px}
+  .top-inner{width:100%;gap:8px}
+  .top-inner>span{font-size:8.5px;line-height:1.2;max-width:62%}
+  .top-language{font-size:10px}
+  .top-language select{font-size:10px;padding:5px 7px}
+
+  header{position:sticky;top:0}
+  .nav{min-height:62px;gap:8px}
+  .brand{min-width:0;gap:7px}
+  .logo{width:42px;height:42px;border-radius:11px}
+  .brand b{font-size:14px;white-space:nowrap}
+  .brand small{font-size:8px;white-space:nowrap}
+  .language-control{display:flex;flex:0 0 auto;padding:4px 7px}
+  .language-control select{width:62px;font-size:10px}
+  .nav>.btn{font-size:9px;padding:9px 10px;white-space:nowrap}
+
+  .hero-pro{
+    padding:38px 0 34px;
+    background:
+      linear-gradient(145deg,rgba(4,31,49,.97),rgba(8,74,92,.91)),
+      url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  }
+  .hero-layout{gap:20px}
+  .hero-content{text-align:center}
+  .hero-kicker{font-size:8px;letter-spacing:.8px;padding:7px 9px;margin-bottom:13px}
+  .hero-pro h1{font-size:34px;letter-spacing:-.8px;line-height:1.04}
+  .hero-accent{font-size:27px;margin-top:3px}
+  .hero-lead{font-size:14px;line-height:1.45;margin:10px auto 17px;padding:0 6px}
+
+  .hero-process{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 14px 1fr;
+    gap:0;
+    padding:8px 7px;
+    margin-bottom:17px;
+    border-radius:13px;
+  }
+  .hero-process .process-item{padding:7px 3px;justify-content:flex-start;gap:5px}
+  .hero-process .process-item span{font-size:14px}
+  .hero-process .process-item b{font-size:8px;line-height:1.15;white-space:normal;text-align:left}
+  .hero-process i{font-size:12px;text-align:center}
+
+  .hero-actions{gap:8px}
+  .hero-actions .btn{width:100%;min-width:0;min-height:47px;padding:12px 15px;font-size:12px}
+
+  .hero-start-card{
+    width:100%;
+    max-width:none;
+    padding:17px;
+    border-radius:19px;
+    box-shadow:0 18px 40px rgba(0,0,0,.22);
+  }
+  .hero-start-card h3{font-size:18px;margin:8px 0 7px}
+  .start-step{padding:9px 0;gap:9px}
+  .start-step>strong{flex-basis:28px;width:28px;height:28px;border-radius:8px}
+  .start-step b{font-size:12px}
+  .start-step small{font-size:10px}
+  .start-link{margin-top:8px;padding:11px 12px;font-size:11px}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .stat{padding:13px 7px;border-right:1px solid var(--line);border-bottom:0}
+  .stat:last-child{border-right:0}
+  .stat b{font-size:19px}
+  .stat span{font-size:9px;line-height:1.3;display:block}
+
+  section{padding:43px 0}
+  .head{margin-bottom:22px}
+  .head h2{font-size:28px}
+  .head p{font-size:13px}
+  .help-grid{gap:10px}
+  .help-card{min-height:132px;padding:16px}
+  .help-icon{width:42px;height:42px;font-size:22px;margin-bottom:10px}
+  .help-card h3{font-size:14px}
+  .help-card p{font-size:10px}
+  .help-card>b{margin-top:10px;font-size:10px}
+
+  .opportunity-head{display:block}
+  .opportunity-head h2{font-size:29px}
+  .opportunity-head .btn{width:100%;margin-top:14px}
+  .opportunity-grid{grid-template-columns:1fr;gap:9px}
+  .op-card{min-height:82px;padding:13px}
 }
 
 
@@ -1205,40 +1283,77 @@ gu:{
 }};
 
 const originalText=new Map();
+
+function getLanguage(){
+  return localStorage.getItem("pmfmeLanguage") || "en";
+}
+
+function syncLanguageSelectors(lang){
+  ["topLanguage","pageLanguage"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.value=lang;
+  });
+}
+
 function translatePage(lang){
+  lang = ["en","hi","gu"].includes(lang) ? lang : "en";
   document.documentElement.lang=lang==="hi"?"hi":lang==="gu"?"gu":"en";
-  if(lang==="en"){
-    originalText.forEach((value,node)=>node.nodeValue=value);
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>el.placeholder=el.dataset.i18nPlaceholder);
-    return;
-  }
+
   const dict=translations[lang]||{};
+
+  // Restore the original English text first. This makes language switching
+  // reliable even after changing language several times.
+  originalText.forEach((value,node)=>node.nodeValue=value);
+
   document.body.querySelectorAll("*").forEach(el=>{
     if(el.children.length===0 && el.firstChild && el.firstChild.nodeType===3){
       const raw=el.firstChild.nodeValue.trim();
       if(!originalText.has(el.firstChild)) originalText.set(el.firstChild,raw);
-      if(dict[raw]) el.firstChild.nodeValue=el.firstChild.nodeValue.replace(raw,dict[raw]);
+      const original=originalText.get(el.firstChild);
+      if(lang==="en"){
+        el.firstChild.nodeValue=original;
+      }else if(dict[original]){
+        el.firstChild.nodeValue=original.replace(original,dict[original]);
+      }
     }
   });
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>el.placeholder=dict[el.dataset.i18nPlaceholder]||el.dataset.i18nPlaceholder);
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+    const key=el.dataset.i18nPlaceholder;
+    el.placeholder=lang==="en" ? key : (dict[key]||key);
+  });
+
+  syncLanguageSelectors(lang);
+  localStorage.setItem("pmfmeLanguage",lang);
+
+  // Refresh any open dynamic component in the selected language.
+  window.dispatchEvent(new CustomEvent("pmfme:languagechange",{detail:{lang}}));
 }
-const langSelect=document.getElementById("topLanguage");
-if(langSelect){
-  langSelect.addEventListener("change",e=>translatePage(e.target.value));
+
+function setSiteLanguage(lang){
+  translatePage(lang);
 }
+
+const topLanguage=document.getElementById("topLanguage");
+const pageLanguage=document.getElementById("pageLanguage");
+
+[topLanguage,pageLanguage].forEach(select=>{
+  if(select){
+    select.addEventListener("change",e=>setSiteLanguage(e.target.value));
+  }
+});
+
 const formLang=document.getElementById("language");
-if(formLang && langSelect){
+if(formLang){
   formLang.addEventListener("change",()=>{
     const v=formLang.value.includes("Hindi")?"hi":formLang.value.includes("Gujarati")?"gu":"en";
-    langSelect.value=v; translatePage(v);
+    setSiteLanguage(v);
   });
 }
-if(langSelect){
-  const savedLang=localStorage.getItem("pmfmeLanguage")||"en";
-  langSelect.value=savedLang;
-  translatePage(savedLang);
-  langSelect.addEventListener("change",()=>localStorage.setItem("pmfmeLanguage",langSelect.value));
-}
+
+const initialLanguage=getLanguage();
+syncLanguageSelectors(initialLanguage);
+translatePage(initialLanguage);
 
 
 const phone="917041075170";
@@ -2199,6 +2314,17 @@ I would like PMFME guidance from DRP Shankar Pradhan.`;
   const s=document.getElementById("topLanguage");
   if(s)s.addEventListener("change",()=>{if(currentKey)setTimeout(()=>openHelp(currentKey),120)});
 })();
+</script>
+
+<script>
+/* Final language synchronisation: both desktop and mobile selectors control the same page language. */
+window.addEventListener("pmfme:languagechange", function(e){
+  const lang = e.detail && e.detail.lang ? e.detail.lang : "en";
+  ["topLanguage","pageLanguage"].forEach(function(id){
+    const el=document.getElementById(id);
+    if(el) el.value=lang;
+  });
+});
 </script>
 
 </body>
