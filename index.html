@@ -542,6 +542,144 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
   .opportunity-grid{grid-template-columns:1fr;gap:10px}.op-card{min-height:88px}
 }
 
+
+/* ===== INTERACTIVE FOOD PROCESSING DETAILS ===== */
+.op-card{
+  appearance:none;
+  width:100%;
+  text-align:left;
+  font-family:inherit;
+  cursor:pointer;
+}
+.op-card:focus-visible{outline:3px solid #5bb6c4;outline-offset:3px}
+
+.process-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+}
+.process-modal.is-open{display:block}
+.process-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(3,24,38,.70);
+  backdrop-filter:blur(4px);
+}
+.process-modal-box{
+  position:relative;
+  width:min(940px,calc(100% - 28px));
+  max-height:calc(100vh - 36px);
+  overflow:auto;
+  margin:18px auto;
+  background:#f8fcfd;
+  border-radius:24px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+  padding:28px;
+  color:#163f5b;
+}
+.process-close{
+  position:absolute;
+  top:15px;right:17px;
+  width:38px;height:38px;
+  border:0;border-radius:50%;
+  background:#eaf3f6;color:#163f5b;
+  font-size:27px;line-height:1;
+  cursor:pointer;
+}
+.process-modal-head{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  padding-right:48px;
+  margin-bottom:20px;
+}
+.process-modal-icon{
+  width:62px;height:62px;flex:0 0 62px;
+  display:grid;place-items:center;
+  border-radius:17px;background:#e7f5f7;
+  font-size:31px;
+}
+.process-modal-head h2{
+  margin:3px 0 4px;
+  color:#123f63;
+  font-size:30px;
+  letter-spacing:-.5px;
+}
+.process-modal-head p{
+  margin:0;color:#647e8c;font-size:14px;line-height:1.5;
+}
+.process-flow{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:6px;
+  align-items:stretch;
+  margin:8px 0 22px;
+}
+.process-step{
+  position:relative;
+  min-height:108px;
+  padding:14px 10px 12px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #dcebef;
+  text-align:center;
+}
+.process-step:not(:last-child):after{
+  content:"→";
+  position:absolute;
+  right:-12px;top:42px;
+  color:#e49a2f;font-size:19px;font-weight:1000;z-index:2;
+}
+.process-step-num{
+  display:inline-grid;place-items:center;
+  width:25px;height:25px;border-radius:50%;
+  background:#e9f5f7;color:#19748a;
+  font-size:9px;font-weight:1000;
+  margin-bottom:7px;
+}
+.process-step-icon{font-size:23px;display:block;margin-bottom:5px}
+.process-step b{display:block;color:#123f63;font-size:11px;line-height:1.25}
+.process-step small{display:block;color:#718692;font-size:9px;line-height:1.3;margin-top:3px}
+.process-detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.process-info-card{
+  background:#fff;
+  border:1px solid #dcebef;
+  border-radius:16px;
+  padding:17px 18px;
+}
+.process-info-card h3{
+  margin:0 0 7px;color:#123f63;font-size:14px;
+}
+.process-info-card p{
+  margin:0;color:#607986;font-size:12px;line-height:1.55;
+}
+.process-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;margin-top:18px;padding-top:16px;
+  border-top:1px solid #dcebef;
+}
+.process-bottom small{color:#738793;line-height:1.4}
+.process-bottom .btn{white-space:nowrap}
+
+@media(max-width:800px){
+  .process-modal-box{padding:22px 17px;margin:10px auto;max-height:calc(100vh - 20px);border-radius:20px}
+  .process-modal-head{align-items:flex-start}.process-modal-head h2{font-size:25px}
+  .process-flow{grid-template-columns:repeat(3,1fr);gap:8px}
+  .process-step:not(:last-child):after{display:none}
+  .process-step{min-height:100px}
+  .process-detail-grid{grid-template-columns:1fr}
+  .process-bottom{display:block}.process-bottom .btn{width:100%;margin-top:12px}
+}
+@media(max-width:480px){
+  .process-flow{grid-template-columns:repeat(2,1fr)}
+  .process-modal-icon{width:52px;height:52px;flex-basis:52px;font-size:26px}
+}
+
 </style>
 
 <style>
@@ -644,26 +782,68 @@ html[lang="hi"] .btn,html[lang="gu"] .btn{line-height:1.25}
       <div>
         <div class="eyebrow">FOOD BUSINESS OPPORTUNITIES</div>
         <h2>What can you process?</h2>
-        <p>Explore simple food-processing ideas. Pick one and discuss your project with DRP Shankar Pradhan.</p>
+        <p>Tap any category to see what the business can include — from raw material to processing, value addition and packing.</p>
       </div>
       <a class="btn blue" href="#whatsapp-form">💬 I HAVE AN IDEA</a>
     </div>
 
     <div class="opportunity-grid">
-      <a class="op-card card-grain" href="#whatsapp-form"><span>🌾</span><div><h3>Grains & Flour</h3><p>Flour, millet & cereal products</p></div><b>→</b></a>
-      <a class="op-card card-spice" href="#whatsapp-form"><span>🌶️</span><div><h3>Spices & Masala</h3><p>Grinding, blending & packing</p></div><b>→</b></a>
-      <a class="op-card card-fruit" href="#whatsapp-form"><span>🥭</span><div><h3>Fruits & Vegetables</h3><p>Processing, preservation & value addition</p></div><b>→</b></a>
-      <a class="op-card card-dehy" href="#whatsapp-form"><span>🍌</span><div><h3>Dehydrated Foods</h3><p>Dry fruits, vegetables & herbs</p></div><b>→</b></a>
-      <a class="op-card card-bakery" href="#whatsapp-form"><span>🍪</span><div><h3>Bakery & Snacks</h3><p>Bakery products & packaged snacks</p></div><b>→</b></a>
-      <a class="op-card card-pickle" href="#whatsapp-form"><span>🫙</span><div><h3>Pickle, Chutney & Sauce</h3><p>Traditional & value-added foods</p></div><b>→</b></a>
-      <a class="op-card card-oil" href="#whatsapp-form"><span>🥜</span><div><h3>Oil & Seed Processing</h3><p>Edible oil, seeds & nuts</p></div><b>→</b></a>
-      <a class="op-card card-dairy" href="#whatsapp-form"><span>🥛</span><div><h3>Dairy Processing</h3><p>Explore eligible dairy opportunities</p></div><b>→</b></a>
-      <a class="op-card card-value" href="#whatsapp-form"><span>📦</span><div><h3>Other Value-Added Foods</h3><p>Turn local produce into marketable products</p></div><b>→</b></a>
+      <button class="op-card card-grain" data-process="grain"><span>🌾</span><div><h3>Grains & Flour</h3><p>Wheat, millet, rice & cereal products</p></div><b>→</b></button>
+      <button class="op-card card-spice" data-process="spice"><span>🌶️</span><div><h3>Spices & Masala</h3><p>Cleaning, grinding, blending & packing</p></div><b>→</b></button>
+      <button class="op-card card-fruit" data-process="fruit"><span>🥭</span><div><h3>Fruits & Vegetables</h3><p>Processing, preservation & value addition</p></div><b>→</b></button>
+      <button class="op-card card-dehy" data-process="dehy"><span>🍌</span><div><h3>Dehydrated Foods</h3><p>Drying fruits, vegetables & herbs</p></div><b>→</b></button>
+      <button class="op-card card-bakery" data-process="bakery"><span>🍪</span><div><h3>Bakery & Snacks</h3><p>Mixing, shaping, baking/frying & packing</p></div><b>→</b></button>
+      <button class="op-card card-pickle" data-process="pickle"><span>🫙</span><div><h3>Pickle, Chutney & Sauce</h3><p>Preparation, cooking, filling & packing</p></div><b>→</b></button>
+      <button class="op-card card-oil" data-process="oil"><span>🥜</span><div><h3>Oil & Seed Processing</h3><p>Cleaning, grading, pressing & filtering</p></div><b>→</b></button>
+      <button class="op-card card-dairy" data-process="dairy"><span>🥛</span><div><h3>Dairy Processing</h3><p>Milk-based processing & value addition</p></div><b>→</b></button>
+      <button class="op-card card-value" data-process="value"><span>📦</span><div><h3>Other Value-Added Foods</h3><p>Turn local produce into marketable foods</p></div><b>→</b></button>
     </div>
 
-    <div class="opportunity-note">Not sure which category fits? <a href="#whatsapp-form">Tell Shankar your product idea →</a></div>
+    <div class="opportunity-note">Tap a category to explore the process. Not sure which one fits? <a href="#whatsapp-form">Tell Shankar your product idea →</a></div>
   </div>
 </section>
+
+<!-- Food processing opportunity detail modal -->
+<div class="process-modal" id="processModal" aria-hidden="true">
+  <div class="process-modal-backdrop" data-close-process></div>
+  <div class="process-modal-box" role="dialog" aria-modal="true" aria-labelledby="processModalTitle">
+    <button class="process-close" type="button" data-close-process aria-label="Close">×</button>
+    <div class="process-modal-head">
+      <div class="process-modal-icon" id="processModalIcon">🌾</div>
+      <div>
+        <div class="eyebrow" id="processModalEyebrow">FOOD PROCESSING OPPORTUNITY</div>
+        <h2 id="processModalTitle">Grains & Flour</h2>
+        <p id="processModalIntro"></p>
+      </div>
+    </div>
+
+    <div class="process-flow" id="processFlow"></div>
+
+    <div class="process-detail-grid">
+      <div class="process-info-card">
+        <h3>🥕 Raw materials</h3>
+        <p id="processRaw"></p>
+      </div>
+      <div class="process-info-card">
+        <h3>🏭 Processing / machinery</h3>
+        <p id="processMachinery"></p>
+      </div>
+      <div class="process-info-card">
+        <h3>📦 Products you can make</h3>
+        <p id="processProducts"></p>
+      </div>
+      <div class="process-info-card">
+        <h3>🛍️ Packing & market</h3>
+        <p id="processPacking"></p>
+      </div>
+    </div>
+
+    <div class="process-bottom">
+      <small>Eligibility and project suitability should be checked for the specific product and applicant profile.</small>
+      <a class="btn orange" href="#whatsapp-form" data-close-process>💬 DISCUSS THIS IDEA WITH SHANKAR</a>
+    </div>
+  </div>
+</div>
 
 
 
@@ -1579,6 +1759,217 @@ I would like PMFME guidance from DRP Shankar Pradhan.`;
  }
  setTimeout(run,100);setTimeout(run,450);
  const s=document.getElementById("topLanguage");if(s)s.addEventListener("change",()=>{setTimeout(run,150);setTimeout(run,500)});
+})();
+</script>
+
+
+<script>
+(function(){
+  const DATA={
+    en:{
+      grain:{icon:"🌾",title:"Grains & Flour",intro:"A broad opportunity covering cleaning, milling, flour production and value-added grain products.",
+        steps:[
+          ["🌾","Raw material","Wheat, millet, maize, rice & other grains"],
+          ["🧹","Cleaning","Remove dust, stones & foreign matter"],
+          ["⚙️","Processing","Dehulling, milling, grinding or polishing"],
+          ["🥣","Value addition","Flour blends, multigrain products & mixes"],
+          ["🔬","Quality","Sieve, check moisture & maintain hygiene"],
+          ["📦","Packing","Weigh, seal, label & store for market"]
+        ],
+        raw:"Wheat, bajra, jowar, ragi, maize, rice and other suitable grains.",
+        machinery:"Cleaner/grader, destoner, dehuller, mill or pulverizer, sieve, mixer, weighing and packing equipment — depending on the product.",
+        products:"Wheat flour, millet flour, multigrain flour, cereal mixes, cleaned/graded grains and other eligible value-added grain products.",
+        packing:"Retail pouches, bulk packs or institutional packs. Branding, labelling and suitable storage can be added before distribution."
+      },
+      spice:{icon:"🌶️",title:"Spices & Masala",intro:"Convert whole spices into cleaned, graded, ground and blended products ready for retail or institutional markets.",
+        steps:[
+          ["🌶️","Raw material","Whole spices such as chilli, turmeric, cumin & coriander"],
+          ["🧹","Cleaning","Sort, clean and remove foreign material"],
+          ["☀️","Conditioning","Dry or condition material as required"],
+          ["⚙️","Grinding","Pulverize to the required particle size"],
+          ["🥣","Blending","Create single-spice or blended masala products"],
+          ["📦","Packing","Seal, label and pack for the market"]
+        ],
+        raw:"Chilli, turmeric, cumin, coriander, pepper and other suitable spices.",
+        machinery:"Cleaner, grader, dryer where required, pulverizer/grinder, blender, sieve, weighing and pouch packing equipment.",
+        products:"Turmeric powder, chilli powder, cumin powder, coriander powder and blended masala products.",
+        packing:"Moisture-protective pouches or jars, proper weighing, sealing, labelling and finished-product storage."
+      },
+      fruit:{icon:"🥭",title:"Fruits & Vegetables",intro:"Turn seasonal farm produce into longer-life or value-added food products through suitable processing and packaging.",
+        steps:[
+          ["🥭","Raw material","Fresh fruits & vegetables from farmers/suppliers"],
+          ["🧹","Sorting","Grade, wash and remove damaged material"],
+          ["🔪","Preparation","Peel, cut, pulp, crush or prepare as required"],
+          ["🔥","Processing","Cook, pasteurize, preserve or process for the product"],
+          ["🔬","Quality","Check hygiene, consistency and suitable storage conditions"],
+          ["📦","Packing","Fill, seal, label and store finished products"]
+        ],
+        raw:"Mango, tomato, banana, guava, onion, vegetables and other locally available produce.",
+        machinery:"Washer, grader, cutter/peeler, pulper, mixer, kettle/cooker, filling/sealing and other product-specific equipment.",
+        products:"Pulp, sauces, purees, processed vegetables, preserves and other eligible value-added products.",
+        packing:"Pouches, jars, bottles, trays or other suitable food-grade packs with proper labelling."
+      },
+      dehy:{icon:"🍌",title:"Dehydrated Foods",intro:"Reduce moisture in suitable fruits, vegetables and herbs to create convenient, shelf-stable value-added products.",
+        steps:[
+          ["🍌","Raw material","Fresh fruits, vegetables, herbs or other suitable produce"],
+          ["🧹","Sorting & washing","Select, clean and prepare raw material"],
+          ["🔪","Cutting","Slice, dice or prepare uniform pieces"],
+          ["☀️","Drying","Use suitable controlled drying/dehydration"],
+          ["🔬","Quality","Check dryness, hygiene and storage suitability"],
+          ["📦","Packing","Moisture-proof packing and proper sealing"]
+        ],
+        raw:"Banana, mango, onion, garlic, vegetables, herbs and other suitable produce.",
+        machinery:"Washer, slicer/cutter, tray dryer or suitable dehydrator, weighing and moisture-protective packing equipment.",
+        products:"Dried fruits, dried vegetables, herbs, powders and other suitable dehydrated foods.",
+        packing:"Moisture-barrier pouches or containers, sealed and labelled for storage and sale."
+      },
+      bakery:{icon:"🍪",title:"Bakery & Snacks",intro:"Convert ingredients into bakery and snack products through preparation, shaping, baking/frying and packaging.",
+        steps:[
+          ["🌾","Ingredients","Flour, grains, oil, sugar, spices & other ingredients"],
+          ["⚖️","Preparation","Weigh, mix and prepare the formulation"],
+          ["🥣","Mixing","Knead, blend or prepare batter/dough"],
+          ["🔥","Cooking","Shape, bake, roast or fry as required"],
+          ["🔬","Quality","Cool, check consistency and maintain hygiene"],
+          ["📦","Packing","Pack, seal, label and move to market"]
+        ],
+        raw:"Flour, grains, oil, sugar, spices and other ingredients according to the product.",
+        machinery:"Mixer, dough kneader, oven, fryer/roaster, shaping equipment, cooling racks and packing equipment.",
+        products:"Biscuits, bakery products, roasted snacks and other suitable packaged food products.",
+        packing:"Food-grade pouches, trays, boxes or jars with suitable sealing and labelling."
+      },
+      pickle:{icon:"🫙",title:"Pickle, Chutney & Sauce",intro:"Create value-added products from fruits, vegetables, spices and other suitable ingredients through preparation and controlled processing.",
+        steps:[
+          ["🥭","Raw material","Fruits, vegetables, spices & other ingredients"],
+          ["🧹","Sorting & washing","Clean and select suitable raw material"],
+          ["🔪","Preparation","Cut, crush, pulp or prepare ingredients"],
+          ["🔥","Processing","Mix, cook or process according to the product"],
+          ["🧪","Quality","Control hygiene, consistency and product quality"],
+          ["🫙","Filling & packing","Fill, seal, label and store finished products"]
+        ],
+        raw:"Mango, lemon, chilli, tomato, vegetables, spices and other suitable ingredients.",
+        machinery:"Washer, cutter, pulper, mixer, cooking kettle, filling/sealing equipment and weighing equipment.",
+        products:"Pickles, chutneys, sauces and other eligible value-added products.",
+        packing:"Food-grade jars, bottles or pouches with sealing, labelling and suitable storage."
+      },
+      oil:{icon:"🥜",title:"Oil & Seed Processing",intro:"Process oilseeds and nuts through cleaning, grading, pressing and filtration to create edible oil and by-products.",
+        steps:[
+          ["🥜","Raw material","Groundnut, sesame, mustard & other suitable seeds"],
+          ["🧹","Cleaning","Remove stones, dust and foreign matter"],
+          ["⚙️","Preparation","Grade, condition or prepare seed as required"],
+          ["🛢️","Extraction","Press or extract oil using suitable equipment"],
+          ["🔬","Filtration","Filter and maintain product quality"],
+          ["🧴","Packing","Fill, seal, label oil and pack by-products"]
+        ],
+        raw:"Groundnut, sesame, mustard, sunflower and other suitable oilseeds.",
+        machinery:"Cleaner, grader, seed preparation equipment, oil expeller/press, filter, storage tanks, filling and packing equipment.",
+        products:"Edible oils and suitable seed/oil-cake by-products.",
+        packing:"Food-grade bottles or containers for oil; suitable bags or packs for by-products."
+      },
+      dairy:{icon:"🥛",title:"Dairy Processing",intro:"Explore suitable dairy value-addition opportunities beyond basic milk handling, subject to product and applicant eligibility.",
+        steps:[
+          ["🥛","Milk / input","Procure suitable quality milk or dairy input"],
+          ["🧹","Testing","Check quality and maintain hygienic handling"],
+          ["⚙️","Processing","Standardize, heat-treat or process as required"],
+          ["🍦","Value addition","Convert into the selected dairy product"],
+          ["🔬","Quality","Cool/store under suitable conditions and maintain hygiene"],
+          ["📦","Packing","Fill, seal, label and maintain cold chain where needed"]
+        ],
+        raw:"Milk and suitable dairy inputs from reliable sources.",
+        machinery:"Milk testing equipment, chilling/handling equipment, pasteurizer or product-specific machinery, filling and packing equipment.",
+        products:"Eligible value-added dairy products depending on the proposed unit and applicable scheme/product conditions.",
+        packing:"Food-grade cups, pouches, bottles or other suitable packs with appropriate temperature-controlled storage where required."
+      },
+      value:{icon:"📦",title:"Other Value-Added Foods",intro:"If your idea does not fit one category, it may still be worth discussing — especially where local agricultural produce is converted into a marketable food product.",
+        steps:[
+          ["🌾","Raw material","Identify local agricultural or food raw material"],
+          ["🧹","Preparation","Clean, sort, grade or prepare the material"],
+          ["⚙️","Processing","Use the product-specific processing method"],
+          ["✨","Value addition","Create a finished food product with market value"],
+          ["🔬","Quality","Maintain hygiene, consistency and suitable storage"],
+          ["📦","Packing","Pack, label and prepare for distribution"]
+        ],
+        raw:"Local agricultural produce or food raw materials suitable for the proposed product.",
+        machinery:"Depends on the product — equipment may include cleaning, cutting, grinding, cooking, drying, mixing, filling and packing machinery.",
+        products:"Product-specific value-added foods based on the raw material, market and proposed processing activity.",
+        packing:"Choose food-grade, suitable and market-friendly packaging based on the product's storage and distribution needs."
+      }
+    }
+  };
+
+  const UI={
+    en:{eyebrow:"FOOD PROCESSING OPPORTUNITY",raw:"🥕 Raw materials",machinery:"🏭 Processing / machinery",products:"📦 Products you can make",packing:"🛍️ Packing & market",note:"Eligibility and project suitability should be checked for the specific product and applicant profile.",cta:"💬 DISCUSS THIS IDEA WITH SHANKAR"},
+    hi:{eyebrow:"खाद्य प्रसंस्करण अवसर",raw:"🥕 कच्चा माल",machinery:"🏭 प्रसंस्करण / मशीनरी",products:"📦 आप कौन से उत्पाद बना सकते हैं",packing:"🛍️ पैकिंग और बाजार",note:"पात्रता और परियोजना की उपयुक्तता संबंधित उत्पाद और आवेदक की प्रोफ़ाइल के अनुसार जांची जानी चाहिए।",cta:"💬 शंकर से इस विचार पर चर्चा करें"},
+    gu:{eyebrow:"ફૂડ પ્રોસેસિંગની તક",raw:"🥕 કાચો માલ",machinery:"🏭 પ્રોસેસિંગ / મશીનરી",products:"📦 તમે કયા પ્રોડક્ટ બનાવી શકો",packing:"🛍️ પેકિંગ અને માર્કેટ",note:"પાત્રતા અને પ્રોજેક્ટની યોગ્યતા સંબંધિત પ્રોડક્ટ અને અરજદારની પ્રોફાઇલ મુજબ તપાસવી જોઈએ.",cta:"💬 શંકર સાથે આ વિચારની ચર્ચા કરો"}
+  };
+  const STEP_LABELS={
+    en:["Raw material","Cleaning","Preparation / processing","Value addition","Quality","Packing"],
+    hi:["कच्चा माल","सफाई","तैयारी / प्रसंस्करण","मूल्य संवर्धन","गुणवत्ता","पैकिंग"],
+    gu:["કાચો માલ","સફાઈ","તૈયારી / પ્રોસેસિંગ","વેલ્યુ એડિશન","ગુણવત્તા","પેકિંગ"]
+  };
+
+  const modal=document.getElementById("processModal");
+  const flow=document.getElementById("processFlow");
+  if(!modal)return;
+
+  function lang(){return localStorage.getItem("pmfmeLanguage")||"en"}
+
+  function openProcess(key){
+    const d=DATA.en[key]; // technical detail remains standardized; UI labels follow preference
+    const l=lang(), ui=UI[l]||UI.en, labels=STEP_LABELS[l]||STEP_LABELS.en;
+    document.getElementById("processModalIcon").textContent=d.icon;
+    document.getElementById("processModalTitle").textContent=d.title;
+    document.getElementById("processModalIntro").textContent=d.intro;
+    document.getElementById("processModalEyebrow").textContent=ui.eyebrow;
+    document.querySelector(".process-info-card:nth-child(1) h3").textContent=ui.raw;
+    document.querySelector(".process-info-card:nth-child(2) h3").textContent=ui.machinery;
+    document.querySelector(".process-info-card:nth-child(3) h3").textContent=ui.products;
+    document.querySelector(".process-info-card:nth-child(4) h3").textContent=ui.packing;
+    document.getElementById("processRaw").textContent=d.raw;
+    document.getElementById("processMachinery").textContent=d.machinery;
+    document.getElementById("processProducts").textContent=d.products;
+    document.getElementById("processPacking").textContent=d.packing;
+    document.querySelector(".process-bottom small").textContent=ui.note;
+    document.querySelector(".process-bottom .btn").textContent=ui.cta;
+
+    flow.innerHTML=d.steps.map((s,i)=>`
+      <div class="process-step">
+        <span class="process-step-num">${String(i+1).padStart(2,"0")}</span>
+        <span class="process-step-icon">${s[0]}</span>
+        <b>${labels[i]}</b>
+        <small>${s[2]}</small>
+      </div>`).join("");
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+  }
+
+  function closeProcess(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+  }
+
+  document.querySelectorAll("[data-process]").forEach(btn=>{
+    btn.addEventListener("click",()=>openProcess(btn.dataset.process));
+  });
+  modal.querySelectorAll("[data-close-process]").forEach(el=>el.addEventListener("click",(e)=>{
+    if(el.tagName==="A") closeProcess();
+    else closeProcess();
+  }));
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeProcess()});
+
+  // Keep the dynamic modal labels in sync with the preferred language.
+  const langSelect=document.getElementById("topLanguage");
+  if(langSelect)langSelect.addEventListener("change",()=>{
+    if(modal.classList.contains("is-open")){
+      const title=document.getElementById("processModalTitle").textContent;
+      const btn=document.querySelector(".op-card[data-process]");
+      // Re-render the currently open category from its stored key.
+      const current=[...document.querySelectorAll("[data-process]")].find(x=>x.dataset.process && x.querySelector("h3")?.textContent===title);
+      if(current)openProcess(current.dataset.process);
+    }
+  });
 })();
 </script>
 
