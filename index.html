@@ -1652,7 +1652,8 @@ Requirement / Question:
 ${get("requirement")||"Not provided"}
 
 I would like PMFME guidance from DRP Shankar Pradhan.`;
-  window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank");
+  const waUrl="https://wa.me/"+phone+"?text="+encodeURIComponent(msg);
+  window.location.href=waUrl;
 });
 
 </script>
