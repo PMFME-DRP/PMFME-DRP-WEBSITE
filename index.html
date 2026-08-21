@@ -680,6 +680,58 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
   .process-modal-icon{width:52px;height:52px;flex-basis:52px;font-size:26px}
 }
 
+
+/* ===== INTERACTIVE "HOW CAN PMFME HELP?" ===== */
+.pmfme-help-section{background:#fff;padding:62px 0}
+.help-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:27px}
+.help-card{
+  appearance:none;width:100%;text-align:left;font-family:inherit;cursor:pointer;
+  min-height:190px;padding:20px;border:1px solid #dcebef;border-radius:18px;
+  background:linear-gradient(180deg,#fff 0%,#f7fbfc 100%);
+  color:#163f5b;box-shadow:0 7px 22px rgba(19,66,91,.06);
+  position:relative;transition:.18s
+}
+.help-card:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(19,66,91,.11);border-color:#b9dce5}
+.help-card:focus-visible{outline:3px solid #5bb6c4;outline-offset:3px}
+.help-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;border-radius:18px 18px 0 0;background:#2d8ca1}
+.help-money:before{background:#e2a13a}.help-machine:before{background:#3988a4}.help-application:before{background:#688cb2}.help-formalisation:before{background:#6ca67b}
+.help-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#edf7f8;font-size:25px;margin-bottom:15px}
+.help-card h3{margin:0 0 6px;color:#123f63;font-size:16px;line-height:1.2}
+.help-card p{margin:0;color:#6b8290;font-size:11px;line-height:1.45;min-height:33px}
+.help-card>b{display:block;margin-top:16px;color:#19778c;font-size:11px}
+.help-note{text-align:center;margin-top:20px;color:#718692;font-size:12px}.help-note a{color:#176d91;font-weight:1000;text-decoration:none}
+
+.help-modal{display:none;position:fixed;inset:0;z-index:10000}
+.help-modal.is-open{display:block}
+.help-modal-backdrop{position:absolute;inset:0;background:rgba(3,24,38,.70);backdrop-filter:blur(4px)}
+.help-modal-box{
+  position:relative;width:min(820px,calc(100% - 28px));max-height:calc(100vh - 36px);
+  overflow:auto;margin:18px auto;background:#f8fcfd;border-radius:24px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);padding:28px;color:#163f5b
+}
+.help-close{position:absolute;top:15px;right:17px;width:38px;height:38px;border:0;border-radius:50%;background:#eaf3f6;color:#163f5b;font-size:27px;line-height:1;cursor:pointer}
+.help-modal-head{display:flex;gap:16px;align-items:center;padding-right:48px;margin-bottom:20px}
+.help-modal-icon{width:62px;height:62px;flex:0 0 62px;display:grid;place-items:center;border-radius:17px;background:#e7f5f7;font-size:31px}
+.help-modal-head h2{margin:3px 0 4px;color:#123f63;font-size:29px;letter-spacing:-.5px}
+.help-modal-head p{margin:0;color:#647e8c;font-size:14px;line-height:1.5}
+.help-detail-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0 18px}
+.help-step{background:#fff;border:1px solid #dcebef;border-radius:15px;padding:16px}
+.help-step-num{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#eaf5f7;color:#19748a;font-size:9px;font-weight:1000;margin-bottom:9px}
+.help-step b{display:block;color:#123f63;font-size:13px;margin-bottom:4px}.help-step p{margin:0;color:#6a808d;font-size:11px;line-height:1.45}
+.help-two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.help-info{background:#fff;border:1px solid #dcebef;border-radius:16px;padding:17px 18px}
+.help-info h3{margin:0 0 7px;color:#123f63;font-size:14px}.help-info p{margin:0;color:#607986;font-size:12px;line-height:1.55}
+.help-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding-top:16px;border-top:1px solid #dcebef}
+.help-bottom small{color:#738793;line-height:1.4;max-width:470px}.help-bottom .btn{white-space:nowrap}
+@media(max-width:900px){.help-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+  .help-modal-box{padding:22px 17px;margin:10px auto;max-height:calc(100vh - 20px);border-radius:20px}
+  .help-modal-head{align-items:flex-start}.help-modal-head h2{font-size:24px}
+  .help-detail-flow{grid-template-columns:1fr}.help-two-col{grid-template-columns:1fr}
+  .help-bottom{display:block}.help-bottom .btn{width:100%;margin-top:12px}
+}
+@media(max-width:520px){.help-grid{grid-template-columns:1fr}.help-card{min-height:145px}}
+
 </style>
 
 <style>
@@ -764,17 +816,81 @@ html[lang="hi"] .btn,html[lang="gu"] .btn{line-height:1.25}
 
 
 
-<section id="benefits">
+<section id="benefits" class="pmfme-help-section">
   <div class="container">
-    <div class="head"><div class="eyebrow">PMFME BENEFITS</div><h2>How can PMFME help your food business?</h2><p>Understand the support available, plan your project and discuss your proposal with DRP Shankar Pradhan before moving ahead.</p></div>
-    <div class="grid4">
-      <div class="card"><div class="icon">💰</div><h3>Credit-Linked Subsidy</h3><p>Eligible individual units may receive credit-linked capital subsidy subject to applicable rules and eligibility.</p></div>
-      <div class="card"><div class="icon">🏭</div><h3>Machinery Planning</h3><p>Understand machinery, capacity, quotations and project-cost components for your proposed unit.</p></div>
-      <div class="card"><div class="icon">📋</div><h3>Application Guidance</h3><p>Prepare your business information, documents, project details and financing discussion.</p></div>
-      <div class="card"><div class="icon">📈</div><h3>Business Formalisation</h3><p>Plan how your food-processing activity can become a more organised enterprise.</p></div>
+    <div class="head">
+      <div class="eyebrow">PMFME BENEFITS</div>
+      <h2>How can PMFME help your food business?</h2>
+      <p>Tap any option to understand what it can mean for your proposed food-processing unit.</p>
+    </div>
+
+    <div class="help-grid">
+      <button class="help-card help-money" data-help="subsidy">
+        <span class="help-icon">💰</span>
+        <div><h3>Credit-Linked Subsidy</h3><p>Understand the capital subsidy support.</p></div>
+        <b>Explore →</b>
+      </button>
+
+      <button class="help-card help-machine" data-help="machinery">
+        <span class="help-icon">🏭</span>
+        <div><h3>Machinery Planning</h3><p>Plan machinery and project-cost components.</p></div>
+        <b>Explore →</b>
+      </button>
+
+      <button class="help-card help-application" data-help="application">
+        <span class="help-icon">📋</span>
+        <div><h3>Application Guidance</h3><p>Know what information and documents to prepare.</p></div>
+        <b>Explore →</b>
+      </button>
+
+      <button class="help-card help-formalisation" data-help="formalisation">
+        <span class="help-icon">📈</span>
+        <div><h3>Business Formalisation</h3><p>Move toward a more organised food enterprise.</p></div>
+        <b>Explore →</b>
+      </button>
+    </div>
+
+    <div class="help-note">
+      Not sure which support matters for your business?
+      <a href="#whatsapp-form">Tell Shankar about your project →</a>
     </div>
   </div>
 </section>
+
+<!-- PMFME help detail modal -->
+<div class="help-modal" id="helpModal" aria-hidden="true">
+  <div class="help-modal-backdrop" data-close-help></div>
+  <div class="help-modal-box" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
+    <button class="help-close" type="button" data-close-help aria-label="Close">×</button>
+
+    <div class="help-modal-head">
+      <div class="help-modal-icon" id="helpModalIcon">💰</div>
+      <div>
+        <div class="eyebrow" id="helpModalEyebrow">PMFME SUPPORT</div>
+        <h2 id="helpModalTitle">Credit-Linked Subsidy</h2>
+        <p id="helpModalIntro"></p>
+      </div>
+    </div>
+
+    <div class="help-detail-flow" id="helpDetailFlow"></div>
+
+    <div class="help-two-col">
+      <div class="help-info">
+        <h3>👤 For the applicant</h3>
+        <p id="helpApplicant"></p>
+      </div>
+      <div class="help-info">
+        <h3>📌 What to discuss with Shankar</h3>
+        <p id="helpDiscuss"></p>
+      </div>
+    </div>
+
+    <div class="help-bottom">
+      <small id="helpNote"></small>
+      <a class="btn orange" href="#whatsapp-form" data-close-help>💬 DISCUSS MY PROJECT</a>
+    </div>
+  </div>
+</div>
 
 <section id="businesses" class="opportunity-section">
   <div class="container">
@@ -1970,6 +2086,118 @@ I would like PMFME guidance from DRP Shankar Pradhan.`;
       if(current)openProcess(current.dataset.process);
     }
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  const DATA={
+    en:{
+      subsidy:{
+        icon:"💰",title:"Credit-Linked Subsidy",
+        intro:"Eligible individual units may receive credit-linked capital subsidy, subject to applicable scheme rules and applicant eligibility.",
+        steps:[
+          ["01","Understand support","Check whether your proposed unit and applicant profile fit the applicable conditions."],
+          ["02","Plan the project","Work out the project cost, machinery requirement and your own contribution."],
+          ["03","Discuss finance","Prepare for the bank-financing discussion linked to the proposed project."]
+        ],
+        applicant:"You should have a clear food-processing activity, an approximate project size and basic applicant information ready for discussion.",
+        discuss:"Product, location, project cost, machinery requirement, own contribution and the proposed financing plan.",
+        note:"Subsidy is not an automatic approval. Final eligibility, admissible cost and sanction are subject to the applicable scheme and bank/authority process."
+      },
+      machinery:{
+        icon:"🏭",title:"Machinery Planning",
+        intro:"PMFME guidance can help you understand the machinery and project-cost components needed for your proposed food-processing unit.",
+        steps:[
+          ["01","Choose the process","Identify what your product needs from raw-material preparation to finished packing."],
+          ["02","Plan machinery","List the required machines, capacity and supporting equipment."],
+          ["03","Build the project","Use suitable quotations and project-cost information for the application and financing discussion."]
+        ],
+        applicant:"Bring your product idea, expected capacity and approximate budget. Machinery should be selected around the actual process rather than buying equipment first.",
+        discuss:"Processing steps, machine capacity, quotations, utilities, installation needs and other project-cost components.",
+        note:"The exact admissible cost and machinery suitability should be checked for the specific project."
+      },
+      application:{
+        icon:"📋",title:"Application Guidance",
+        intro:"Get organised before moving toward the PMFME application by preparing the information needed for your project discussion.",
+        steps:[
+          ["01","Business details","Clearly describe the food product, activity and proposed location."],
+          ["02","Project details","Prepare project cost, machinery details, expected capacity and financing information."],
+          ["03","Documents","Keep the basic applicant and business documents ready for the next stage."]
+        ],
+        applicant:"The more clearly you explain your product, location and project size, the easier it is to identify what needs to be prepared next.",
+        discuss:"Applicant profile, district and taluka, product, project cost, machinery, existing/new activity and documents available.",
+        note:"This is guidance for preparation; final application processing follows the applicable official process."
+      },
+      formalisation:{
+        icon:"📈",title:"Business Formalisation",
+        intro:"PMFME is intended to support the formalisation and strengthening of micro food-processing enterprises.",
+        steps:[
+          ["01","Define the business","Clarify the product, process, market and proposed unit."],
+          ["02","Strengthen the setup","Plan machinery, production, quality, packing and business requirements."],
+          ["03","Move toward market","Build a more organised enterprise with suitable packaging, branding and market planning."]
+        ],
+        applicant:"Think beyond the machine: product quality, packaging, branding, production capacity and market access are all part of building a stronger food enterprise.",
+        discuss:"Your current business stage, product range, production setup, market, packaging and future expansion plan.",
+        note:"The exact support available depends on the applicable scheme provisions and your project profile."
+      }
+    }
+  };
+  const UI={
+    en:{eyebrow:"PMFME SUPPORT",applicant:"👤 For the applicant",discuss:"📌 What to discuss with Shankar",cta:"💬 DISCUSS MY PROJECT"},
+    hi:{eyebrow:"PMFME सहायता",applicant:"👤 आवेदक के लिए",discuss:"📌 शंकर से क्या चर्चा करें",cta:"💬 अपने प्रोजेक्ट पर चर्चा करें"},
+    gu:{eyebrow:"PMFME સહાય",applicant:"👤 અરજદાર માટે",discuss:"📌 શંકર સાથે શું ચર્ચા કરવી",cta:"💬 મારા પ્રોજેક્ટની ચર્ચા કરો"}
+  };
+  const modal=document.getElementById("helpModal");
+  if(!modal)return;
+
+  function lang(){return localStorage.getItem("pmfmeLanguage")||"en"}
+  let currentKey=null;
+
+  function openHelp(key){
+    currentKey=key;
+    const d=DATA.en[key], u=UI[lang()]||UI.en;
+    document.getElementById("helpModalIcon").textContent=d.icon;
+    document.getElementById("helpModalTitle").textContent=d.title;
+    document.getElementById("helpModalIntro").textContent=d.intro;
+    document.getElementById("helpModalEyebrow").textContent=u.eyebrow;
+    document.querySelector(".help-info:nth-child(1) h3").textContent=u.applicant;
+    document.querySelector(".help-info:nth-child(2) h3").textContent=u.discuss;
+    document.getElementById("helpApplicant").textContent=d.applicant;
+    document.getElementById("helpDiscuss").textContent=d.discuss;
+    document.getElementById("helpNote").textContent=d.note;
+    document.querySelector(".help-bottom .btn").textContent=u.cta;
+
+    const labels=lang()==="hi"?["क्या करें","कैसे योजना बनाएं","अगला कदम"]:lang()==="gu"?["શું કરવું","કેવી રીતે પ્લાન કરવું","આગળનું પગલું"]:["What to do","How to plan","Next step"];
+    document.getElementById("helpDetailFlow").innerHTML=d.steps.map((s,i)=>`
+      <div class="help-step">
+        <span class="help-step-num">${s[0]}</span>
+        <b>${labels[i]}</b>
+        <p>${s[2]}</p>
+      </div>`).join("");
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+  }
+
+  function closeHelp(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+  }
+
+  document.querySelectorAll("[data-help]").forEach(btn=>{
+    btn.addEventListener("click",()=>openHelp(btn.dataset.help));
+  });
+  modal.querySelectorAll("[data-close-help]").forEach(el=>{
+    el.addEventListener("click",()=>closeHelp());
+  });
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp()});
+
+  const s=document.getElementById("topLanguage");
+  if(s)s.addEventListener("change",()=>{if(currentKey)setTimeout(()=>openHelp(currentKey),120)});
 })();
 </script>
 
