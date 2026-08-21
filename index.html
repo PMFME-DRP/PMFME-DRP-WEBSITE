@@ -115,7 +115,7 @@ textarea{min-height:90px;resize:vertical}
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 .field{margin-bottom:13px}.full{grid-column:1/-1}.select-note{font-size:11px;color:var(--muted);margin-top:4px}
 .result{margin-top:15px;padding:15px;border-radius:14px;background:#edf8fd;border:1px solid #cfe5ef;display:none}
-.result.show{display:block}
+.result.show{display:block;animation:resultIn .25s ease}.result strong{font-size:16px}@keyframes resultIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 .result strong{color:var(--green)}
 .calc{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
 .calc-result{background:linear-gradient(135deg,#4b8fb8,#72b8d8);color:#fff;border-radius:22px;padding:25px}
@@ -136,7 +136,7 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
   .pmfme-title{font-size:13px;line-height:1.25}
 
   .top-inner{font-size:10px}.top-language select{padding:4px 5px}
-  .hero{padding:48px 0 58px}.hero-visual{min-height:300px}.visual-factory{right:25px;transform:scale(.8);transform-origin:bottom right}.visual-arrow{left:37%;bottom:150px}.visual-label{font-size:9px}
+  .hero{padding:48px 0 58px}.hero-visual{min-height:300px}.visual-factory{right:25px;transform:scale(.8);transform-origin:bottom right}.visual-arrow{left:37%;bottom:150px}
 
   .top-inner{align-items:center}.top-inner>span{font-size:10px}.top-language span{display:none}.top-language select{padding:4px 5px}
   .container{width:min(94%,560px)}.nav{min-height:65px}.brand b{font-size:17px}.brand small{font-size:9px}
@@ -147,6 +147,34 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
   .mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:100;padding:8px;gap:8px;box-shadow:0 -5px 20px rgba(0,0,0,.1)}
   .mobilebar .btn{flex:1;padding:11px 8px;font-size:12px}.mobile-space{height:58px}
 }
+
+.application-flow{background:linear-gradient(180deg,#f7fbfd 0%,#eaf5f9 100%);padding:58px 0;border-top:1px solid #dbeaf1;border-bottom:1px solid #dbeaf1}
+.flow-heading{text-align:center;max-width:760px;margin:0 auto 28px}
+.flow-heading h2{font-size:38px;line-height:1.08;color:var(--blue);margin:6px 0 10px}
+.flow-heading p{color:var(--muted);font-size:16px;margin:0}
+.flow-grid{display:grid;grid-template-columns:1fr 55px 1fr 55px 1fr;align-items:center;gap:8px}
+.flow-card{background:#fff;border:1px solid #d7e7ef;border-radius:22px;padding:24px;min-height:210px;box-shadow:0 12px 28px rgba(18,63,99,.08);transition:.2s}
+.flow-card.active{border:2px solid var(--teal);box-shadow:0 16px 34px rgba(43,155,147,.14);transform:translateY(-4px)}
+.flow-no{font-size:12px;font-weight:1000;color:#8aa5b4;letter-spacing:1px}
+.flow-icon{font-size:30px;margin:10px 0 6px}
+.flow-card h3{margin:0 0 8px;color:var(--blue);font-size:20px}
+.flow-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.flow-arrow{text-align:center;font-size:34px;color:var(--gold);font-weight:900}
+.flow-cta{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+@media(max-width:760px){
+  .flow-grid{grid-template-columns:1fr;gap:10px}
+  .flow-arrow{transform:rotate(90deg);font-size:26px}
+  .flow-card{min-height:auto}
+  .flow-heading h2{font-size:30px}
+  .flow-cta .btn{width:100%}
+}
+
+.conversion-cta{background:#123f63;padding:42px 0}
+.conversion-box{display:flex;align-items:center;justify-content:space-between;gap:28px;background:linear-gradient(135deg,#194f72,#176b8f);border:1px solid rgba(255,255,255,.2);border-radius:26px;padding:32px;color:#fff;box-shadow:0 18px 45px rgba(18,63,99,.18)}
+.conversion-box .eyebrow{color:#ffd37a}.conversion-box h2{font-size:30px;margin:6px 0 8px;color:#fff}.conversion-box p{margin:0;color:#e6f3f8}.conversion-actions{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:760px){.conversion-box{display:block}.conversion-actions{margin-top:20px}.conversion-actions .btn{width:100%}}
+
+.visual-badge{position:absolute;left:18px;top:18px;background:rgba(255,255,255,.9);color:#174f70;padding:8px 11px;border-radius:10px;font-size:10px;font-weight:1000;letter-spacing:.5px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
 </style>
 </head>
 
@@ -186,11 +214,11 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
       <div class="badge">FIELD → VALUE ADDITION → FOOD PROCESSING → MARKET</div>
       <h1>Have a food business idea?<br><span>Let's plan it better.</span></h1>
       <div class="hero-image-caption">🌾 FARM / AGRI PRODUCE &nbsp; → &nbsp; 🏭 FOOD PROCESSING &nbsp; → &nbsp; 📦 VALUE ADDITION &nbsp; → &nbsp; 🛒 MARKET</div>
-      <p>Get practical PMFME guidance from <b>DRP Shankar Pradhan</b> for your food processing idea, eligibility, project cost, machinery, documents, financing and application journey.</p>
+      <p>Have a food processing idea? <b>Start with DRP Shankar Pradhan.</b> Share your product, location and project cost — get practical guidance on eligibility, machinery, documents and the application journey.</p>
       <div class="actions">
-        <a class="btn orange" href="#whatsapp-form">💬 GET GUIDANCE FROM SHANKAR</a>
+        <a class="btn orange" href="#whatsapp-form">💬 START PMFME GUIDANCE</a>
         <a class="btn white" href="tel:+917041075170">📞 CALL DRP SHANKAR PRADHAN</a>
-        <a class="btn outline" href="#calculator">🧮 ESTIMATE PROJECT SUPPORT</a>
+        <a class="btn outline" href="#calculator">🧮 CHECK PROJECT SUPPORT</a>
       </div>
     </div>
     <div class="hero-visual" aria-label="Agriculture to food processing illustration">
@@ -206,8 +234,7 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
         </div>
         <div class="factory-smoke"></div>
       </div>
-      <div class="visual-arrow">→</div>
-      <div class="visual-label">🌾 FARM PRODUCE &nbsp; → &nbsp; 🏭 PROCESSING &nbsp; → &nbsp; 📦 VALUE ADDITION</div>
+      <div class="visual-arrow">→</div><div class="visual-badge">FOOD PROCESSING • VALUE ADDITION</div>
     </div>
   </div>
 </section>
@@ -218,6 +245,42 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
   <div class="stat"><b>10%*</b><span>Minimum beneficiary contribution mentioned in current guidance</span></div>
 </div>
 
+
+<section class="application-flow">
+  <div class="container">
+    <div class="flow-heading">
+      <div class="eyebrow">YOUR PMFME JOURNEY</div>
+      <h2>Idea → Guidance → Application</h2>
+      <p>Tell DRP Shankar Pradhan about your food business. Get a practical first discussion before preparing the application.</p>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-no">01</div>
+        <div class="flow-icon">💡</div>
+        <h3>Share Your Idea</h3>
+        <p>Tell us your product, location and estimated project cost.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card active">
+        <div class="flow-no">02</div>
+        <div class="flow-icon">💬</div>
+        <h3>Get DRP Guidance</h3>
+        <p>Discuss eligibility, machinery, project planning and documents.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card">
+        <div class="flow-no">03</div>
+        <div class="flow-icon">📋</div>
+        <h3>Move Toward Application</h3>
+        <p>Prepare the information needed to take the next step.</p>
+      </div>
+    </div>
+    <div class="flow-cta">
+      <a class="btn orange" href="#whatsapp-form">💬 START MY PMFME GUIDANCE</a>
+      <a class="btn white" href="tel:+917041075170">📞 TALK TO SHANKAR</a>
+    </div>
+  </div>
+</section>
 <section id="benefits">
   <div class="container">
     <div class="head"><div class="eyebrow">PMFME BENEFITS</div><h2>What can PMFME support mean for your food business?</h2><p>Understand the scheme, plan your project and discuss your proposal with DRP Shankar Pradhan before moving ahead.</p></div>
@@ -248,6 +311,22 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
 </section>
 
 
+
+<section id="conversion-cta" class="conversion-cta">
+  <div class="container">
+    <div class="conversion-box">
+      <div>
+        <div class="eyebrow">READY TO DISCUSS YOUR PROJECT?</div>
+        <h2>Don't wait to understand your options.</h2>
+        <p>Send your basic details to <b>DRP Shankar Pradhan</b>. You can choose English, Hindi or Gujarati.</p>
+      </div>
+      <div class="conversion-actions">
+        <a class="btn orange" href="#whatsapp-form">💬 SEND MY DETAILS</a>
+        <a class="btn white" href="tel:+917041075170">📞 CALL SHANKAR</a>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="eligibility">
   <div class="container">
     <div class="head"><div class="eyebrow">QUICK ELIGIBILITY CHECK</div><h2>Is your basic profile suitable to explore PMFME?</h2><p>This is a preliminary self-check, not an official approval or eligibility decision.</p></div>
@@ -285,8 +364,8 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
 </div>
         <button class="btn green" id="calcBtn" type="button">CALCULATE INDICATIVE FIGURES</button>
       </div>
-      <div class="calc-result"><div style="font-size:12px;opacity:.9;margin-bottom:8px">Bank loan estimate = Project Cost − Contribution</div>
-        <div style="font-size:12px;opacity:.9">Indicative Bank Loan = Project Cost − Beneficiary Contribution</div>
+      <div class="calc-result">
+        <div style="font-size:12px;opacity:.9"></div>
         <div style="margin-top:12px">Indicative subsidy at 35%*</div>
         <div class="big" id="subsidy">₹0</div>
         <div class="minirow"><span>Project cost entered</span><b id="costOut">₹0</b></div>
@@ -429,7 +508,7 @@ hi:{
 "Get practical PMFME guidance from":"से व्यावहारिक PMFME मार्गदर्शन प्राप्त करें",
 "DRP Shankar Pradhan":"DRP शंकर प्रधान",
 "for your food processing idea, eligibility, project cost, machinery, documents, financing and application journey.":"खाद्य प्रसंस्करण विचार, पात्रता, परियोजना लागत, मशीनरी, दस्तावेज़, वित्त और आवेदन प्रक्रिया के लिए।",
-"GET GUIDANCE FROM SHANKAR":"शंकर से मार्गदर्शन लें","CALL DRP SHANKAR PRADHAN":"DRP शंकर प्रधान को कॉल करें","ESTIMATE PROJECT SUPPORT":"परियोजना सहायता का अनुमान",
+"START PMFME GUIDANCE":"शंकर से मार्गदर्शन लें","CALL DRP SHANKAR PRADHAN":"DRP शंकर प्रधान को कॉल करें","CHECK PROJECT SUPPORT":"परियोजना सहायता का अनुमान",
 "PMFME BENEFITS":"PMFME लाभ","What can PMFME support mean for your food business?":"PMFME आपके खाद्य व्यवसाय के लिए क्या सहायता दे सकता है?",
 "Understand the scheme, plan your project and discuss your proposal with DRP Shankar Pradhan before moving ahead.":"योजना समझें, अपनी परियोजना की योजना बनाएं और आगे बढ़ने से पहले DRP शंकर प्रधान से चर्चा करें।",
 "Credit-Linked Subsidy":"क्रेडिट-लिंक्ड सब्सिडी","Machinery Planning":"मशीनरी योजना","Application Guidance":"आवेदन मार्गदर्शन","Business Formalisation":"व्यवसाय औपचारिकरण",
@@ -456,7 +535,7 @@ gu:{
 "Get practical PMFME guidance from":"થી વ્યવહારુ PMFME માર્ગદર્શન મેળવો",
 "DRP Shankar Pradhan":"DRP શંકર પ્રધાન",
 "for your food processing idea, eligibility, project cost, machinery, documents, financing and application journey.":"તમારા ફૂડ પ્રોસેસિંગ વિચાર, પાત્રતા, પ્રોજેક્ટ ખર્ચ, મશીનરી, દસ્તાવેજો, ફાઇનાન્સ અને અરજી પ્રક્રિયા માટે.",
-"GET GUIDANCE FROM SHANKAR":"શંકર પાસેથી માર્ગદર્શન મેળવો","CALL DRP SHANKAR PRADHAN":"DRP શંકર પ્રધાનને કૉલ કરો","ESTIMATE PROJECT SUPPORT":"પ્રોજેક્ટ સપોર્ટનો અંદાજ",
+"START PMFME GUIDANCE":"શંકર પાસેથી માર્ગદર્શન મેળવો","CALL DRP SHANKAR PRADHAN":"DRP શંકર પ્રધાનને કૉલ કરો","CHECK PROJECT SUPPORT":"પ્રોજેક્ટ સપોર્ટનો અંદાજ",
 "PMFME BENEFITS":"PMFME લાભ","What can PMFME support mean for your food business?":"PMFME તમારા ફૂડ બિઝનેસ માટે શું મદદ કરી શકે?",
 "Understand the scheme, plan your project and discuss your proposal with DRP Shankar Pradhan before moving ahead.":"યોજના સમજો, પ્રોજેક્ટ પ્લાન કરો અને આગળ વધતા પહેલા DRP શંકર પ્રધાન સાથે ચર્ચા કરો.",
 "Credit-Linked Subsidy":"ક્રેડિટ-લિન્ક્ડ સબસિડી","Machinery Planning":"મશીનરી પ્લાનિંગ","Application Guidance":"અરજી માર્ગદર્શન","Business Formalisation":"બિઝનેસ ફોર્મલાઇઝેશન",
@@ -492,14 +571,22 @@ function translatePage(lang){
   });
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>el.placeholder=dict[el.dataset.i18nPlaceholder]||el.dataset.i18nPlaceholder);
 }
-document.getElementById("pageLanguage").addEventListener("change",e=>translatePage(e.target.value));
-const langSelect=document.getElementById("pageLanguage");
+const langSelect=document.getElementById("topLanguage");
+if(langSelect){
+  langSelect.addEventListener("change",e=>translatePage(e.target.value));
+}
 const formLang=document.getElementById("language");
-if(formLang){
+if(formLang && langSelect){
   formLang.addEventListener("change",()=>{
     const v=formLang.value.includes("Hindi")?"hi":formLang.value.includes("Gujarati")?"gu":"en";
     langSelect.value=v; translatePage(v);
   });
+}
+if(langSelect){
+  const savedLang=localStorage.getItem("pmfmeLanguage")||"en";
+  langSelect.value=savedLang;
+  translatePage(savedLang);
+  langSelect.addEventListener("change",()=>localStorage.setItem("pmfmeLanguage",langSelect.value));
 }
 
 
@@ -559,42 +646,39 @@ const gujaratTalukas = {
 const districtNames=Object.keys(gujaratTalukas).sort((a,b)=>a.localeCompare(b));
 
 function fillDistricts(selectId){
-  const s=document.getElementById(selectId); if(!s) return;
-  districtNames.forEach(d=>{const o=document.createElement("option");o.value=d;o.textContent=d;s.appendChild(o);});
+  const s=document.getElementById(selectId);
+  if(!s)return;
+  s.innerHTML="<option value=''>Select District</option>";
+  districtNames.forEach(d=>{
+    const o=document.createElement("option");
+    o.value=d;o.textContent=d;s.appendChild(o);
+  });
 }
 function fillTalukas(districtId,talukaId){
-  const d=document.getElementById(districtId), t=document.getElementById(talukaId);
+  const d=document.getElementById(districtId);
+  const t=document.getElementById(talukaId);
   if(!d||!t)return;
-  t.innerHTML="";
-  const selected=d.value;
-  if(!selected){
-    t.disabled=true;
-    t.innerHTML="<option value=''>Select District First</option>";
-    return;
-  }
-  const first=document.createElement("option");
-  first.value=""; first.textContent="Select Taluka"; t.appendChild(first);
-  const list=gujaratTalukas[selected]||[];
-  list.forEach(x=>{
+  t.innerHTML="<option value=''>Select Taluka</option>";
+  t.disabled=true;
+  if(!d.value)return;
+  (gujaratTalukas[d.value]||[]).forEach(name=>{
     const o=document.createElement("option");
-    o.value=x; o.textContent=x; t.appendChild(o);
+    o.value=name;o.textContent=name;t.appendChild(o);
   });
-  t.disabled=list.length===0;
+  t.disabled=false;
 }
 fillDistricts("district");
-
 const districtSelect=document.getElementById("district");
-const talukaSelect=document.getElementById("taluka");
-
-if(districtSelect && talukaSelect){
-  districtSelect.addEventListener("change",function(){
+if(districtSelect){
+  districtSelect.addEventListener("change",()=>{
     fillTalukas("district","taluka");
   });
 }
 
 const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(Number(n)||0);
 
-document.getElementById("checkBtn").addEventListener("click",()=>{
+const checkBtn=document.getElementById("checkBtn");
+if(checkBtn) checkBtn.addEventListener("click",()=>{
   const status=document.getElementById("businessStatus")?.value||"";
   const activity=document.getElementById("foodActivity")?.value||"";
   const state=document.getElementById("location")?.value||"Gujarat";
@@ -622,7 +706,8 @@ document.getElementById("checkBtn").addEventListener("click",()=>{
   }
 });
 
-document.getElementById("calcBtn").addEventListener("click",()=>{
+const calcBtn=document.getElementById("calcBtn");
+if(calcBtn) calcBtn.addEventListener("click",()=>{
   const cost=Number(document.getElementById("projectCost")?.value)||0;
   const pctInput=document.getElementById("contributionPct");
   const subsidyEl=document.getElementById("subsidy");
@@ -699,109 +784,6 @@ ${get("requirement")||"Not provided"}
 I would like PMFME guidance from DRP Shankar Pradhan.`;
   window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg),"_blank");
 });
-
-const translations={
-en:{
-  top:"PMFME FOOD BUSINESS GUIDANCE • GUJARAT • DRP SHANKAR PRADHAN",
-  benefits:"Benefits",businesses:"Business Ideas",eligibility:"Eligibility",calculator:"Calculator",districts:"Districts",stories:"Stories",faq:"FAQ",
-  call:"📞 CALL DRP SHANKAR",badge:"FIELD → VALUE ADDITION → FOOD PROCESSING → MARKET",
-  heroTitle:"Have a food business idea?<br><span>Let's plan it better.</span>",
-  heroText:"Get practical PMFME guidance from <b>DRP Shankar Pradhan</b> for your food processing idea, eligibility, project cost, machinery, documents, financing and application journey.",
-  get:"💬 GET GUIDANCE FROM SHANKAR",callFull:"📞 CALL DRP SHANKAR PRADHAN",estimate:"🧮 ESTIMATE PROJECT SUPPORT",
-  benefitsTitle:"What can PMFME support mean for your food business?",
-  businessesTitle:"Food processing opportunities to explore",
-  eligibilityTitle:"Is your basic profile suitable to explore PMFME?",
-  calculatorTitle:"Get an indicative subsidy estimate",
-  whatsappTitle:"Fill the details once — send a complete request to DRP Shankar Pradhan",
-  storiesTitle:"See food processing businesses in action",faqTitle:"Common PMFME questions",
-  finalTitle:"Have a food business idea? Talk to DRP Shankar Pradhan."
-},
-hi:{
-  top:"PMFME खाद्य व्यवसाय मार्गदर्शन • गुजरात • DRP शंकर प्रधान",
-  benefits:"लाभ",businesses:"व्यवसाय के अवसर",eligibility:"पात्रता",calculator:"कैलकुलेटर",districts:"जिले",stories:"सफलता की कहानियाँ",faq:"सामान्य प्रश्न",
-  call:"📞 DRP शंकर को कॉल करें",badge:"कृषि उपज → मूल्य संवर्धन → खाद्य प्रसंस्करण → बाजार",
-  heroTitle:"क्या आपके पास खाद्य व्यवसाय का विचार है?<br><span>आइए इसे बेहतर योजना दें।</span>",
-  heroText:"<b>DRP शंकर प्रधान</b> से PMFME मार्गदर्शन प्राप्त करें—खाद्य प्रसंस्करण, पात्रता, परियोजना लागत, मशीनरी, दस्तावेज, वित्त और आवेदन प्रक्रिया के लिए।",
-  get:"💬 शंकर से मार्गदर्शन लें",callFull:"📞 DRP शंकर प्रधान को कॉल करें",estimate:"🧮 परियोजना अनुमान",
-  benefitsTitle:"PMFME आपके खाद्य व्यवसाय में कैसे मदद कर सकता है?",
-  businessesTitle:"खाद्य प्रसंस्करण के व्यवसायिक अवसर",
-  eligibilityTitle:"क्या आपकी मूल प्रोफ़ाइल PMFME के लिए उपयुक्त है?",
-  calculatorTitle:"अनुमानित सब्सिडी कैलकुलेटर",
-  whatsappTitle:"जानकारी भरें — DRP शंकर प्रधान को पूरी जानकारी WhatsApp करें",
-  storiesTitle:"खाद्य प्रसंस्करण व्यवसायों को देखें",faqTitle:"PMFME के सामान्य प्रश्न",
-  finalTitle:"खाद्य व्यवसाय का विचार है? DRP शंकर प्रधान से बात करें।"
-},
-gu:{
-  top:"PMFME ફૂડ બિઝનેસ માર્ગદર્શન • ગુજરાત • DRP શંકર પ્રધાન",
-  benefits:"લાભ",businesses:"બિઝનેસ તકો",eligibility:"પાત્રતા",calculator:"કેલ્ક્યુલેટર",districts:"જિલ્લા",stories:"સફળતા કથાઓ",faq:"વારંવાર પૂછાતા પ્રશ્નો",
-  call:"📞 DRP શંકરને કૉલ કરો",badge:"ખેતી ઉપજ → વેલ્યુ એડિશન → ફૂડ પ્રોસેસિંગ → માર્કેટ",
-  heroTitle:"તમારો ફૂડ બિઝનેસનો વિચાર છે?<br><span>ચાલો તેને વધુ સારી રીતે પ્લાન કરીએ.</span>",
-  heroText:"ફૂડ પ્રોસેસિંગ, પાત્રતા, પ્રોજેક્ટ ખર્ચ, મશીનરી, દસ્તાવેજો, ફાઇનાન્સ અને અરજી પ્રક્રિયા માટે <b>DRP શંકર પ્રધાન</b> પાસેથી PMFME માર્ગદર્શન મેળવો.",
-  get:"💬 શંકર પાસેથી માર્ગદર્શન મેળવો",callFull:"📞 DRP શંકર પ્રધાનને કૉલ કરો",estimate:"🧮 પ્રોજેક્ટ અંદાજ",
-  benefitsTitle:"PMFME તમારા ફૂડ બિઝનેસમાં કેવી રીતે મદદ કરી શકે?",
-  businessesTitle:"ફૂડ પ્રોસેસિંગ માટે બિઝનેસ તકો",
-  eligibilityTitle:"શું તમારી મૂળ પ્રોફાઇલ PMFME માટે યોગ્ય છે?",
-  calculatorTitle:"અંદાજિત સબસિડી કેલ્ક્યુલેટર",
-  whatsappTitle:"માહિતી ભરો — DRP શંકર પ્રધાનને સંપૂર્ણ માહિતી WhatsApp કરો",
-  storiesTitle:"ફૂડ પ્રોસેસિંગ બિઝનેસ જુઓ",faqTitle:"PMFME અંગે સામાન્ય પ્રશ્નો",
-  finalTitle:"ફૂડ બિઝનેસનો વિચાર છે? DRP શંકર પ્રધાન સાથે વાત કરો."
-}};
-
-function setLanguage(lang){
-  const t=translations[lang]||translations.en;
-  document.documentElement.lang=lang;
-  document.querySelector(".top span").textContent=t.top;
-
-  const nav=document.querySelectorAll(".navlinks a");
-  if(nav.length>=7){
-    nav[0].textContent=t.benefits;nav[1].textContent=t.businesses;nav[2].textContent=t.eligibility;
-    nav[3].textContent=t.districts;nav[4].textContent=t.calculator;nav[5].textContent=t.stories;nav[6].textContent=t.faq;
-  }
-
-  const heroBadge=document.querySelector(".hero .badge"); if(heroBadge)heroBadge.textContent=t.badge;
-  const h1=document.querySelector(".hero h1"); if(h1)h1.innerHTML=t.heroTitle;
-  const hp=document.querySelector(".hero p"); if(hp)hp.innerHTML=t.heroText;
-
-  const heroButtons=document.querySelectorAll(".hero .actions .btn");
-  if(heroButtons.length>=3){heroButtons[0].textContent=t.get;heroButtons[1].textContent=t.callFull;heroButtons[2].textContent=t.estimate;}
-
-  const heads=document.querySelectorAll(".head h2");
-  heads.forEach(h=>{
-    const id=h.closest("section")?.id;
-    if(id==="benefits")h.textContent=t.benefitsTitle;
-    if(id==="businesses")h.textContent=t.businessesTitle;
-    if(id==="eligibility")h.textContent=t.eligibilityTitle;
-    if(id==="calculator")h.textContent=t.calculatorTitle;
-    if(id==="whatsapp-form")h.textContent=t.whatsappTitle;
-    if(id==="stories")h.textContent=t.storiesTitle;
-    if(id==="faq")h.textContent=t.faqTitle;
-  });
-  const finalH=document.querySelector(".help h2"); if(finalH)finalH.textContent=t.finalTitle;
-
-  const topLang=document.getElementById("topLanguage");
-  if(topLang && topLang.value!==lang)topLang.value=lang;
-  const formLang=document.getElementById("language");
-  if(formLang){
-    formLang.value=lang==="hi"?"Hindi / हिन्दी":lang==="gu"?"Gujarati / ગુજરાતી":"English";
-  }
-  localStorage.setItem("pmfmeLanguage",lang);
-}
-
-const savedLang=localStorage.getItem("pmfmeLanguage")||"en";
-const topLang=document.getElementById("topLanguage");
-const formLang=document.getElementById("language");
-if(topLang){
-  topLang.value=savedLang;
-  topLang.addEventListener("change",()=>setLanguage(topLang.value));
-}
-if(formLang){
-  formLang.addEventListener("change",()=>{
-    const v=formLang.value;
-    const lang=v.startsWith("Hindi")?"hi":v.startsWith("Gujarati")?"gu":"en";
-    setLanguage(lang);
-  });
-}
-setLanguage(savedLang);
 
 </script>
 </body>
