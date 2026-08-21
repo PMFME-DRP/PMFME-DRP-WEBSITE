@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-language="en" en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2191,6 +2191,7 @@ I would like PMFME guidance from DRP Shankar Pradhan.`;
 /* ===== FINAL PMFME LANGUAGE ENGINE ===== */
 (function () {
   const KEY = "pmfmeLanguage";
+  const DEFAULT_LANGUAGE = "en";
   const IDS = ["topLanguage", "pageLanguage"];
   const originals = new WeakMap();
 
@@ -2260,7 +2261,7 @@ I would like PMFME guidance from DRP Shankar Pradhan.`;
       });
     });
 
-    applyLanguage(localStorage.getItem(KEY) || "en");
+    applyLanguage(DEFAULT_LANGUAGE);
   }
 
   if (document.readyState === "loading") {
@@ -2273,77 +2274,87 @@ I would like PMFME guidance from DRP Shankar Pradhan.`;
 })();
 </script>
 
+
+
+
 <script>
-/* FINAL WHATSAPP HANDLER */
-(function(){
-  function initWhatsApp(){
-    const btn=document.getElementById("whatsappBtn");
-    if(!btn || btn.dataset.waFixed==="1") return;
-    btn.dataset.waFixed="1";
+/* ===== RELIABLE WHATSAPP SUBMISSION ===== */
+(function () {
+  function setupWhatsApp() {
+    const btn = document.getElementById("whatsappBtn");
+    if (!btn || btn.dataset.whatsappReady === "true") return;
+    btn.dataset.whatsappReady = "true";
 
-    btn.addEventListener("click",function(e){
-      e.preventDefault();
+    btn.onclick = function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-      const required=[
-        ["name","Full Name"],
-        ["phone","Mobile Number"],
-        ["district","District"],
-        ["taluka","Taluka"],
-        ["category","Food Business Category"],
-        ["product","Exact Product"]
+      const get = id => {
+        const el = document.getElementById(id);
+        return el ? String(el.value || "").trim() : "";
+      };
+
+      const required = [
+        ["name", "Full Name"],
+        ["phone", "Mobile Number"],
+        ["district", "District"],
+        ["taluka", "Taluka"],
+        ["category", "Food Business Category"],
+        ["product", "Exact Product"]
       ];
 
-      for(const [id,label] of required){
-        const el=document.getElementById(id);
-        if(!el || !String(el.value||"").trim()){
-          const err=document.getElementById("formError");
-          if(err) err.textContent="Please fill: "+label;
-          if(el) el.focus();
-          return;
+      for (const [id, label] of required) {
+        const el = document.getElementById(id);
+        if (!el || !String(el.value || "").trim()) {
+          const error = document.getElementById("formError");
+          if (error) error.textContent = "Please fill: " + label;
+          if (el) el.focus();
+          return false;
         }
       }
 
-      const val=id=>String(document.getElementById(id)?.value||"").trim();
-      const msg =
+      const message =
 `Hello DRP Shankar Pradhan,
 
 I want guidance under the PMFME Scheme.
 
-Name: ${val("name")}
-Mobile: ${val("phone")}
-State: ${val("state")}
-District: ${val("district")}
-Taluka: ${val("taluka")}
-Village/City/Area: ${val("village")}
-Preferred Language: ${val("language")}
-Food Business Category: ${val("category")}
-Exact Product: ${val("product")}
-Applicant Type: ${val("applicantType")}
-Business Status: ${val("status")}
-Estimated Project Cost: ${val("costRange")}
-Approx. Project Cost: ₹${val("cost")}
-Own Investment Available: ₹${val("investment")}
-Bank Loan Required: ${val("loan")}
-Machinery Required: ${val("machinery")}
-Registration Status: ${val("registration")}
-Project Stage: ${val("projectStage")}
+Name: ${get("name")}
+Mobile: ${get("phone")}
+State: ${get("state")}
+District: ${get("district")}
+Taluka: ${get("taluka")}
+Village / City / Area: ${get("village")}
+Preferred Language: ${get("language")}
+Food Business Category: ${get("category")}
+Exact Product: ${get("product")}
+Applicant Type: ${get("applicantType")}
+Business Status: ${get("status")}
+Estimated Project Cost: ${get("costRange")}
+Approx. Project Cost: ₹${get("cost")}
+Own Investment Available: ₹${get("investment")}
+Bank Loan Required: ${get("loan")}
+Machinery Required: ${get("machinery")}
+Business Registration Status: ${get("registration")}
+Project Stage: ${get("projectStage")}
 
 My requirement / question:
-${val("requirement")}
+${get("requirement")}
 
 Please guide me regarding PMFME eligibility, project planning, subsidy and application process.`;
 
-      const url="https://wa.me/917041075170?text="+encodeURIComponent(msg);
+      const whatsappURL =
+        "https://wa.me/917041075170?text=" + encodeURIComponent(message);
 
-      // Direct navigation is much more reliable than window.open on mobile.
-      window.location.href=url;
-    });
+      // Same-tab navigation: works on mobile, desktop and inside most previews.
+      window.location.assign(whatsappURL);
+      return false;
+    };
   }
 
-  if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded",initWhatsApp,{once:true});
-  }else{
-    initWhatsApp();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupWhatsApp, { once: true });
+  } else {
+    setupWhatsApp();
   }
 })();
 </script>
