@@ -82,7 +82,7 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 
 .hero-grid{display:grid;grid-template-columns:1fr;gap:25px;align-items:center;max-width:850px}
 .pmfme-lockup{display:flex;align-items:center;gap:10px;margin-bottom:15px}
-.pmfme-mark{background:#fff;color:var(--blueDeep);font-weight:1000;padding:6px 9px;border-radius:9px;letter-spacing:1px;box-shadow:0 4px 12px rgba(0,0,0,.15);min-width:70px;display:grid;place-items:center}.pmfme-mark img{max-width:66px;max-height:34px;object-fit:contain}
+.pmfme-mark{background:#fff;color:var(--blueDeep);font-weight:1000;padding:6px 9px;border-radius:9px;letter-spacing:1px;box-shadow:0 4px 12px rgba(0,0,0,.15);min-width:70px;display:grid;place-items:center}.pmfme-title{font-size:17px;font-weight:800;line-height:1.3;color:#fff;display:block}.pmfme-mark img{max-width:66px;max-height:34px;object-fit:contain}
 .pmfme-lockup span:last-child{font-size:12px;font-weight:700;color:#f3fff8}
 .badge{display:inline-block;padding:7px 12px;border:1px solid rgba(255,255,255,.5);border-radius:999px;font-size:12px;font-weight:800;margin-bottom:18px}
 
@@ -133,6 +133,8 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
 .mobilebar{display:none}
 @media(max-width:1000px){.navlinks{display:none}.hero-grid,.checker,.calc,.contact-grid{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){
+  .pmfme-title{font-size:13px;line-height:1.25}
+
   .top-inner{font-size:10px}.top-language select{padding:4px 5px}
   .hero{padding:48px 0 58px}.hero-visual{min-height:300px}.visual-factory{right:25px;transform:scale(.8);transform-origin:bottom right}.visual-arrow{left:37%;bottom:150px}.visual-label{font-size:9px}
 
@@ -180,7 +182,7 @@ footer{background:#2d6f96;color:#d8eee4;padding:32px 0}.foot{display:grid;grid-t
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="pmfme-lockup"><span class="pmfme-mark"><img src="https://www.uxdt.nic.in/wp-content/uploads/2024/11/pmfms-pmfms.jpg" alt="PMFME" onerror="this.style.display='none';this.parentElement.textContent='PMFME'"></span><span>Pradhan Mantri Formalisation of Micro Food Processing Enterprises</span></div>
+      <div class="pmfme-lockup"><span class="pmfme-mark"><img src="https://www.uxdt.nic.in/wp-content/uploads/2024/11/pmfms-pmfms.jpg" alt="PMFME" onerror="this.style.display='none';this.parentElement.textContent='PMFME'"></span><span class="pmfme-title">Pradhan Mantri Formalisation of Micro Food Processing Enterprises</span></div>
       <div class="badge">FIELD → VALUE ADDITION → FOOD PROCESSING → MARKET</div>
       <h1>Have a food business idea?<br><span>Let's plan it better.</span></h1>
       <div class="hero-image-caption">🌾 FARM / AGRI PRODUCE &nbsp; → &nbsp; 🏭 FOOD PROCESSING &nbsp; → &nbsp; 📦 VALUE ADDITION &nbsp; → &nbsp; 🛒 MARKET</div>
