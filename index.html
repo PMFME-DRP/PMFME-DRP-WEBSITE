@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-default-language="en" en">
+<html lang="en" data-default-language="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2355,6 +2355,31 @@ Please guide me regarding PMFME eligibility, project planning, subsidy and appli
     document.addEventListener("DOMContentLoaded", setupWhatsApp, { once: true });
   } else {
     setupWhatsApp();
+  }
+})();
+</script>
+
+
+<script>
+/* HOME PAGE: ENGLISH IS THE DEFAULT */
+(function () {
+  function forceHomeEnglish() {
+    try {
+      localStorage.setItem("pmfmeLanguage", "en");
+      document.documentElement.lang = "en";
+      if (typeof window.PMFME_SET_LANGUAGE === "function") {
+        window.PMFME_SET_LANGUAGE("en");
+      }
+      ["topLanguage","pageLanguage"].forEach(function(id){
+        var el=document.getElementById(id);
+        if(el) el.value="en";
+      });
+    } catch(e) {}
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", forceHomeEnglish, {once:true});
+  } else {
+    forceHomeEnglish();
   }
 })();
 </script>
