@@ -30,8 +30,9 @@ jobs:
           path = Path("index.html")
           data = path.read_text(encoding="utf-8")
 
-          if len(data) < 200_000:
-              raise SystemExit("Safety stop: index.html is unexpectedly small.")
+          # Safety check calibrated to the actual homepage size.
+          if len(data) < 50_000:
+              raise SystemExit(f"Safety stop: index.html is unexpectedly small ({len(data)} bytes).")
 
           canonical = '<link rel="canonical" href="https://www.pmfmegujarat.in/">'
           if canonical in data:
@@ -42,9 +43,13 @@ jobs:
           if data.count(title) != 1:
               raise SystemExit("Safety stop: expected homepage title was not found exactly once.")
 
+          for marker in ['<html lang="en"', '<style>', '</html>']:
+              if marker not in data:
+                  raise SystemExit(f"Safety stop: required homepage marker missing: {marker}")
+
           updated = data.replace(title, title + "\n" + canonical, 1)
-          if len(updated) < 200_000 or len(updated) <= len(data):
-              raise SystemExit("Safety stop: resulting index.html failed size checks.")
+          if len(updated) <= len(data) or updated.count(canonical) != 1:
+              raise SystemExit("Safety stop: resulting index.html failed integrity checks.")
 
           path.write_text(updated, encoding="utf-8")
           print(f"Patched index.html: {len(data)} -> {len(updated)} bytes")
