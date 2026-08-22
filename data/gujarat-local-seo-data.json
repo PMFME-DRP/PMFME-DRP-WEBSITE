@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-08-22",
+  "purpose": "Source-controlled foundation for Gujarat district, taluka and village-area SEO pages.",
+  "state": "Gujarat",
+  "district_count": 34,
+  "administrative_taluka_count_reference": 267,
+  "taluka_panchayat_count_reference": 265,
+  "districts": [
+    "Ahmedabad", "Amreli", "Anand", "Aravalli", "Banaskantha", "Bharuch", "Bhavnagar", "Botad", "Chhota Udaipur", "Dahod", "Devbhoomi Dwarka", "Dang", "Gandhinagar", "Gir Somnath", "Jamnagar", "Junagadh", "Kheda", "Kutch", "Mahisagar", "Mahesana", "Morbi", "Narmada", "Navsari", "Panchmahal", "Patan", "Porbandar", "Rajkot", "Sabarkantha", "Surat", "Surendranagar", "Tapi", "Vadodara", "Valsad", "Vav-Tharad"
+  ],
+  "new_talukas_2025": [
+    {"name":"Godhar","district":"Mahisagar","source_taluka":"Santrampur / Shehra"},
+    {"name":"Kothamba","district":"Panchmahal","source_taluka":"Lunawada"},
+    {"name":"Chikda","district":"Narmada","source_taluka":"Dediapada"},
+    {"name":"Nanapodha","district":"Valsad","source_taluka":"Vapi Rural / Kaprada / Pardi"},
+    {"name":"Rah","district":"Banaskantha","source_taluka":"Tharad"},
+    {"name":"Dharnidhar","district":"Banaskantha","source_taluka":"Vav"},
+    {"name":"Ogad","district":"Banaskantha","source_taluka":"Kankrej"},
+    {"name":"Hadad","district":"Banaskantha","source_taluka":"Danta"},
+    {"name":"Govind Guru Limdi","district":"Dahod","source_taluka":"Jhalod"},
+    {"name":"Sukhsar","district":"Dahod","source_taluka":"Fatepura"},
+    {"name":"Kadval","district":"Chhota Udaipur","source_taluka":"Jetpur Pavi"},
+    {"name":"Fagvel","district":"Kheda","source_taluka":"Kapadvanj / Kathlal"},
+    {"name":"Shamlaji","district":"Aravalli","source_taluka":"Bhiloda"},
+    {"name":"Sathamba","district":"Aravalli","source_taluka":"Bayad"},
+    {"name":"Ukai","district":"Tapi","source_taluka":"Songadh"},
+    {"name":"Areth","district":"Surat","source_taluka":"Mandvi"},
+    {"name":"Ambika","district":"Surat","source_taluka":"Mahuva"}
+  ],
+  "vav_tharad_district": {
+    "headquarters": "Tharad",
+    "talukas_from_banaskantha": ["Vav", "Tharad", "Suigam", "Bhabhar", "Deodar", "Lakhni"]
+  },
+  "page_generation_policy": {
+    "district": "indexable when unique district-specific PMFME/ODOP content is available",
+    "taluka": "indexable when current administrative mapping and meaningful local content are verified",
+    "village_area": "directory entry first; indexable page only when useful unique content exists",
+    "no_doorway_pages": true
+  },
+  "sources": [
+    {"type":"official_statistics","url":"https://gujecostat.gujarat.gov.in/uploads/mediafiles/list%20of%20taluka%20eng.pdf","note":"Gujarat government statistical taluka reference; historical baseline, not sufficient alone for 2025-26 boundary changes."},
+    {"type":"official_gazette","url":"https://revenuedepartment.gujarat.gov.in/downloads/Noti_198_24092025_L1.pdf","note":"2025 Gazette schedules for Vav and Dharanidhar village allocation."},
+    {"type":"official_gazette","url":"https://revenuedepartment.gujarat.gov.in/downloads/Noti_196_24092025_L1.pdf","note":"2025 Gazette schedules for Paradi and Kaprada village allocation."},
+    {"type":"current_reference","url":"https://www.gujarat.gov.in/","note":"Use current Gujarat government notifications for future administrative changes."}
+  ]
+}
