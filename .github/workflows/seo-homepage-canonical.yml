@@ -4,16 +4,23 @@ on:
   push:
     branches:
       - seo-homepage-canonical
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
   patch-canonical:
+    if: github.event_name == 'push' || github.event.pull_request.head.ref == 'seo-homepage-canonical'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: seo-homepage-canonical
 
       - name: Add homepage canonical without rewriting the page
         run: |
@@ -23,7 +30,6 @@ jobs:
           path = Path("index.html")
           data = path.read_text(encoding="utf-8")
 
-          # Safety checks: this homepage is large and must never be replaced by a truncated file.
           if len(data) < 200_000:
               raise SystemExit("Safety stop: index.html is unexpectedly small.")
 
@@ -57,8 +63,12 @@ jobs:
           if grep -q 'rel="canonical" href="https://www.pmfmegujarat.in/"' index.html; then
             rm -f .github/workflows/seo-homepage-canonical.yml
             git add index.html .github/workflows/seo-homepage-canonical.yml
-            git commit -m "SEO: add homepage canonical URL"
-            git push
+            if git diff --cached --quiet; then
+              echo "No changes to commit."
+            else
+              git commit -m "SEO: add homepage canonical URL"
+              git push origin seo-homepage-canonical
+            fi
           else
             echo "Canonical not found after patch; refusing to commit."
             exit 1
