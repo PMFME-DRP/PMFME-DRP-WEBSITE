@@ -1,0 +1,65 @@
+name: Safe homepage canonical patch
+
+on:
+  push:
+    branches:
+      - seo-homepage-canonical
+
+permissions:
+  contents: write
+
+jobs:
+  patch-canonical:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add homepage canonical without rewriting the page
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("index.html")
+          data = path.read_text(encoding="utf-8")
+
+          # Safety checks: this homepage is large and must never be replaced by a truncated file.
+          if len(data) < 200_000:
+              raise SystemExit("Safety stop: index.html is unexpectedly small.")
+
+          canonical = '<link rel="canonical" href="https://www.pmfmegujarat.in/">'
+          if canonical in data:
+              print("Canonical already present; no change needed.")
+              raise SystemExit(0)
+
+          title = '<title>PMFME Gujarat | DRP Shankar Pradhan | Food Business Guidance</title>'
+          if data.count(title) != 1:
+              raise SystemExit("Safety stop: expected homepage title was not found exactly once.")
+
+          updated = data.replace(title, title + "\n" + canonical, 1)
+          if len(updated) < 200_000 or len(updated) <= len(data):
+              raise SystemExit("Safety stop: resulting index.html failed size checks.")
+
+          path.write_text(updated, encoding="utf-8")
+          print(f"Patched index.html: {len(data)} -> {len(updated)} bytes")
+          PY
+
+      - name: Verify minimal change
+        run: |
+          git diff --check
+          git diff --stat
+          git diff -- index.html | head -80
+
+      - name: Commit canonical patch and remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if grep -q 'rel="canonical" href="https://www.pmfmegujarat.in/"' index.html; then
+            rm -f .github/workflows/seo-homepage-canonical.yml
+            git add index.html .github/workflows/seo-homepage-canonical.yml
+            git commit -m "SEO: add homepage canonical URL"
+            git push
+          else
+            echo "Canonical not found after patch; refusing to commit."
+            exit 1
+          fi
