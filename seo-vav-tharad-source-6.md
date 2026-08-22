@@ -1,1 +1,0 @@
-Official source: https://vavtharad.nic.in/about-district/
