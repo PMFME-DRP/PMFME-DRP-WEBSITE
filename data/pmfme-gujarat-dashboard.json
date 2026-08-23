@@ -1,0 +1,34 @@
+{
+  "sourceUrl": "https://pmfme.mofpi.gov.in/sitesubsite/#/state/gujarat",
+  "syncedAt": "2026-08-23T00:00:00.000Z",
+  "sourceAttribution": "Website Content Managed by Ministry of Food Processing Industries, Government of India. Designed, Developed and Hosted by National Informatics Centre (NIC).",
+  "helpline": "+91-8168001500",
+  "title": "PMFME Gujarat Dashboard",
+  "totals": {
+    "applicationsSubmitted": 4476,
+    "loanSanctioned": 2112,
+    "loanDisbursed": 1813,
+    "applicationsForwardedToBank": 3354,
+    "odopApplications": 727,
+    "nonOdopApplications": 3748
+  },
+  "yearly": {
+    "applicationsSubmitted": [{"year":"2026-27","value":662},{"year":"2025-26","value":2046},{"year":"2024-25","value":587},{"year":"2023-24","value":753},{"year":"2022-23","value":273},{"year":"2021-22","value":155}],
+    "loanSanctioned": [{"year":"2026-27","value":292},{"year":"2025-26","value":1073},{"year":"2024-25","value":324},{"year":"2023-24","value":301},{"year":"2022-23","value":119},{"year":"2021-22","value":3}],
+    "loanDisbursed": [{"year":"2026-27","value":235},{"year":"2025-26","value":883},{"year":"2024-25","value":315},{"year":"2023-24","value":271},{"year":"2022-23","value":107},{"year":"2021-22","value":2}],
+    "applicationsForwardedToBank": [{"year":"2026-27","value":37},{"year":"2025-26","value":1429},{"year":"2024-25","value":645},{"year":"2023-24","value":892},{"year":"2022-23","value":277},{"year":"2021-22","value":74}],
+    "odopApplications": [{"year":"2026-27","value":66},{"year":"2025-26","value":230},{"year":"2024-25","value":54},{"year":"2023-24","value":131},{"year":"2022-23","value":98},{"year":"2021-22","value":148}],
+    "nonOdopApplications": [{"year":"2026-27","value":596},{"year":"2025-26","value":1816},{"year":"2024-25","value":533},{"year":"2023-24","value":621},{"year":"2022-23","value":175},{"year":"2021-22","value":7}]
+  },
+  "lastSevenDays": {
+    "applicationsSubmitted": [{"date":"2026-08-17","value":9},{"date":"2026-08-18","value":6},{"date":"2026-08-19","value":12},{"date":"2026-08-20","value":16},{"date":"2026-08-21","value":9},{"date":"2026-08-22","value":5},{"date":"2026-08-23","value":4}],
+    "applicationsSanctioned": [{"date":"2026-08-17","value":6},{"date":"2026-08-18","value":0},{"date":"2026-08-19","value":1},{"date":"2026-08-20","value":1},{"date":"2026-08-21","value":0},{"date":"2026-08-22","value":0},{"date":"2026-08-23","value":0}]
+  },
+  "socialCategory": {"General":58.54,"OBC":26.32,"SC":3.65,"ST":11.48},
+  "topPerformers": {
+    "dlcs": [{"name":"Surat (Gujarat)","value":489},{"name":"Rajkot (Gujarat)","value":253},{"name":"Junagadh (Gujarat)","value":237},{"name":"Ahmadabad (Gujarat)","value":227},{"name":"Jamnagar (Gujarat)","value":172}],
+    "districts": [{"name":"Surat","value":251},{"name":"Rajkot","value":211},{"name":"Junagadh","value":196},{"name":"Ahmadabad","value":156},{"name":"Jamnagar","value":150}],
+    "drps": [{"name":"Surat","value":257},{"name":"Rajkot","value":188},{"name":"Junagadh","value":132},{"name":"Surat","value":93},{"name":"Jamnagar","value":79}]
+  },
+  "rawText": "PMFME GUJARAT DASHBOARD\nApplications Submitted (4476)\n2026-27 662\n2025-26 2046\n2024-25 587\n2023-24 753\n2022-23 273\n2021-22 155\nLoan Sanctioned (2112)\n2026-27 292\n2025-26 1073\n2024-25 324\n2023-24 301\n2022-23 119\n2021-22 3\nLoan Disbursed(1813)\n2026-27 235\n2025-26 883\n2024-25 315\n2023-24 271\n2022-23 107\n2021-22 2\nApplications submitted in last seven days\nSocial Category wise No of Application\nApplications sanctioned in last seven days\nApplications Forwarded To Bank (3354)\n2026-27 37\n2025-26 1429\n2024-25 645\n2023-24 892\n2022-23 277\n2021-22 74\nODOP Applications (727)\n2026-27 66\n2025-26 230\n2024-25 54\n2023-24 131\n2022-23 98\n2021-22 148\nNon ODOP Applications (3748)\n2026-27 596\n2025-26 1816\n2024-25 533\n2023-24 621\n2022-23 175\n2021-22 7\nTop 5 Performing DLCs\nSurat (Gujarat) 489\nRajkot (Gujarat) 253\nJunagadh (Gujarat) 237\nAhmadabad (Gujarat) 227\nJamnagar (Gujarat) 172\nTop 5 Performing Districts\nSurat 251\nRajkot 211\nJunagadh 196\nAhmadabad 156\nJamnagar 150\nTop 5 Performing DRPs\nSurat 257\nRajkot 188\nJunagadh 132\nSurat 93\nJamnagar 79\nभारत सरकार | GOVERNMENT OF INDIA Helpline Number: +91-8168001500"
+}
