@@ -1,0 +1,31 @@
+name: Install PMFME Dashboard On Homepage
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install homepage dashboard widget
+        run: python3 inject-pmfme-dashboard-home.py
+
+      - name: Commit homepage change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'Homepage already contains the dashboard widget.'
+          else
+            git commit -m 'Add synchronized PMFME dashboard to homepage'
+            git push
+          fi
