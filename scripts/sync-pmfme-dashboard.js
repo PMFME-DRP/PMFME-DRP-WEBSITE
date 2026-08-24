@@ -51,13 +51,41 @@ function topFive(text, label) {
   return rows;
 }
 
+async function loadDashboard(page) {
+  const attempts = 3;
+  let lastError;
+
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      console.log(`Dashboard fetch attempt ${attempt}/${attempts}`);
+      await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: 120000 });
+
+      // The source is an SPA; wait for actual dashboard content rather than
+      // relying on one exact heading/capitalization.
+      await page.waitForFunction(() => {
+        const text = document.body?.innerText || '';
+        return /Applications Submitted/i.test(text) &&
+               /Loan Sanctioned/i.test(text);
+      }, { timeout: 120000 });
+
+      // Give charts/tables time to finish rendering before reading the DOM.
+      await page.waitForTimeout(7000);
+      return;
+    } catch (error) {
+      lastError = error;
+      console.warn(`Attempt ${attempt} failed: ${error.message}`);
+      if (attempt < attempts) await page.waitForTimeout(5000);
+    }
+  }
+
+  throw lastError;
+}
+
 (async () => {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
   try {
-    await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: 120000 });
-    await page.waitForFunction(() => document.body && document.body.innerText.includes('PMFME GUJARAT DASHBOARD'), { timeout: 120000 });
-    await page.waitForTimeout(5000);
+    await loadDashboard(page);
 
     const rawText = await page.locator('body').innerText();
     const data = {
@@ -89,6 +117,11 @@ function topFive(text, label) {
       },
       rawText
     };
+
+    const populatedTotals = Object.values(data.totals).filter(value => value !== null).length;
+    if (populatedTotals < 2) {
+      throw new Error('Dashboard loaded but expected KPI totals were not detected; refusing to overwrite existing data.');
+    }
 
     fs.mkdirSync(path.dirname(OUT), { recursive: true });
     fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + '\n', 'utf8');
