@@ -2,7 +2,8 @@ name: Sync PMFME Gujarat Dashboard
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    # 09:00 IST = 03:30 UTC. Automatic sync runs once per day.
+    - cron: '30 3 * * *'
   workflow_dispatch:
 
 permissions:
