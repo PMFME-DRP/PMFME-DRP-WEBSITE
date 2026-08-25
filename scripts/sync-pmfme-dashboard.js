@@ -52,40 +52,52 @@ function topFive(text, label) {
 }
 
 async function loadDashboard(page) {
-  const attempts = 3;
+  // Keep one daily workflow, but allow it to recover from temporary
+  // PMFME/NIC downtime for up to about 75 minutes after the 09:00 IST run.
+  const attempts = 12;
+  const attemptTimeout = 180000;
+  const retryDelay = 300000;
   let lastError;
 
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
       console.log(`Dashboard fetch attempt ${attempt}/${attempts}`);
-      await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: 120000 });
+      await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: attemptTimeout });
 
-      // The source is an SPA; wait for actual dashboard content rather than
-      // relying on one exact heading/capitalization.
       await page.waitForFunction(() => {
         const text = document.body?.innerText || '';
+        const maintenance = /maintenance|under maintenance|temporarily unavailable|service unavailable/i.test(text);
+        if (maintenance) return false;
         return /Applications Submitted/i.test(text) &&
                /Loan Sanctioned/i.test(text);
-      }, { timeout: 120000 });
+      }, { timeout: attemptTimeout });
 
-      // Give charts/tables time to finish rendering before reading the DOM.
-      await page.waitForTimeout(7000);
-      return;
+      await page.waitForTimeout(10000);
+      return true;
     } catch (error) {
       lastError = error;
       console.warn(`Attempt ${attempt} failed: ${error.message}`);
-      if (attempt < attempts) await page.waitForTimeout(5000);
+      if (attempt < attempts) {
+        console.log(`Waiting ${retryDelay / 60000} minutes before retrying the same daily sync...`);
+        await page.waitForTimeout(retryDelay);
+      }
     }
   }
 
-  throw lastError;
+  console.warn('PMFME Gujarat source was unavailable for the full retry window. Existing dashboard data will be preserved.');
+  console.warn(lastError?.message || 'Unknown source error');
+  return false;
 }
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
   try {
-    await loadDashboard(page);
+    const loaded = await loadDashboard(page);
+    if (!loaded) {
+      process.exitCode = 0;
+      return;
+    }
 
     const rawText = await page.locator('body').innerText();
     const data = {
