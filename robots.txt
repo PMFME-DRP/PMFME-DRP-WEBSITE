@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pmfmegujarat.infofo/sitemap.xml
+Sitemap: https://www.pmfmegujarat.infofofofo/sitemap.xml
